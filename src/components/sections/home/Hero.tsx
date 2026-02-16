@@ -35,6 +35,16 @@ export function Hero() {
                 Explore pilot for Q1 2026
               </Button>
             </Link>
+            <a
+              href="https://sandbox.futeurcredx.com/demo/citi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" variant="outline" className="gap-2 px-8 py-6 text-lg font-semibold border-primary/40 text-primary hover:bg-primary/10">
+                Try Live Demo
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>
