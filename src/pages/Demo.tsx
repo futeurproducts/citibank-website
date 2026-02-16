@@ -259,8 +259,8 @@ export default function Demo() {
               <div className="text-xs font-bold text-[#003B70] tracking-wider mb-2">03 — CONSUMER DEMO</div>
               <h3 className="text-xl font-bold text-gray-900 mb-6">What the Consumer Demo Shows</h3>
               
-              <div className="h-48 rounded-xl bg-gradient-to-br from-[#003B70]/10 to-[#33CCFF]/5 border border-[#003B70]/20 flex items-center justify-center mb-6">
-                <p className="text-gray-400 text-sm">[Consumer App Mockup]</p>
+              <div className="rounded-xl bg-gradient-to-br from-[#003B70]/10 to-[#33CCFF]/5 border border-[#003B70]/20 flex items-center justify-center mb-6 p-4">
+                <img src="/images/3-phone-consumer.png" alt="Citi Consumer Credit Journey Mockup" className="w-full h-auto rounded-lg" />
               </div>
               
               <div className="space-y-4">
@@ -283,8 +283,8 @@ export default function Demo() {
               <div className="text-xs font-bold text-[#003B70] tracking-wider mb-2">04 — BUSINESS DEMO</div>
               <h3 className="text-xl font-bold text-gray-900 mb-6">What the Business Demo Shows</h3>
               
-              <div className="h-48 rounded-xl bg-gradient-to-br from-[#F5A623]/10 to-[#F5A623]/5 border border-[#F5A623]/20 flex items-center justify-center mb-6">
-                <p className="text-gray-400 text-sm">[Business App Mockup]</p>
+              <div className="rounded-xl bg-gradient-to-br from-[#F5A623]/10 to-[#F5A623]/5 border border-[#F5A623]/20 flex items-center justify-center mb-6 p-4">
+                <img src="/images/3-phones-business.png" alt="Citi Business Credit Journey Mockup" className="w-full h-auto rounded-lg" />
               </div>
               
               <div className="space-y-4">
@@ -491,7 +491,7 @@ export default function Demo() {
                 Watch the Demo
               </h2>
               <p className="text-white/70 mb-6">
-                See the exact system that Chase used to build Credit Journey momentum, Capital One used to create CreditWise dominance, and Wells Fargo used to upgrade SMB credit flows.
+                See the exact system that competing banks used to build Credit Journey momentum, create CreditWise dominance, and upgrade SMB credit flows.
               </p>
               <p className="text-lg text-[#33CCFF] font-semibold">
                 Citi has never had — until now.

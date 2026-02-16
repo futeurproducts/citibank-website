@@ -29,7 +29,7 @@ export default function Revolution() {
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Advanced Systems Intelligence</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Unified credit visibility that transforms how 7 million SMBs understand their financial health—powered by the tri-score spectrum Chase already uses.
+              Unified credit visibility that transforms how millions of SMBs understand their financial health — powered by the tri-score spectrum that Citi can deploy first.
             </p>
           </motion.div>
         </div>
@@ -58,7 +58,7 @@ export default function Revolution() {
                   The Gap
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Small-business customers of JPMorgan Chase have <strong className="text-foreground">no unified way</strong> to monitor both the personal and business credit health that underwrites every lending or card approval decision.
+                  Small-business customers of Citibank have <strong className="text-foreground">no unified way</strong> to monitor both the personal and business credit health that underwrites every lending or card approval decision.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-4">
                   Consumer Credit Journey scaled to 40M+ users. Yet <strong className="text-foreground">7 million business owners remain invisible</strong> to their own dual credit profile.
@@ -77,7 +77,7 @@ export default function Revolution() {
                   <strong className="text-primary">LUMIQ AI</strong> automates dual-score orchestration: owner FICO + business credit (Intelliscore, FSR, PAYDEX) → instant soft-approval insights, behavioral scoring, and one-tap card applications.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-4">
-                  All inside the Chase Business app. Zero friction. Maximum transparency.
+                  All inside the Citi Business app. Zero friction. Maximum transparency.
                 </p>
               </div>
             </div>
@@ -125,8 +125,8 @@ export default function Revolution() {
                   Strategic Timing
                 </h3>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Chase already serves <strong className="text-foreground">7M SMBs</strong> with deep personal & business credit history. 
-                  Yet these customers have no window into how Chase views them—until they apply.
+                  Citi already serves <strong className="text-foreground">millions of SMBs</strong> with deep personal & business credit history.
+                  Yet these customers have no window into how Citi views them — until they apply.
                 </p>
               </div>
 
@@ -134,7 +134,7 @@ export default function Revolution() {
                 <div>
                   <h4 className="font-semibold mb-2 text-foreground">Competitive White Space</h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    No major bank offers a Credit Journey–style product for SMBs. LUMIQ AI gives Chase first-mover advantage.
+                    No major bank offers a unified Credit Journey for SMBs. LUMIQ AI gives Citi first-mover advantage.
                   </p>
                 </div>
                 <div>
@@ -163,7 +163,7 @@ export default function Revolution() {
                 The Vision
               </h3>
               <p className="text-lg text-foreground/90 max-w-3xl mx-auto leading-relaxed mb-8">
-                Give <span className="text-primary font-semibold">7 million SMB clients</span> the same credit-journey transparency that consumers already enjoy—
+                Give <span className="text-primary font-semibold">Citi's SMB clients</span> the same credit-journey transparency that consumers already enjoy —
                 a shared roadmap to better borrowing, greater trust, and higher card spend.
                 <br/><br/>
                 All now powered by AI that understands <span className="text-secondary font-semibold">both the company and the human behind it</span>.
@@ -198,7 +198,7 @@ export default function Revolution() {
       <section className="py-10">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} FuteurCredX · For internal evaluation by JPMorgan Chase CCB
+            © {new Date().getFullYear()} FuteurCredX · For internal evaluation by Citibank
           </p>
         </div>
       </section>

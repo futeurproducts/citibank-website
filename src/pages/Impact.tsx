@@ -175,7 +175,7 @@ export default function Impact() {
               <span className="text-2xl md:text-3xl text-muted-foreground">Year One. Proven. Scalable.</span>
             </h1>
             <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
-              Not a projection. A replication of Chase's own Credit Journey success—now weaponized for SMB.
+              Not a projection. A replication of proven Credit Journey success — now weaponized for Citi's SMB portfolio.
             </p>
           </motion.div>
 
@@ -202,7 +202,7 @@ export default function Impact() {
               <DollarSign className="h-6 w-6" style={{ color: brand.accent }} />
               <h2 className="text-4xl font-extrabold">Year-1 Financial Impact</h2>
             </div>
-            <p className="text-xl text-slate-400">Optimistic but Grounded — Mirrors Chase Credit Journey Trajectory</p>
+            <p className="text-xl text-slate-400">Optimistic but Grounded — Mirrors Proven Credit Journey Trajectory</p>
           </motion.div>
 
           {/* Revenue Breakdown Visualization */}
@@ -564,7 +564,7 @@ export default function Impact() {
               viewport={{ once: true }}
               className={`rounded-2xl p-6 ${brand.card} ${brand.border}`}
             >
-              <h3 className="text-xl font-semibold mb-4">Chase Rules Enforced</h3>
+              <h3 className="text-xl font-semibold mb-4">Citi Rules Enforced</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className={`rounded-lg p-4 ${brand.border} bg-slate-800/40`}>
                   <div className="text-2xl font-bold mb-1" style={{ color: brand.accent }}>5/24</div>
@@ -614,7 +614,7 @@ export default function Impact() {
       {/* FOOTER */}
       <footer className="py-10 border-t border-border/50">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="text-xs text-muted-foreground text-center">© {new Date().getFullYear()} FuteurCredX · For internal evaluation by JPMorgan Chase CCB.</p>
+          <p className="text-xs text-muted-foreground text-center">© {new Date().getFullYear()} FuteurCredX · For internal evaluation by Citibank.</p>
         </div>
       </footer>
     </PageLayout>

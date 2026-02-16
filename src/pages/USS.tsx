@@ -86,7 +86,7 @@ function USS() {
             </h1>
 
             <p className="text-xl text-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Chase Credit Journey® revolutionized consumer credit engagement. Now the same proven science powers business credit intelligence.
+              Consumer credit journeys revolutionized engagement at competing banks. Now the same proven science powers Citi's business credit intelligence.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -106,7 +106,7 @@ function USS() {
         </div>
       </section>
 
-      {/* Chase Credit Journey Historical Impact */}
+      {/* Industry Credit Journey Historical Impact */}
       <section className="py-24 relative">
         <div className="container mx-auto px-6">
           <motion.div
@@ -117,13 +117,13 @@ function USS() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Chase Credit Journey®: The{" "}
+              Consumer Credit Journeys: The{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
                 Proof Point
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Since implementation, Chase Credit Journey has transformed consumer credit engagement and generated massive ROI
+              Industry credit journey products have transformed consumer credit engagement and generated massive ROI at competing banks
             </p>
           </motion.div>
 
@@ -290,7 +290,7 @@ function USS() {
             <div className="grid md:grid-cols-2 gap-6 mb-8">
               <div className="text-center p-6 rounded-xl bg-card/30 border border-border/30">
                 <Users className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-2">Chase Credit Journey®</h3>
+                <h3 className="text-2xl font-bold mb-2">Industry Credit Journeys</h3>
                 <p className="text-muted-foreground">Consumer Credit Intelligence</p>
               </div>
               <div className="text-center p-6 rounded-xl bg-primary/5 border border-primary/30">
@@ -351,7 +351,7 @@ function USS() {
               </span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Conservative projections based on Chase Credit Journey's proven results, applied to business credit portfolio
+              Conservative projections based on proven credit journey results at competing banks, applied to Citi's business credit portfolio
             </p>
           </motion.div>
 
@@ -363,7 +363,7 @@ function USS() {
               </CardHeader>
               <CardContent>
                 <p className="text-foreground font-semibold mb-2">Pre-Qualified SMB Conversions</p>
-                <p className="text-sm text-muted-foreground">Same conversion lift Chase achieved with consumers</p>
+                <p className="text-sm text-muted-foreground">Same conversion lift proven by industry credit journey products</p>
               </CardContent>
             </Card>
 

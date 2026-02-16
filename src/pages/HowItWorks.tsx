@@ -566,7 +566,7 @@ export default function HowItWorks() {
                   Impact on Citi's Ecosystem
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  ROI that hits like Chase + Apple keynote energy
+                  ROI that delivers measurable impact from day one
                 </p>
               </div>
 
