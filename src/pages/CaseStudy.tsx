@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/PageLayout";
@@ -33,6 +34,10 @@ import {
 } from "lucide-react";
 
 export default function CaseStudy() {
+  useEffect(() => {
+    document.title = "Case Study \u2014 Modernizing Citi\u2019s Credit Funnel";
+  }, []);
+
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
@@ -102,6 +107,45 @@ export default function CaseStudy() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Strategic Context — Recent Citi Moves */}
+        <section className="py-12 bg-muted/30">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
+              <h2 className="text-2xl font-heading font-bold mb-8 text-foreground">Recent Citi Strategic Context</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <Card>
+                  <CardContent className="p-5">
+                    <div className="text-xs font-semibold text-primary mb-2">FEB 2026</div>
+                    <h3 className="font-semibold text-sm mb-1">Sakana AI Investment</h3>
+                    <p className="text-xs text-muted-foreground">Citi's first-ever strategic AI investment. David Griffiths: "AI is infrastructure, not experiment."</p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-5">
+                    <div className="text-xs font-semibold text-primary mb-2">DEC 2025</div>
+                    <h3 className="font-semibold text-sm mb-1">OCC Consent Order Removed</h3>
+                    <p className="text-xs text-muted-foreground">Regulators validate Citi's transformation progress. Model governance infrastructure recognized.</p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-5">
+                    <div className="text-xs font-semibold text-primary mb-2">NOV 2025</div>
+                    <h3 className="font-semibold text-sm mb-1">Citi Token Services Expansion</h3>
+                    <p className="text-xs text-muted-foreground">Euro integration, 24/7 multi-currency liquidity. Real-time cross-border payment rails.</p>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardContent className="p-5">
+                    <div className="text-xs font-semibold text-primary mb-2">OCT 2025</div>
+                    <h3 className="font-semibold text-sm mb-1">Jane Fraser — Board Chair</h3>
+                    <p className="text-xs text-muted-foreground">Leadership stability confirmed. Transformation mandate continues with full board alignment.</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </motion.div>
           </div>
         </section>
 

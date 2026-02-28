@@ -48,6 +48,10 @@ const competitorData = [
 export default function Pilot() {
   const location = useLocation();
 
+  useEffect(() => {
+    document.title = "Start Pilot \u2014 $150K, 90 Days, Measurable Results";
+  }, []);
+
   // Handle hash navigation when component mounts or hash changes
   useEffect(() => {
     if (location.hash === '#pilot-form') {
@@ -626,7 +630,14 @@ export default function Pilot() {
               ))}
             </div>
 
-            <motion.div {...fadeInUp} className="mt-8">
+            <motion.div {...fadeInUp} className="mt-8 space-y-4">
+              <Card className="bg-card border border-border shadow-sm">
+                <CardContent className="p-5">
+                  <p className="text-sm text-foreground">
+                    <span className="font-semibold">Designed for seamless integration with Citi Stylus Workspaces</span> — Citi's agentic AI platform led by CTO David Griffiths, with 150,000+ employees already using AI tools. LumiqAI's governance-first architecture aligns with Citi's enterprise AI infrastructure strategy.
+                  </p>
+                </CardContent>
+              </Card>
               <Card className="bg-primary border-0 shadow-lg">
                 <CardContent className="p-6 text-center">
                   <p className="text-primary-foreground">
@@ -856,6 +867,7 @@ export default function Pilot() {
                   {[
                     "Support for TransUnion, Equifax, Experian, CIBIL, CRIF, etc.",
                     "Configurable to local regulatory environments",
+                    "Cross-border payment intelligence powered by Citi Token Services — 24/7 multi-currency liquidity with real-time credit decisioning for international SMB transactions",
                     "Multi-product eligibility across regions",
                     "Multi-language UX",
                     "Seamless API replication across markets"

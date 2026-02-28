@@ -6,6 +6,7 @@ import { PageLayout } from "@/components/PageLayout";
 
 export default function Revolution() {
   useEffect(() => {
+    document.title = "The Revolution \u2014 Business Credit Journey";
     document.body.style.background = "hsl(var(--background))";
   }, []);
 
@@ -61,7 +62,7 @@ export default function Revolution() {
                   Small-business customers of Citibank have <strong className="text-foreground">no unified way</strong> to monitor both the personal and business credit health that underwrites every lending or card approval decision.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-4">
-                  Consumer Credit Journey scaled to 40M+ users. Yet <strong className="text-foreground">7 million business owners remain invisible</strong> to their own dual credit profile.
+                  Consumer Credit Journey scaled to 40M+ users. Yet <strong className="text-foreground">450,000+ middle-market business owners remain invisible</strong> to their own dual credit profile.
                 </p>
                 <p className="text-muted-foreground leading-relaxed mt-4">
                   This invisibility leaves billions in lending & card revenue under-optimized.
@@ -94,7 +95,7 @@ export default function Revolution() {
             <ScoreCard
               number="2"
               title="Rule Intelligence"
-              description="5/24 · 2/30 · 1/30 · EX freeze · 40% max utilization enforced automatically"
+              description="Score threshold · utilization ceiling · account age · bureau freeze detection · exposure limits enforced automatically"
               icon={<Shield className="h-5 w-5" />}
             />
             <ScoreCard
@@ -179,7 +180,7 @@ export default function Revolution() {
                     See Financial Impact <ChevronRight className="h-4 w-4" />
                   </motion.button>
                 </Link>
-                <Link to="/demo">
+                <a href="https://sandbox.futeurcredx.com/demo/citi" target="_blank" rel="noopener noreferrer">
                   <motion.button
                     className="inline-flex items-center gap-2 rounded-xl px-8 py-4 font-semibold border-2 border-border bg-card/50 backdrop-blur-sm text-foreground hover:border-primary/50 hover:bg-card transition-all"
                     whileHover={{ scale: 1.05 }}
@@ -187,7 +188,7 @@ export default function Revolution() {
                   >
                     Try Interactive Demo
                   </motion.button>
-                </Link>
+                </a>
               </div>
             </div>
           </motion.div>

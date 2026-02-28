@@ -20,6 +20,9 @@ export function Hero() {
               Unlock 15–20% more approvals from declined applications — without elevating risk.
               Built to align with Reg B (ECOA) and SPCP frameworks.
             </p>
+            <p className="mx-auto max-w-3xl text-base font-body text-foreground/60 mt-2">
+              Built for the only top-4 bank with a 160-country global network and $14.53B in Treasury & Trade Solutions revenue.
+            </p>
           </div>
 
           {/* CTA Buttons */}
@@ -32,7 +35,7 @@ export function Hero() {
             </Link>
             <Link to="/pilot#pilot-form">
               <Button size="lg" variant="outline" className="gap-2 px-8 py-6 text-lg font-semibold">
-                Explore pilot for Q1 2026
+                Start Your 90-Day Pilot
               </Button>
             </Link>
             <a

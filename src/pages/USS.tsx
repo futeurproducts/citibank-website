@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { CheckCircle2, TrendingUp, Users, DollarSign, Shield, Zap, ArrowRight, BarChart3, Target, Briefcase } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
@@ -54,6 +54,10 @@ function ComparisonRow({ consumer, business, delay = 0 }: { consumer: string; bu
 }
 
 function USS() {
+  useEffect(() => {
+    document.title = "Unique Salient Similarities \u2014 Consumer to Business";
+  }, []);
+
   return (
     <PageLayout>
       {/* Hero Section */}

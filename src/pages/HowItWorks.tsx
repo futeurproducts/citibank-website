@@ -39,6 +39,10 @@ const AnimatedCounter = ({ num, suffix = "", decimals = 0 }: {
 };
 
 export default function HowItWorks() {
+  useEffect(() => {
+    document.title = "How It Works \u2014 Credit Intelligence in 90 Days";
+  }, []);
+
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
@@ -713,6 +717,55 @@ export default function HowItWorks() {
                 </CardContent>
               </Card>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Global Reach */}
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
+                Cross-Border Credit Intelligence
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Built for the only top-4 bank with a 160-country global network.
+              </p>
+            </motion.div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="rounded-2xl border border-border/50 p-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Globe className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">Multi-Jurisdiction KYB</h3>
+                <p className="text-sm text-muted-foreground">
+                  Verify business credit across domestic and international bureaus. Automated compliance checks for businesses operating in 2+ countries.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border/50 p-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <TrendingUp className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">Trade Finance Scoring</h3>
+                <p className="text-sm text-muted-foreground">
+                  AI-powered import/export risk assessment. Credit intelligence for the $7.75 trillion global trade market, with 64% AI adoption rate.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-border/50 p-6">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <Shield className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">TTS Integration</h3>
+                <p className="text-sm text-muted-foreground">
+                  Credit decisioning that connects to Citi's $14.53B Treasury & Trade Solutions platform. Cross-sell treasury services alongside credit products.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 

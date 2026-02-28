@@ -51,9 +51,36 @@ function MetricCard({ value, label, suffix = "", delay = 0 }: { value: number; l
 }
 
 function Index() {
+  useEffect(() => {
+    document.title = "LUMIQ AI \u00d7 Citi \u2014 Cross-Border Credit Intelligence";
+  }, []);
+
   return (
     <PageLayout>
       <Hero />
+
+      {/* Press Intelligence */}
+      <section className="py-6 border-y border-border/30 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-green-500"></span>
+              <span className="font-medium">Feb 2026:</span> Citi invests in Sakana AI — first-ever strategic AI investment
+            </div>
+            <div className="hidden md:block w-px h-4 bg-border"></div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-blue-500"></span>
+              <span className="font-medium">Dec 2025:</span> OCC removes consent order — transformation validated
+            </div>
+            <div className="hidden md:block w-px h-4 bg-border"></div>
+            <div className="flex items-center gap-2">
+              <span className="inline-block w-2 h-2 rounded-full bg-purple-500"></span>
+              <span className="font-medium">Oct 2025:</span> Jane Fraser elected Board Chair
+            </div>
+          </div>
+        </div>
+      </section>
+
       <BankComparison />
       <StrategicBridge />
 
@@ -655,6 +682,61 @@ function Index() {
         </div>
       </section>
 
+      {/* Cross-Border Advantage */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">
+              Why Citi — The Cross-Border Advantage
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              No other top-4 bank operates at this global scale. LumiqAI is built to match it.
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="rounded-2xl border border-border/50 p-8 text-center"
+            >
+              <div className="text-4xl font-bold text-primary mb-2">$14.53B</div>
+              <div className="text-sm font-semibold text-foreground mb-2">Treasury & Trade Solutions</div>
+              <p className="text-sm text-muted-foreground">24/7 multi-currency liquidity with Citi Token Services. LumiqAI provides credit intelligence for instant cross-border decisions.</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="rounded-2xl border border-border/50 p-8 text-center"
+            >
+              <div className="text-4xl font-bold text-primary mb-2">$7.75T</div>
+              <div className="text-sm font-semibold text-foreground mb-2">Global Trade Market</div>
+              <p className="text-sm text-muted-foreground">AI adoption in trade finance at 64%. LumiqAI scores cross-border credit risk for import/export decisioning.</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="rounded-2xl border border-border/50 p-8 text-center"
+            >
+              <div className="text-4xl font-bold text-primary mb-2">15→0 Days</div>
+              <div className="text-sm font-semibold text-foreground mb-2">Digital Credit Application</div>
+              <p className="text-sm text-muted-foreground">Current 15-day approval cycle reduced to same-day with AI-powered multi-bureau orchestration across domestic and international bureaus.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section id="cta" className="py-32 relative scroll-mt-20 bg-primary/5">
         <div className="container mx-auto px-6 relative z-10">
@@ -666,7 +748,7 @@ function Index() {
             className="max-w-[1600px] mx-auto text-center"
           >
             <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Start a 6-Week Pilot with Pre-Agreed Success Criteria
+              Install the Credit Intelligence Layer in 90 Days
             </h2>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
               Non-disruptive integration. Measurable results. Built on proven principles.

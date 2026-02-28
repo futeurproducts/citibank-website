@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/PageLayout";
@@ -8,6 +9,10 @@ import { ExternalLink, Target, Shield, TrendingUp, Users, Lightbulb, ArrowRight,
 import HeroBackground from "@/components/HeroBackground";
 
 function About() {
+  useEffect(() => {
+    document.title = "About FuteurCredX \u2014 Enterprise Credit Intelligence";
+  }, []);
+
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -418,6 +423,53 @@ function About() {
               </Card>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* For Citi */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+              <Target className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary uppercase tracking-wider">For Citi</span>
+            </div>
+            <h2 className="font-heading text-[36px] md:text-[48px] font-bold mb-6 text-foreground">
+              Why This Matters for Citi
+            </h2>
+            <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <p>
+                Citi serves <strong className="text-foreground">450,000+ middle-market businesses</strong> across{" "}
+                <strong className="text-foreground">160+ countries</strong> — a global footprint no other top-4 US bank can match.
+                Yet these businesses have no unified credit intelligence layer inside the Citi ecosystem.
+              </p>
+              <p>
+                LumiqAI provides the missing connection: domestic credit scoring fused with cross-border trade finance intelligence,
+                all delivered through Citi's existing digital channels. The result is faster credit decisions, higher product cross-sell,
+                and a competitive moat that leverages Citi's $14.53B Treasury & Trade Solutions infrastructure.
+              </p>
+              <p>
+                With Citi's investment in agentic AI through{" "}
+                <strong className="text-foreground">Citi Stylus Workspaces</strong> and the{" "}
+                <strong className="text-foreground">Sakana AI partnership</strong>, the timing has never been better
+                for an AI-powered credit intelligence layer that serves both Consumer and Business banking.
+              </p>
+            </div>
+            <div className="mt-8">
+              <Button size="lg" asChild>
+                <Link to="/pilot#pilot-form">
+                  Explore the Pilot
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </section>
 

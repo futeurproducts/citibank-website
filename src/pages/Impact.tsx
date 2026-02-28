@@ -15,7 +15,7 @@ const brand = {
   border: "border border-slate-800/60",
   text: "text-slate-200",
   sub: "text-slate-400",
-  accent: "#33CCFF",
+  accent: "#4A90D9",
   accentSoft: "#5CBFEF",
   success: "#22C55E",
   warning: "#F59E0B",
@@ -155,6 +155,7 @@ export default function Impact() {
   const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    document.title = "Financial Impact \u2014 $19.3M to $102.9M Year-1";
     document.body.style.background = "#020617";
   }, []);
 
@@ -564,19 +565,19 @@ export default function Impact() {
               viewport={{ once: true }}
               className={`rounded-2xl p-6 ${brand.card} ${brand.border}`}
             >
-              <h3 className="text-xl font-semibold mb-4">Citi Rules Enforced</h3>
+              <h3 className="text-xl font-semibold mb-4">Citi Eligibility Criteria</h3>
               <div className="grid grid-cols-2 gap-4">
                 <div className={`rounded-lg p-4 ${brand.border} bg-slate-800/40`}>
-                  <div className="text-2xl font-bold mb-1" style={{ color: brand.accent }}>5/24</div>
-                  <div className="text-xs text-slate-400">Card limit rule</div>
+                  <div className="text-2xl font-bold mb-1" style={{ color: brand.accent }}>≥680</div>
+                  <div className="text-xs text-slate-400">Minimum FICO threshold</div>
                 </div>
                 <div className={`rounded-lg p-4 ${brand.border} bg-slate-800/40`}>
-                  <div className="text-2xl font-bold mb-1" style={{ color: brand.accent }}>2/30</div>
-                  <div className="text-xs text-slate-400">Recent apps limit</div>
+                  <div className="text-2xl font-bold mb-1" style={{ color: brand.accent }}>&lt;35%</div>
+                  <div className="text-xs text-slate-400">Utilization ceiling</div>
                 </div>
                 <div className={`rounded-lg p-4 ${brand.border} bg-slate-800/40`}>
-                  <div className="text-2xl font-bold mb-1" style={{ color: brand.accent }}>1/30</div>
-                  <div className="text-xs text-slate-400">Business app limit</div>
+                  <div className="text-2xl font-bold mb-1" style={{ color: brand.accent }}>2yr+</div>
+                  <div className="text-xs text-slate-400">Account age requirement</div>
                 </div>
                 <div className={`rounded-lg p-4 ${brand.border} bg-slate-800/40`}>
                   <div className="text-2xl font-bold mb-1" style={{ color: brand.accent }}>&lt;40%</div>
@@ -598,7 +599,7 @@ export default function Impact() {
           >
             <h2 className="text-4xl font-extrabold mb-6">Ready to Deploy?</h2>
             <p className="text-xl text-slate-300 mb-8">
-              90-day pilot. 250K digitally-active SMBs. $100M+ uplift trajectory.
+              90-day pilot. 450K middle-market businesses. $100M+ uplift trajectory.
             </p>
             <Link
               to="/#demo"
