@@ -1,41 +1,100 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Zap, DollarSign, FileSignature, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-24 md:pt-28 lg:pt-32 bg-gradient-to-b from-primary/10 to-background">
+    <section className="relative overflow-hidden pt-24 md:pt-28 lg:pt-32 pb-16 bg-gradient-to-b from-primary/10 to-background">
       <div className="container mx-auto px-6">
         <div className="space-y-8 text-center max-w-[1600px] mx-auto">
-          <div className="space-y-4">
-            {/* Heading */}
-            <h1 className="mx-auto max-w-5xl text-5xl md:text-7xl lg:text-8xl font-heading leading-tight tracking-tight text-foreground">
-              Citi is the only top-4 bank{" "}
-              <span className="text-primary">without</span> a built-in credit intelligence layer.
-            </h1>
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm font-semibold text-primary">
+              Powering Citi's AI-First Commercial Lending Transformation
+            </span>
+          </motion.div>
 
-            {/* Description */}
-            <p className="mx-auto max-w-3xl text-lg font-body text-foreground/70">
-              Unlock 15–20% more approvals from declined applications — without elevating risk.
-              Built to align with Reg B (ECOA) and SPCP frameworks.
-            </p>
-            <p className="mx-auto max-w-3xl text-base font-body text-foreground/60 mt-2">
-              Built for the only top-4 bank with a 160-country global network and $14.53B in Treasury & Trade Solutions revenue.
-            </p>
+          <div className="space-y-4">
+            {/* H1 */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mx-auto max-w-5xl text-5xl md:text-7xl lg:text-8xl font-heading leading-tight tracking-tight text-foreground"
+            >
+              Credit Intelligence for{" "}
+              <span className="text-primary">Citi's Digital Commercial Bank</span>
+            </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mx-auto max-w-3xl text-lg font-body text-foreground/70"
+            >
+              From digital credit applications on CitiDirect to cross-border eligibility scoring
+              to CRA-compliant community lending — seven intelligence outputs from one API call,
+              powering every decision across CCB's digital lending platform.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="mx-auto max-w-3xl text-sm font-body text-foreground/50"
+            >
+              Sources: CCB Digitizes Lending (Jun 2025), Outstanding CRA Rating (May 2025)
+            </motion.p>
           </div>
 
+          {/* Metrics Strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-wrap items-center justify-center gap-3 md:gap-4"
+          >
+            {[
+              { icon: Zap, label: "83ms Scoring Response Time" },
+              { icon: DollarSign, label: "Up to $10M Per Digital Credit Application" },
+              { icon: FileSignature, label: "End-to-End Digital Signatures on CitiDirect" },
+              { icon: Building2, label: "$145.9B CRA-Allocated Lending Activity" },
+            ].map((pill, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-card border border-border text-sm text-muted-foreground"
+              >
+                <pill.icon className="w-4 h-4 text-primary flex-shrink-0" />
+                <span>{pill.label}</span>
+              </div>
+            ))}
+          </motion.div>
+
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/how-it-works">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <a
+              href="https://citi.demo.futeurcredx.com/integration-preview?bank=citi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" variant="default" className="gap-2 px-8 py-6 text-lg font-semibold">
-                See how it works in 90 seconds
+                Explore the Credit Intelligence Engine
                 <ArrowRight className="w-5 h-5" />
               </Button>
-            </Link>
-            <Link to="/pilot#pilot-form">
+            </a>
+            <Link to="/model-governance-framework">
               <Button size="lg" variant="outline" className="gap-2 px-8 py-6 text-lg font-semibold">
-                Start Your 90-Day Pilot
+                View the 90-Day Pilot Framework
               </Button>
             </Link>
             <a
@@ -48,65 +107,9 @@ export function Hero() {
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </a>
-          </div>
-        </div>
-      </div>
-      
-      {/* Strategic Gap Content - Left Text Block Only */}
-      <div className="container mx-auto px-6 mt-16 md:mt-24">
-        <div className="max-w-[1600px] mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="space-y-6"
-          >
-            {/* Strategic Gap Body Text */}
-            <div className="space-y-4 text-muted-foreground leading-relaxed border-l-2 border-primary/30 pl-5">
-              <p className="font-medium text-foreground">
-                Citi customers cannot:
-              </p>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>View their real credit score</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Prequalify instantly</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>See predictive card or loan pathways</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Activate offers inside the Citi App</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Build or strengthen thin credit files</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Recover from declines with guided steps</span>
-                </li>
-              </ul>
-              <p className="text-primary font-semibold pt-3">
-                This single missing capability breaks Citi's funnel.
-              </p>
-              <p className="text-sm">
-                Competitors intercept intent before Citi even sees the demand signal — using Citi's own customers' open-banking data.
-              </p>
-              <p className="text-foreground font-medium pt-2">
-                LUMIQ AI can close this gap with a turnkey Credit Journey™ that integrates within 90 days.
-              </p>
-            </div>
           </motion.div>
         </div>
       </div>
     </section>
   );
 }
-

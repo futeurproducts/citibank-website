@@ -5,28 +5,23 @@ import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  TrendingUp, 
-  Shield, 
+import {
+  TrendingUp,
+  Shield,
   CheckCircle2,
   ArrowRight,
-  AlertTriangle,
   Zap,
   Users,
   Building2,
   Target,
-  Eye,
-  CreditCard,
   RefreshCw,
   Globe,
   Lock,
-  Database,
   FileCheck,
   BarChart3,
   Clock,
   Server,
   Key,
-  Layers,
   XCircle
 } from "lucide-react";
 const fadeInUp = {
@@ -49,7 +44,7 @@ export default function Pilot() {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = "Start Pilot \u2014 $150K, 90 Days, Measurable Results";
+    document.title = "90-Day Credit Intelligence Pilot \u2014 $150K, CCB Digital Lending, Measurable KPIs";
   }, []);
 
   // Handle hash navigation when component mounts or hash changes
@@ -74,40 +69,49 @@ export default function Pilot() {
         <div className="container mx-auto px-6 relative z-10">
           <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto text-center">
             <Badge className="mb-6 bg-primary-foreground/20 text-primary-foreground border-primary-foreground/30 px-4 py-2">
-              CITI PILOT PROGRAM
+              Credit Intelligence for Citi Commercial Bank
             </Badge>
-            
+
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-primary-foreground leading-tight">
-              Install the Credit Intelligence Layer in{" "}
-              <span className="text-primary-foreground/90">90 Days</span>
+              90-Day Credit Intelligence Pilot for{" "}
+              <span className="text-primary-foreground/90">Citi Commercial Bank</span>
             </h1>
-            
+
             <p className="text-base md:text-lg text-primary-foreground/80 mb-4 max-w-3xl mx-auto">
-              Close Citi's structural gap. Capture revenue currently leaking to Chase, Capital One, AmEx, and Apple.
+              Deploy credit intelligence across CCB's digital lending platform, measure 7 KPIs against pre-agreed baselines, and generate measurable conversion lift — within your risk framework.
             </p>
-            
-            <p className="text-sm text-primary-foreground/70 mb-8 max-w-2xl mx-auto">
-              Deploy a fully governed, risk-aligned, Citi-logic credit intelligence layer directly inside the Citi App. 
-              This pilot is designed to produce <span className="text-primary-foreground font-medium">measurable revenue uplift within the first 60–90 days</span> of deployment.
-            </p>
+
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              {[
+                "+15-25% application conversion lift",
+                "83ms pre-qualification on CitiDirect",
+                "ECOA/FCRA/CRA/GLBA compliant"
+              ].map((pill, idx) => (
+                <span key={idx} className="px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-sm text-primary-foreground/90 font-medium">
+                  {pill}
+                </span>
+              ))}
+            </div>
             
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="w-full sm:w-auto bg-primary-foreground hover:bg-primary-foreground/90 text-primary font-semibold rounded-full shadow-lg px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base"
-                onClick={() => document.getElementById('pilot-form')?.scrollIntoView({ behavior: 'smooth' })}
+                asChild
               >
-                Start Citi Pilot
-                <ArrowRight className="ml-2 h-4 w-4" />
+                <a href="https://citi.demo.futeurcredx.com/integration-preview?bank=citi">
+                  Explore the Credit Intelligence Engine
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="outline"
                 className="w-full sm:w-auto border-2 border-primary-foreground/50 bg-transparent text-primary-foreground hover:bg-primary-foreground/20 hover:border-primary-foreground hover:text-primary-foreground rounded-full font-semibold shadow-md transition-all px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base"
                 asChild
               >
-                <a href="/Citi Model Governance Framework.pdf" download="Citi Model Governance Framework.pdf">
-                  Download Model Governance Framework
+                <a href="/model-governance-framework">
+                  View the 90-Day Pilot Framework
                 </a>
               </Button>
             </div>
@@ -122,11 +126,11 @@ export default function Pilot() {
             <div className="text-center mb-12 lg:mb-16">
               <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">01 — WHY THIS PILOT MATTERS NOW</div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
-                Citi is the only top-4 U.S. bank without consumer or business credit intelligence inside its mobile app.
+                CCB is digitizing lending end-to-end. The credit intelligence layer is the missing piece.
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Competitors now capture Citi's customers at the moment of credit intent—before Citi even sees the demand signal. 
-                This pilot delivers instant structural correction with minimal lift from Citi teams.
+                Digital Credit Applications on CitiDirect. Up to $10M per application. Electronic signatures.
+                This pilot adds the 83ms pre-qualification layer that scores every business before it applies — with minimal lift from CCB teams.
               </p>
               <div className="h-px w-24 bg-primary mx-auto mt-6" />
             </div>
@@ -134,15 +138,15 @@ export default function Pilot() {
             <motion.div {...fadeInUp}>
               <Card className="bg-card border border-border shadow-lg">
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-bold text-foreground mb-6">The Pilot Instantly Enables Citi Customers To:</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-6">The Pilot Instantly Enables CCB's Digital Lending Platform To:</h3>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {[
-                      { icon: Eye, text: "View real credit scores inside the app" },
-                      { icon: Target, text: "Receive Citi-based prequalification" },
-                      { icon: BarChart3, text: "Get product eligibility confidence bands" },
-                      { icon: TrendingUp, text: "See predictive approval pathways" },
-                      { icon: CreditCard, text: "Apply with 1-tap inside the app" },
-                      { icon: RefreshCw, text: "Receive decline-recovery logic tied to Citi's rules" }
+                      { icon: Zap, text: "Pre-qualify businesses in 83ms before CitiDirect submission" },
+                      { icon: Target, text: "Score revolving credit, term loans, commercial cards, LOC eligibility" },
+                      { icon: BarChart3, text: "Generate product-level confidence bands across CCB's shelf" },
+                      { icon: TrendingUp, text: "Deliver structured JSON signals to Stylus Workspaces" },
+                      { icon: Globe, text: "Monitor cross-border portfolio health across 94 markets" },
+                      { icon: RefreshCw, text: "Map CRA-eligible zones for community lending compliance" }
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-center gap-3 p-4 rounded-lg bg-primary/5 border border-primary/10">
                         <item.icon className="h-5 w-5 text-primary flex-shrink-0" />
@@ -152,7 +156,7 @@ export default function Pilot() {
                   </div>
                   <div className="mt-6 p-4 rounded-lg bg-foreground/5 border border-foreground/20">
                     <p className="text-sm text-foreground font-medium">
-                      This pilot prevents further revenue leakage and positions Citi to reclaim lost ground — fast.
+                      $150K pilot investment. 100% redeemable against Year 1 platform license upon full-scale deployment. Zero risk — if KPIs are not met, the full amount applies to an extended evaluation or is returned.
                     </p>
                   </div>
                 </CardContent>
@@ -169,10 +173,10 @@ export default function Pilot() {
             <div className="text-center mb-12 lg:mb-16">
               <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">02 — WHY THIS MATTERS</div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
-                Because Citi currently has no in-app credit intelligence layer.
+                CCB's digital lending platform needs a credit intelligence layer.
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                This shows the precise capability competitors already use to intercept Citi customers.
+                Competitors already pre-qualify businesses digitally. CCB's Digital Credit Application on CitiDirect is ready — the intelligence layer completes the picture.
               </p>
               <div className="h-px w-24 bg-primary mx-auto mt-6" />
             </div>
@@ -252,7 +256,7 @@ export default function Pilot() {
               <Card className="bg-primary border-0 shadow-lg">
                 <CardContent className="p-6 text-center">
                   <p className="text-primary-foreground text-lg">
-                    This shows Citi jumping from <span className="font-bold">"No capability"</span> → <span className="font-bold">"Industry leader"</span> in a single integrated deployment.
+                    This pilot positions CCB with <span className="font-bold">83ms digital pre-qualification</span> — complementing CitiDirect's end-to-end Digital Credit Application platform.
                   </p>
                 </CardContent>
               </Card>
@@ -268,47 +272,36 @@ export default function Pilot() {
             <div className="text-center mb-12 lg:mb-16">
               <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">03 — PILOT SCOPE</div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
-                Dual-Platform Credit Intelligence
+                What's Included in the Pilot
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">Consumer + Business journeys deployed simultaneously.</p>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">Three intelligence modules deployed across CCB's digital lending platform.</p>
               <div className="h-px w-24 bg-primary mx-auto mt-6" />
             </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Consumer Scope */}
+          <div className="grid lg:grid-cols-3 gap-8">
+            {/* Card 1: Digital Lending Intelligence */}
             <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
               <Card className="h-full bg-card border border-border overflow-hidden">
                 <div className="p-4 bg-primary/10 border-b border-primary/20">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                      <Users className="h-4 w-4 text-primary-foreground" />
+                      <Zap className="h-4 w-4 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-foreground">Consumer Pilot Scope</h3>
-                      <p className="text-xs text-primary">~75k–150k Citi Consumer customers</p>
+                      <h3 className="font-bold text-foreground">Digital Lending Intelligence</h3>
                     </div>
                   </div>
                 </div>
-                
-                {/* Consumer 3-Screen Mockup */}
-                <div className="p-6 bg-background-secondary border-b border-border">
-                  <img 
-                    src="/images/3-phone-consumer.png" 
-                    alt="Citi Consumer 3-Screen Mockup"
-                    className="w-full h-auto rounded-lg max-w-2xl mx-auto"
-                  />
-                </div>
-                
                 <CardContent className="p-6">
-                  <p className="text-sm text-muted-foreground mb-4 font-semibold">Capabilities included:</p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Pre-score businesses before they submit Digital Credit Applications on CitiDirect. Revolving credit, term loans, commercial cards, LOC.
+                  </p>
                   <ul className="space-y-2">
                     {[
-                      "Real-time credit score surfacing",
-                      "Citi-aligned prequalification: Custom Cash, Double Cash, Strata Premier, Rewards+",
-                      "Eligibility Confidence Bands",
-                      "Predictive card pathways",
-                      "Instant Apply",
-                      "Reason Codes + Recovery Guidance"
+                      "Territory analysis across CCB's commercial footprint",
+                      "Business pre-scoring by industry, revenue, credit signals",
+                      "Product-level eligibility across CCB's full shelf",
+                      "Structured JSON signals for Stylus Workspaces"
                     ].map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
                         <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
@@ -320,39 +313,63 @@ export default function Pilot() {
               </Card>
             </motion.div>
 
-            {/* Business Scope */}
+            {/* Card 2: CitiDirect Pre-Qualification */}
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
               <Card className="h-full bg-card border border-border overflow-hidden">
                 <div className="p-4 bg-primary/10 border-b border-primary/20">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                      <Building2 className="h-4 w-4 text-primary-foreground" />
+                      <Target className="h-4 w-4 text-primary-foreground" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-foreground">Business Pilot Scope</h3>
-                      <p className="text-xs text-primary">~25k–50k SMB customers</p>
+                      <h3 className="font-bold text-foreground">CitiDirect Pre-Qualification</h3>
                     </div>
                   </div>
                 </div>
-                
-                {/* Business 3-Screen Mockup */}
-                <div className="p-6 bg-background-secondary border-b border-border">
-                  <img 
-                    src="/images/3-phones-business.png" 
-                    alt="Citi Business 3-Screen Mockup"
-                    className="w-full h-auto rounded-lg max-w-2xl mx-auto"
-                  />
-                </div>
-                
                 <CardContent className="p-6">
-                  <p className="text-sm text-muted-foreground mb-4 font-semibold">Capabilities included:</p>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    83ms full scoring pipeline complements CitiDirect's end-to-end Digital Credit Application. Electronic signatures. Up to $10M per application.
+                  </p>
                   <ul className="space-y-2">
                     {[
-                      "Business Credit Score + Owner FICO blended view",
-                      "Forecasted eligibility: CitiBusiness AAdvantage, Costco Business Card",
-                      "SMB Revenue + Spend Pattern Modeling",
-                      "Combined PG / Business attribute scoring",
-                      "Apply Now (Business Flow)"
+                      "83ms pre-qualification before submission",
+                      "Confidence bands calibrated to CCB thresholds",
+                      "Decline-recovery flows tied to Citi policy",
+                      "Zero re-keying — data flows directly"
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
+                        <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Card 3: Portfolio Intelligence */}
+            <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
+              <Card className="h-full bg-card border border-border overflow-hidden">
+                <div className="p-4 bg-primary/10 border-b border-primary/20">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+                      <Globe className="h-4 w-4 text-primary-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-foreground">Portfolio Intelligence</h3>
+                    </div>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Monitor the CCB portfolio across markets. Cross-border signals aligned with Token Services. Trade finance credit assessment for the $7.75T supercycle.
+                  </p>
+                  <ul className="space-y-2">
+                    {[
+                      "Cross-sell triggers and early warning signals",
+                      "Cross-border eligibility aligned with Token Services",
+                      "CRA-eligible zone mapping and community analytics",
+                      "Portfolio health dashboards for executive review"
                     ].map((item, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm text-foreground">
                         <CheckCircle2 className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
@@ -369,8 +386,8 @@ export default function Pilot() {
             <Card className="bg-primary border-0 shadow-lg">
               <CardContent className="p-6 text-center">
                 <p className="text-primary-foreground text-lg">
-                  <span className="font-bold">Citi becomes the only major bank</span>{" "}
-                  <span className="text-primary-foreground/80">with a dual-platform credit intelligence layer for both Consumer + SMB.</span>
+                  <span className="font-bold">$150K pilot investment.</span>{" "}
+                  <span className="text-primary-foreground/80">100% redeemable against Year 1 platform license upon full-scale deployment.</span>
                 </p>
               </CardContent>
             </Card>
@@ -423,16 +440,16 @@ export default function Pilot() {
                           <div className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-base">1</div>
                           <div className="text-center lg:text-left">
                             <h3 className="font-bold text-foreground text-base sm:text-lg">Phase 1</h3>
-                            <p className="text-xs sm:text-sm text-primary font-medium">Weeks 1–3</p>
+                            <p className="text-xs sm:text-sm text-primary font-medium">Weeks 0–2</p>
                           </div>
                         </div>
-                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base text-center lg:text-left">Alignment & Integration</h4>
+                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base text-center lg:text-left">Signal Connection + Validation</h4>
                         <ul className="space-y-2">
                           {[
-                            "Load Citi's product eligibility criteria",
-                            "Map bureau + cash-flow data to Citi rules",
-                            "SSO + API integration",
-                            "Security review & architecture approval",
+                            "Connect credit signals (FICO, Intelliscore, FSR) in secure sandbox",
+                            "Validate against CCB's underwriting standards",
+                            "Configure CitiDirect integration parameters",
+                            "Security review + architecture approval",
                             "Risk governance sign-off"
                           ].map((item, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-foreground">
@@ -471,16 +488,16 @@ export default function Pilot() {
                           <div className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-base">2</div>
                           <div className="text-center lg:text-left">
                             <h3 className="font-bold text-foreground text-base sm:text-lg">Phase 2</h3>
-                            <p className="text-xs sm:text-sm text-primary font-medium">Weeks 4–7</p>
+                            <p className="text-xs sm:text-sm text-primary font-medium">Weeks 3–8</p>
                           </div>
                         </div>
-                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base text-center lg:text-left">Experience Layer & AI Eligibility</h4>
+                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base text-center lg:text-left">Deploy + Measure</h4>
                         <ul className="space-y-2">
                           {[
-                            "Build consumer & SMB journeys in-app",
-                            "Enable eligibility engine using Citi's published criteria",
-                            "Deploy confidence bands based on Citi thresholds",
-                            "Build decline-recovery flows"
+                            "Deploy across CCB's digital lending platform",
+                            "Track application conversion, cross-sell accuracy, portfolio health",
+                            "A/B test pre-qualification vs. manual review",
+                            "Weekly performance dashboards for CCB leadership"
                           ].map((item, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-foreground">
                               <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0 mt-0.5" />
@@ -518,16 +535,16 @@ export default function Pilot() {
                           <div className="lg:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold text-sm sm:text-base">3</div>
                           <div className="text-center lg:text-left">
                             <h3 className="font-bold text-foreground text-base sm:text-lg">Phase 3</h3>
-                            <p className="text-xs sm:text-sm text-primary font-medium">Weeks 8–12</p>
+                            <p className="text-xs sm:text-sm text-primary font-medium">Weeks 9–12</p>
                           </div>
                         </div>
-                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base text-center lg:text-left">Controlled Live Pilot</h4>
+                        <h4 className="font-semibold text-foreground mb-3 sm:mb-4 text-sm sm:text-base text-center lg:text-left">Executive Review + Scale Decision</h4>
                         <ul className="space-y-2">
                           {[
-                            "Go-live for limited consumer + SMB cohorts",
-                            "Capture uplift data",
-                            "Weekly performance dashboards",
-                            "Pilot evaluation report for executive leadership"
+                            "Executive review with KPI results vs. pre-agreed baselines",
+                            "Scale decision: full CCB integration roadmap",
+                            "Stylus Workspaces integration planning",
+                            "Cross-border expansion roadmap with Token Services"
                           ].map((item, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-foreground">
                               <CheckCircle2 className="h-3 w-3 sm:h-4 sm:w-4 text-primary flex-shrink-0 mt-0.5" />
@@ -638,11 +655,19 @@ export default function Pilot() {
                   </p>
                 </CardContent>
               </Card>
+              <Card className="bg-card border border-border shadow-sm">
+                <CardContent className="p-5">
+                  <h4 className="font-bold text-foreground mb-2">Cross-Border Governance — Token Services + Credit Intelligence</h4>
+                  <p className="text-sm text-foreground">
+                    Citi Token Services processes billions on private permissioned blockchain across US, UK, Singapore, Hong Kong, and Dublin (Euro). LumiqAI provides credit governance for cross-border lending decisions — every eligibility assessment logged, every cross-border credit signal auditable, aligned with BCBS 239 data lineage standards.
+                  </p>
+                </CardContent>
+              </Card>
               <Card className="bg-primary border-0 shadow-lg">
                 <CardContent className="p-6 text-center">
                   <p className="text-primary-foreground">
                     <span className="font-bold">Zero changes to Citi's risk appetite.</span>{" "}
-                    <span className="text-primary-foreground/80">Maximum control remains inside the bank.</span>
+                    <span className="text-primary-foreground/80">Maximum control remains inside the bank. CRA Outstanding compliance maintained.</span>
                   </p>
                 </CardContent>
               </Card>
@@ -772,15 +797,15 @@ export default function Pilot() {
                 <Card className="h-full border-t-4 border-t-primary bg-card">
                   <CardContent className="p-6">
                     <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
-                      <Users className="h-5 w-5 text-primary" />
-                      Consumer KPIs
+                      <Zap className="h-5 w-5 text-primary" />
+                      Digital Lending KPIs
                     </h3>
                     <div className="space-y-3">
                       {[
-                        { metric: "+12–24%", label: "Approval lift" },
-                        { metric: "+2–3×", label: "App engagement increase" },
-                        { metric: "5–10%", label: "Conversion uplift" },
-                        { metric: "25–40%", label: "Manual review reduction" }
+                        { metric: "83ms", label: "Pre-Qualification Time (vs. manual review)" },
+                        { metric: "Real-time", label: "Digital Applications Scored/Day (vs. manual queue)" },
+                        { metric: "+15-25%", label: "Application conversion lift" },
+                        { metric: "70%+", label: "Cross-sell accuracy" }
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between items-center py-2 border-b border-border last:border-0">
                           <span className="text-sm text-muted-foreground">{item.label}</span>
@@ -797,13 +822,13 @@ export default function Pilot() {
                   <CardContent className="p-6">
                     <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
                       <Building2 className="h-5 w-5 text-primary" />
-                      Business KPIs
+                      Portfolio + Cross-Border KPIs
                     </h3>
                     <div className="space-y-3">
                       {[
-                        { metric: "+18–30%", label: "SMB approval lift" },
-                        { metric: "35–50%", label: "Fewer manual reviews" },
-                        { metric: "5–12%", label: "SMB product conversion uplift" }
+                        { metric: "90%+", label: "Monitoring enrollment (existing book)" },
+                        { metric: "+20-35%", label: "Treasury attach rate improvement" },
+                        { metric: "100%", label: "Governance coverage (audit trail)" }
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between items-center py-2 border-b border-border last:border-0">
                           <span className="text-sm text-muted-foreground">{item.label}</span>
@@ -820,12 +845,12 @@ export default function Pilot() {
                   <CardContent className="p-6">
                     <h3 className="font-bold text-foreground mb-4 flex items-center gap-2">
                       <TrendingUp className="h-5 w-5 text-primary" />
-                      Financial Impact (Pilot Window)
+                      Pilot Investment
                     </h3>
                     <div className="space-y-3">
                       {[
-                        { metric: "$30M–$45M", label: "Incremental approvals" },
-                        { metric: "~$10M", label: "Cost savings" }
+                        { metric: "$150K", label: "90-day pilot investment" },
+                        { metric: "100%", label: "Redeemable against Year 1 license" }
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between items-center py-2 border-b border-border last:border-0">
                           <span className="text-sm text-muted-foreground">{item.label}</span>
@@ -835,7 +860,7 @@ export default function Pilot() {
                     </div>
                     <div className="mt-4 p-3 rounded-lg bg-primary/10 border border-primary/20">
                       <p className="text-xs text-foreground font-medium">
-                        By Day 90, Citi will see quantifiable revenue impact.
+                        $150K for 90 days of proof on a platform processing up to $10M per digital credit application. ROI measured against CCB's digital lending conversion baseline.
                       </p>
                     </div>
                   </CardContent>
@@ -846,14 +871,14 @@ export default function Pilot() {
         </div>
       </section>
 
-      {/* Section 8 - Global Expansion */}
+      {/* Section 8 - Global Scale */}
       <section className="py-20 md:py-24 lg:py-32 bg-background">
         <div className="container mx-auto px-6">
           <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
             <div className="text-center mb-12 lg:mb-16">
-              <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">08 — GLOBAL EXPANSION PATH</div>
+              <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">08 — GLOBAL SCALE PATH</div>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
-                A Platform Move, Not a Single Feature
+                From CCB Pilot to Global Credit Intelligence Platform
               </h2>
               <div className="h-px w-24 bg-primary mx-auto" />
             </div>
@@ -861,7 +886,7 @@ export default function Pilot() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <motion.div {...fadeInUp}>
                 <p className="text-lg text-muted-foreground mb-6">
-                  After U.S. deployment, LumiqAI becomes Citi's global eligibility engine, with market-specific logic:
+                  After CCB pilot validation, LumiqAI scales across Citi's global commercial lending platform — aligned with Token Services' 24/7 multi-currency infrastructure:
                 </p>
                 <ul className="space-y-3">
                   {[
@@ -902,10 +927,13 @@ export default function Pilot() {
           <div className="max-w-[1400px] mx-auto">
             <motion.div {...fadeInUp} className="text-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-primary-foreground mb-4">
-                Install Citi's Missing Credit Intelligence Layer
+                Start a 90-Day Pilot Alongside Citi's Digital Lending Rollout
               </h2>
-              <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-8">
-                Launch a controlled pilot in 90 days. Begin capturing revenue Citi is losing today.
+              <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-4">
+                $150,000 Strategic Pilot across CCB's digital lending platform. 83ms pre-qualification on CitiDirect. 7 KPIs measured against pre-agreed baselines.
+              </p>
+              <p className="text-sm text-primary-foreground/60 max-w-xl mx-auto mb-8">
+                100% redeemable against Year 1 platform license upon full-scale deployment.
               </p>
               
               <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
