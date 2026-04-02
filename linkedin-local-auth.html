@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head><title>LinkedIn Auth - Local</title></head>
+<body>
+<h2>Click to authorize (local redirect):</h2>
+<a href="https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=7831lbh717oqll&redirect_uri=http://localhost:3939/callback&state=gp-local&scope=openid profile email w_member_social r_basicprofile r_1st_connections_size r_organization_admin r_organization_social r_ads r_ads_reporting">
+<button style="padding:20px 40px;font-size:18px;background:#003B70;color:white;border:none;border-radius:8px;cursor:pointer;">Authorize (Local Redirect)</button>
+</a>
+<p style="margin-top:20px;color:#666;">This redirects to localhost:3939 where we catch the code and exchange it manually.</p>
+</body>
+</html>
