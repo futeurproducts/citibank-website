@@ -697,8 +697,8 @@ export default function HowItWorks() {
               </div>
 
               {/* Pilot Economics */}
-              <div className="mt-12 p-6 md:p-8 rounded-xl bg-[#C9922A]/10 border border-[#C9922A]/30 text-center">
-                <h4 className="text-sm font-bold tracking-widest text-[#C9922A] uppercase mb-2">$600K Pilot Economics</h4>
+              <div className="mt-12 p-6 md:p-8 rounded-xl bg-primary/10 border border-primary/30 text-center">
+                <h4 className="text-sm font-bold tracking-widest text-primary uppercase mb-2">$600K Pilot Economics</h4>
                 <p className="text-foreground font-medium max-w-3xl mx-auto mb-2">
                   $600K to validate credit intelligence across CitiDirect — less than a single RM's annual compensation.
                 </p>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -5,6 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Shield, Lock, FileCheck, AlertTriangle } from "lucide-react";
 
 function Security() {
+  useEffect(() => {
+    document.title = "Security — LUMIQ AI";
+  }, []);
+
   return (
     <PageLayout>
       <section className="py-16 md:py-24 bg-background">

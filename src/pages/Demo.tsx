@@ -95,7 +95,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-4 flex items-center justify-between text-left group"
       >
-        <span className="text-sm font-medium text-gray-900 group-hover:text-[#003B70] transition-colors">
+        <span className="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors">
           {question}
         </span>
         {isOpen ? (
@@ -128,7 +128,7 @@ export default function Demo() {
     <PageLayout>
       {/* Hero */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#003B70] via-[#002850] to-[#001830]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-[hsl(212,100%,16%)] to-[hsl(212,100%,9%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(51,204,255,0.15),transparent_50%)]" />
         
         <div className="container mx-auto px-6 relative z-10">
@@ -149,7 +149,7 @@ export default function Demo() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                className="bg-[#33CCFF] hover:bg-[#29b8e8] text-[#003B70] font-semibold"
+                className="bg-[#33CCFF] hover:bg-[#29b8e8] text-primary font-semibold"
                 onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Play className="mr-2 h-4 w-4" />
@@ -171,7 +171,7 @@ export default function Demo() {
       <section className="py-16 bg-[#F5F7FA]">
         <div className="container mx-auto px-6">
           <motion.div {...fadeInUp} className="mb-10">
-            <div className="text-xs font-bold text-[#003B70] tracking-wider mb-2">01 — WHAT THIS DEMO SHOWS</div>
+            <div className="text-xs font-bold text-primary tracking-wider mb-2">01 — WHAT THIS DEMO SHOWS</div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Dual Credit Intelligence Layers
             </h2>
@@ -184,9 +184,9 @@ export default function Demo() {
                 <div className="p-4 bg-[#33CCFF]/10 border-b border-[#33CCFF]/20">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-[#33CCFF] flex items-center justify-center">
-                      <Users className="h-4 w-4 text-[#003B70]" />
+                      <Users className="h-4 w-4 text-primary" />
                     </div>
-                    <h3 className="font-bold text-[#003B70]">Digital Lending Intelligence Layer</h3>
+                    <h3 className="font-bold text-primary">Digital Lending Intelligence Layer</h3>
                   </div>
                 </div>
                 <CardContent className="p-6">
@@ -215,9 +215,9 @@ export default function Demo() {
                 <div className="p-4 bg-[#F5A623]/10 border-b border-[#F5A623]/20">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-[#F5A623] flex items-center justify-center">
-                      <Building2 className="h-4 w-4 text-[#003B70]" />
+                      <Building2 className="h-4 w-4 text-primary" />
                     </div>
-                    <h3 className="font-bold text-[#003B70]">Cross-Border & Commercial Intelligence Layer</h3>
+                    <h3 className="font-bold text-primary">Cross-Border & Commercial Intelligence Layer</h3>
                   </div>
                 </div>
                 <CardContent className="p-6">
@@ -242,7 +242,7 @@ export default function Demo() {
           </div>
 
           <motion.div {...fadeInUp} className="mt-8">
-            <Card className="bg-[#003B70] border-0">
+            <Card className="bg-primary border-0">
               <CardContent className="p-6 text-center">
                 <p className="text-white text-lg">
                   <span className="font-bold">Citi becomes the first major bank</span>{" "}
@@ -260,17 +260,17 @@ export default function Demo() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Consumer Demo */}
             <motion.div {...fadeInUp}>
-              <div className="text-xs font-bold text-[#003B70] tracking-wider mb-2">03 — DIGITAL LENDING DEMO</div>
+              <div className="text-xs font-bold text-primary tracking-wider mb-2">03 — DIGITAL LENDING DEMO</div>
               <h3 className="text-xl font-bold text-gray-900 mb-6">What the Digital Lending Demo Shows</h3>
               
-              <div className="rounded-xl bg-gradient-to-br from-[#003B70]/10 to-[#33CCFF]/5 border border-[#003B70]/20 flex items-center justify-center mb-6 p-4">
+              <div className="rounded-xl bg-gradient-to-br from-primary/10 to-[#33CCFF]/5 border border-primary/20 flex items-center justify-center mb-6 p-4">
                 <img src="/images/3-phone-consumer.png" alt="CitiDirect Digital Lending Intelligence Mockup" className="w-full h-auto rounded-lg" />
               </div>
               
               <div className="space-y-4">
                 {consumerFeatures.map((feature, idx) => (
                   <div key={idx} className="flex gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#33CCFF] flex items-center justify-center flex-shrink-0 text-xs font-bold text-[#003B70]">
+                    <div className="w-6 h-6 rounded-full bg-[#33CCFF] flex items-center justify-center flex-shrink-0 text-xs font-bold text-primary">
                       {idx + 1}
                     </div>
                     <div>
@@ -284,7 +284,7 @@ export default function Demo() {
 
             {/* Business Demo */}
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-              <div className="text-xs font-bold text-[#003B70] tracking-wider mb-2">04 — CROSS-BORDER & COMMERCIAL DEMO</div>
+              <div className="text-xs font-bold text-primary tracking-wider mb-2">04 — CROSS-BORDER & COMMERCIAL DEMO</div>
               <h3 className="text-xl font-bold text-gray-900 mb-6">What the Cross-Border Demo Shows</h3>
               
               <div className="rounded-xl bg-gradient-to-br from-[#F5A623]/10 to-[#F5A623]/5 border border-[#F5A623]/20 flex items-center justify-center mb-6 p-4">
@@ -294,7 +294,7 @@ export default function Demo() {
               <div className="space-y-4">
                 {businessFeatures.map((feature, idx) => (
                   <div key={idx} className="flex gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#F5A623] flex items-center justify-center flex-shrink-0 text-xs font-bold text-[#003B70]">
+                    <div className="w-6 h-6 rounded-full bg-[#F5A623] flex items-center justify-center flex-shrink-0 text-xs font-bold text-primary">
                       {idx + 1}
                     </div>
                     <div>
@@ -313,7 +313,7 @@ export default function Demo() {
       <section className="py-16 bg-[#F5F7FA]">
         <div className="container mx-auto px-6">
           <motion.div {...fadeInUp} className="mb-10">
-            <div className="text-xs font-bold text-[#003B70] tracking-wider mb-2">05 — STRATEGIC POWER</div>
+            <div className="text-xs font-bold text-primary tracking-wider mb-2">05 — STRATEGIC POWER</div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
               Why This Demo Changes Everything
             </h2>
@@ -325,7 +325,7 @@ export default function Demo() {
                 <Card className="h-full bg-white border-0 shadow-md">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-[#003B70] flex items-center justify-center flex-shrink-0 text-sm font-bold text-[#33CCFF]">
+                      <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center flex-shrink-0 text-sm font-bold text-[#33CCFF]">
                         {idx + 1}
                       </div>
                       <div>
@@ -425,7 +425,7 @@ export default function Demo() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6">
           <motion.div {...fadeInUp} className="mb-10">
-            <div className="text-xs font-bold text-[#003B70] tracking-wider mb-2">07 — GLOBAL VIEW</div>
+            <div className="text-xs font-bold text-primary tracking-wider mb-2">07 — GLOBAL VIEW</div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
               This demo is not U.S.-locked.
             </h2>
@@ -442,18 +442,18 @@ export default function Demo() {
                   "Across global card and lending portfolios"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-3">
-                    <Globe className="h-5 w-5 text-[#003B70] flex-shrink-0 mt-0.5" />
+                    <Globe className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-lg font-semibold text-[#003B70]">
+              <p className="mt-6 text-lg font-semibold text-primary">
                 This becomes Citi's global credit intelligence layer.
               </p>
             </motion.div>
 
             <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-              <Card className="bg-[#003B70] border-0">
+              <Card className="bg-primary border-0">
                 <CardContent className="p-8 text-center">
                   <Globe className="h-16 w-16 text-[#33CCFF] mx-auto mb-4" />
                   <p className="text-white text-lg font-bold mb-2">160+ Markets</p>
@@ -487,7 +487,7 @@ export default function Demo() {
       </section>
 
       {/* Section 8 - CTA */}
-      <section id="booking" className="py-16 bg-gradient-to-br from-[#003B70] via-[#002850] to-[#001830]">
+      <section id="booking" className="py-16 bg-gradient-to-br from-primary via-[hsl(212,100%,16%)] to-[hsl(212,100%,9%)]">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             <motion.div {...fadeInUp} className="text-center mb-10">
@@ -538,7 +538,7 @@ export default function Demo() {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button 
                       size="lg"
-                      className="flex-1 bg-[#33CCFF] hover:bg-[#29b8e8] text-[#003B70] font-semibold"
+                      className="flex-1 bg-[#33CCFF] hover:bg-[#29b8e8] text-primary font-semibold"
                     >
                       <Play className="mr-2 h-4 w-4" />
                       Schedule Demo

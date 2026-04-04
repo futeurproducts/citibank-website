@@ -53,7 +53,7 @@ export default function Pilot() {
   return (
     <PageLayout>
       {/* ── SECTION 1: HERO ── */}
-      <section className="relative py-20 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-primary via-primary to-primary-dark">
+      <section className="relative py-20 md:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-primary via-primary to-[hsl(212,100%,16%)]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.1),transparent_50%)]" />
 
         <div className="container mx-auto px-6 relative z-10">
@@ -528,7 +528,7 @@ export default function Pilot() {
       {/* ── SECTION 10: BOTTOM CTA ── */}
       <section
         id="pilot-form"
-        className="py-20 md:py-24 lg:py-32 bg-gradient-to-br from-primary via-primary to-primary-dark"
+        className="py-20 md:py-24 lg:py-32 bg-gradient-to-br from-primary via-primary to-[hsl(212,100%,16%)]"
       >
         <div className="container mx-auto px-6">
           <div className="max-w-[1400px] mx-auto">
