@@ -14,10 +14,12 @@ import { Badge } from "@/components/ui/badge";
 import { ImpactChatWidget } from "@/components/ImpactChatWidget";
 import { Footer } from "@/components/Footer";
 import { ArchitectureFlow } from "@/components/ArchitectureFlow";
-import { ApiResponsePreview } from "@/components/ApiResponsePreview";
+import { SevenOutputsExplorer } from "@/components/SevenOutputsExplorer";
 import { BeforeAfterTable } from "@/components/BeforeAfterTable";
 import { InfrastructureComparison } from "@/components/InfrastructureComparison";
 import { ComplianceTrust } from "@/components/ComplianceTrust";
+import { CapabilityCards } from "@/components/CapabilityCards";
+import { SignalFlowPipeline } from "@/components/SignalFlowPipeline";
 
 // Animated Counter Component for numeric values
 const AnimatedCounter = ({ num, suffix = "", decimals = 0 }: {
@@ -146,148 +148,17 @@ export default function HowItWorks() {
               <div className="mt-16">
                 <h3 className="text-xl font-heading font-bold text-center mb-8">Integration Architecture</h3>
 
-                {/* ArchitectureFlow component above the cards */}
-                <div className="mb-8">
-                  <ArchitectureFlow />
-                </div>
-
-                <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                  <Card className="bg-card border border-border shadow-sm">
-                    <CardContent className="p-6 text-center">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                        <Building2 className="w-6 h-6 text-primary" />
-                      </div>
-                      <h4 className="font-bold text-foreground mb-1">CitiDirect Platform</h4>
-                      <p className="text-xs text-muted-foreground">Digital Credit Applications, electronic signatures, end-to-end status</p>
-                    </CardContent>
-                  </Card>
-                  <Card className="bg-primary/5 border border-primary/30 shadow-sm">
-                    <CardContent className="p-6 text-center">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                        <Zap className="w-6 h-6 text-primary" />
-                      </div>
-                      <h4 className="font-bold text-primary mb-1">LUMIQ AI API</h4>
-                      <p className="text-xs text-muted-foreground">83ms decisioning, 7 intelligence outputs, structured JSON signals</p>
-                    </CardContent>
-                  </Card>
-                  <Card className="bg-card border border-border shadow-sm">
-                    <CardContent className="p-6 text-center">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                        <LineChart className="w-6 h-6 text-primary" />
-                      </div>
-                      <h4 className="font-bold text-foreground mb-1">Portfolio & Cross-Border Intelligence</h4>
-                      <p className="text-xs text-muted-foreground">Credit signals aligned with Token Services' 24/7 multi-currency liquidity</p>
-                    </CardContent>
-                  </Card>
-                </div>
+                {/* Animated Architecture Flow Diagram */}
+                <ArchitectureFlow />
               </div>
             </motion.div>
           </div>
         </section>
 
         {/* SECTION 3 — SEVEN INTELLIGENCE OUTPUTS */}
-        <section id="seven-outputs" className="py-20 md:py-24 lg:py-32 bg-background">
-          <div className="container mx-auto px-4 sm:px-6">
-            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
-              <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
-                  SEVEN OUTPUTS, ONE API CALL
-                </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
-                  Seven Intelligence Outputs
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Not seven products. Seven outputs from a single API call — each one built for the decisions Citi's commercial bankers make through CitiDirect every day.
-                </p>
-              </div>
+        <SevenOutputsExplorer />
 
-              <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-10 items-start">
-                {/* Output Cards */}
-                <div className="grid sm:grid-cols-2 gap-6">
-                  {[
-                    {
-                      num: "01",
-                      title: "Digital Lending Intelligence",
-                      desc: "Pre-score every business before they submit a Digital Credit Application on CitiDirect. Territory analysis across CCB's commercial footprint.",
-                      tech: "FSR + Intelliscore + Owner FICO fusion. JSON output.",
-                      icon: Target
-                    },
-                    {
-                      num: "02",
-                      title: "Relationship Manager Copilot (Stylus)",
-                      desc: "Each RM gets an AI briefing aligned with Stylus Workspaces — top prospects, risk flags, and next-best-action. Structured JSON signals consumed natively by Citi's agentic AI.",
-                      tech: "Structured JSON signal array consumed via Stylus API.",
-                      icon: MessageSquareText
-                    },
-                    {
-                      num: "03",
-                      title: "CitiDirect Onboarding Acceleration",
-                      desc: "83ms full scoring pipeline. Complement CitiDirect's Digital Credit Application with instant pre-qualification. Electronic signatures. Zero re-keying.",
-                      tech: "REST endpoint, <100ms p95, idempotent.",
-                      icon: Rocket
-                    },
-                    {
-                      num: "04",
-                      title: "Multi-Product Pre-Qualification ($10M)",
-                      desc: "Revolving credit, term loans, commercial cards, letters of credit — scoring across CCB's full product shelf, up to $10M per application.",
-                      tech: "Product eligibility matrix with confidence bands.",
-                      icon: CreditCard
-                    },
-                    {
-                      num: "05",
-                      title: "Cross-Border Portfolio Radar (94 markets)",
-                      desc: "Monitor your entire CCB book across 94 markets. Cross-sell signals. Early warning. Aligned with Citi Token Services' 24/7 multi-currency liquidity.",
-                      tech: "Multi-jurisdiction KYB + bureau heterogeneity handling.",
-                      icon: Globe
-                    },
-                    {
-                      num: "06",
-                      title: "Trade Finance Intelligence ($7.75T)",
-                      desc: "Score supply chain credit needs in the $7.75T supercycle. AI-powered document processing. LatAm-to-ASEAN trade corridor scoring.",
-                      tech: "Import/export risk model + document AI.",
-                      icon: TrendingUp
-                    },
-                    {
-                      num: "07",
-                      title: "CRA & Community Lending Toolkit ($145.9B, $60B)",
-                      desc: "Map CRA-eligible zones across Citi's $145.9B allocated activity. SPCP-compliant scoring for the $60B housing commitment. Market-level impact dashboards.",
-                      tech: "Geocoded CRA eligibility + branch-level dashboards.",
-                      icon: Users
-                    }
-                  ].map((module, idx) => (
-                    <Card key={idx} className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
-                      <CardContent className="p-6 md:p-8">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                            <module.icon className="w-5 h-5 text-primary" />
-                          </div>
-                          <span className="text-xs font-bold text-primary/60">{module.num}</span>
-                        </div>
-                        <h3 className="text-lg font-heading font-bold mb-2 text-foreground">{module.title}</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mb-3">{module.desc}</p>
-                        <p className="text-xs text-primary/70 font-mono bg-primary/5 rounded-lg px-3 py-2">
-                          {module.tech}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-
-                {/* API Response Preview — beside the output cards */}
-                <div className="hidden lg:block lg:sticky lg:top-24 lg:w-[380px]">
-                  <ApiResponsePreview />
-                </div>
-              </div>
-
-              {/* API Response Preview — mobile (below cards) */}
-              <div className="mt-8 lg:hidden">
-                <ApiResponsePreview />
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* SECTION 4 — AI INFRASTRUCTURE (Integration Architecture) */}
+        {/* SECTION 4 — AI INFRASTRUCTURE (Interactive Capability Cards + Signal Pipeline) */}
         <section id="stylus-integration" className="py-20 md:py-24 lg:py-32 bg-background-secondary">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
@@ -302,62 +173,28 @@ export default function HowItWorks() {
                   LumiqAI produces structured JSON intelligence signals — not dashboards. These signals are designed to be consumed by Citi's Stylus Workspaces, the proprietary agentic AI platform that David Griffiths' team is rolling out to thousands of employees.
                 </p>
               </div>
-
-              {/* Signal Types */}
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-10">
-                {[
-                  { title: "Credit Pre-Qualification", desc: "83ms scoring across revolving credit, term loans, commercial cards, and LOC", icon: Zap },
-                  { title: "Risk Flags", desc: "Early warning signals, portfolio concentration alerts, cross-border risk indicators", icon: AlertCircle },
-                  { title: "Product Matching", desc: "Multi-product eligibility scoring across CCB's full shelf, up to $10M per application", icon: Target },
-                  { title: "Adverse Action Codes", desc: "ECOA-compliant reason codes, decline recovery paths, credit-building recommendations", icon: FileText }
-                ].map((item, idx) => (
-                  <Card key={idx} className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
-                    <CardContent className="p-5 sm:p-6">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-                        <item.icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <h3 className="text-base font-heading font-bold mb-2">{item.title}</h3>
-                      <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-
-              {/* Integration Flow Diagram with Latency Annotations */}
-              <Card className="bg-card border border-border shadow-sm">
-                <CardContent className="p-8 md:p-10">
-                  <h3 className="text-lg font-heading font-bold text-center mb-8">Signal Flow Architecture</h3>
-                  <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-2">
-                    {[
-                      { label: "CitiDirect", sublabel: "Digital Credit Application", latency: null },
-                      { label: "LumiqAI API", sublabel: "83ms Decisioning", latency: "p50: 47ms" },
-                      { label: "Structured JSON", sublabel: "7 Intelligence Outputs", latency: "p95: 83ms" },
-                      { label: "Stylus Workspaces", sublabel: "Agentic AI Platform", latency: "p99: 127ms" },
-                      { label: "RM Action", sublabel: "Informed Decision", latency: null }
-                    ].map((step, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <div className="relative">
-                          <div className={`px-4 py-3 rounded-xl text-center min-w-[140px] ${idx === 1 ? 'bg-primary/10 border-2 border-primary/30' : 'bg-muted/50 border border-border'}`}>
-                            <div className={`text-sm font-bold ${idx === 1 ? 'text-primary' : 'text-foreground'}`}>{step.label}</div>
-                            <div className="text-xs text-muted-foreground">{step.sublabel}</div>
-                          </div>
-                          {step.latency && (
-                            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[10px] font-mono text-primary/60 whitespace-nowrap">
-                              {step.latency}
-                            </div>
-                          )}
-                        </div>
-                        {idx < 4 && (
-                          <ArrowRight className="w-5 h-5 text-primary/50 hidden md:block shrink-0" />
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
             </motion.div>
           </div>
         </section>
+
+        {/* NEW: Interactive capability cards */}
+        <section className="py-16 md:py-24">
+          <div className="max-w-6xl mx-auto px-6 text-center mb-14">
+            <span className="inline-block px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-4">
+              Intelligence Outputs
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Four Core Capabilities
+            </h2>
+            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+              Hover each card to explore technical depth and 10-K validated metrics.
+            </p>
+          </div>
+          <CapabilityCards />
+        </section>
+
+        {/* NEW: Animated signal flow pipeline */}
+        <SignalFlowPipeline />
 
         {/* SECTION 5 — WHAT THE ENGINE DOES UNDER THE HOOD */}
         <section id="engine" className="py-20 md:py-24 lg:py-32 bg-background">
