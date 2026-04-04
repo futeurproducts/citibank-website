@@ -147,7 +147,7 @@ export default function CaseStudy() {
                   {
                     date: "FEB 2026",
                     title: "Sakana AI Investment",
-                    desc: "Citi's first-ever strategic AI investment. David Griffiths: \"AI is infrastructure, not experiment.\"",
+                    desc: "Citi's first-ever strategic AI investment in agentic infrastructure — signals over dashboards.",
                     highlight: false
                   },
                   {

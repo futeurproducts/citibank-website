@@ -5,12 +5,8 @@ import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  Database, Shield, Rocket, Lock, Users, TrendingUp, BarChart3, CheckCircle2,
-  FileText, Target, DollarSign, Zap, ArrowRight, Smartphone, Building2,
-  CreditCard, AlertCircle, Globe, RefreshCw, Bell, LineChart, Clock,
-  ChevronRight, Info, MessageSquareText, X
+  Shield, TrendingUp, CheckCircle2, Target, DollarSign, Zap, ArrowRight, Globe
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { ImpactChatWidget } from "@/components/ImpactChatWidget";
 import { Footer } from "@/components/Footer";
 import { ArchitectureFlow } from "@/components/ArchitectureFlow";
@@ -147,7 +143,10 @@ export default function HowItWorks() {
 
               {/* SECTION 2 — ARCHITECTURE */}
               <div className="mt-16">
-                <h3 className="text-xl font-heading font-bold text-center mb-8">Integration Architecture</h3>
+                <h3 className="text-xl font-heading font-bold text-center mb-2">Integration Architecture</h3>
+                <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mb-6">
+                  One API call. Four bureau sources orchestrated in parallel. Seven structured outputs in 83 milliseconds.
+                </p>
 
                 {/* Animated Architecture Flow Diagram */}
                 <ArchitectureFlow />
@@ -159,43 +158,13 @@ export default function HowItWorks() {
         {/* SECTION 3 — SEVEN INTELLIGENCE OUTPUTS */}
         <SevenOutputsExplorer />
 
-        {/* SECTION 4 — AI INFRASTRUCTURE (Interactive Capability Cards + Signal Pipeline) */}
-        <section id="stylus-integration" className="py-20 md:py-24 lg:py-32 bg-background-secondary">
-          <div className="container mx-auto px-4 sm:px-6">
-            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
-              <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
-                  AI INFRASTRUCTURE
-                </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
-                  Integration Architecture
-                </h2>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  LumiqAI produces structured JSON intelligence signals — not dashboards. These signals are designed to be consumed by Citi's Stylus Workspaces, the proprietary agentic AI platform that David Griffiths' team is rolling out to thousands of employees.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* NEW: Interactive capability cards */}
-        <section className="py-16 md:py-24">
-          <div className="max-w-6xl mx-auto px-6 text-center mb-14">
-            <span className="inline-block px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-4">
-              Intelligence Outputs
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              Four Core Capabilities
-            </h2>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-              Hover each card to explore technical depth and 10-K validated metrics.
-            </p>
-          </div>
+        {/* SECTION 4 — CAPABILITY CARDS + SIGNAL PIPELINE */}
+        <section className="py-16 md:py-24 bg-background-secondary">
           <CapabilityCards />
+          <div className="mt-12">
+            <SignalFlowPipeline />
+          </div>
         </section>
-
-        {/* NEW: Animated signal flow pipeline */}
-        <SignalFlowPipeline />
 
         {/* SECTION 5 — UNDER THE HOOD (interactive tabbed component) */}
         <UnderTheHood />
@@ -292,35 +261,23 @@ export default function HowItWorks() {
           </div>
         </section>
 
-        {/* SECTION 7 — SECURITY & GOVERNANCE */}
+        {/* SECTION 7 — SECURITY & GOVERNANCE (ComplianceTrust is self-contained) */}
         <section id="security" className="py-20 md:py-24 lg:py-32 bg-background-secondary">
-          <div className="container mx-auto px-6">
-            <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
-              <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">
-                  SECURITY & GOVERNANCE
-                </div>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
-                  Security & Governance
-                </h2>
-              </div>
+          <ComplianceTrust />
 
-              {/* ComplianceTrust replaces the old security cards */}
-              <ComplianceTrust />
-
-              {/* BCBS 239 Link */}
-              <div className="mt-6 p-6 md:p-8 rounded-xl bg-primary/5 border border-primary/20 text-center">
-                <h4 className="text-sm font-bold tracking-widest text-primary uppercase mb-2">BCBS 239 Data Lineage</h4>
-                <p className="text-muted-foreground max-w-3xl mx-auto mb-3">
-                  Every credit signal traced from source to decision. Full data lineage dashboard available in the demo.
-                </p>
-                <Button variant="outline" size="sm" asChild>
-                  <a href="https://citi.demo.futeurcredx.com/demo/citi?tab=data-lineage" target="_blank" rel="noopener noreferrer">
-                    View Data Lineage Dashboard <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
-            </motion.div>
+          {/* BCBS 239 Link */}
+          <div className="container mx-auto px-6 mt-6">
+            <div className="max-w-[1400px] mx-auto p-6 md:p-8 rounded-xl bg-primary/5 border border-primary/20 text-center">
+              <h4 className="text-sm font-bold tracking-widest text-primary uppercase mb-2">BCBS 239 Data Lineage</h4>
+              <p className="text-muted-foreground max-w-3xl mx-auto mb-3">
+                Every credit signal traced from source to decision. Full data lineage dashboard available in the demo.
+              </p>
+              <Button variant="outline" size="sm" asChild>
+                <a href="https://citi.demo.futeurcredx.com/demo/citi?tab=data-lineage" target="_blank" rel="noopener noreferrer">
+                  View Data Lineage Dashboard <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
           </div>
         </section>
 
