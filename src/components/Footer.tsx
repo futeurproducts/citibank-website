@@ -5,9 +5,9 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const navigation = [
+    { label: "Platform", href: "/about" },
     { label: "How It Works", href: "/how-it-works" },
-    { label: "Case Study", href: "/case-study" },
-    // { label: "Demo", href: "/demo" }, // Commented out - keeping code as backup
+    { label: "Results", href: "/case-study" },
     { label: "Pilot", href: "/pilot" },
   ];
 
@@ -28,11 +28,11 @@ export function Footer() {
                   letterSpacing: "-0.02em",
                 }}
               >
-                LUMIQ × Citi
+                LUMIQ AI
               </Link>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-foreground/60">
-              Unlock 15–20% more approvals from declined applications without elevating risk.
+              Same-day credit decisions for commercial lending. 83ms. 7 intelligence outputs. $600K pilot.
             </p>
           </div>
 

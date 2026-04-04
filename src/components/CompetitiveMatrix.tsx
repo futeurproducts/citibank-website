@@ -1,9 +1,11 @@
 import { Check, X } from 'lucide-react';
 
 const banks = [
-  { name: 'Chase', consumer: true, consumerLabel: 'Credit Journey', commercial: false },
-  { name: 'Capital One', consumer: true, consumerLabel: 'CreditWise', commercial: false },
-  { name: 'Wells Fargo', consumer: false, commercial: true, commercialLabel: 'Close-Up' },
+  { name: 'Chase', logo: '/Case Study/WHy citi wins/chase.svg', consumer: true, consumerLabel: 'Credit Journey', commercial: false },
+  { name: 'Capital One', logo: '/Case Study/WHy citi wins/Capital_One_logo.svg', consumer: true, consumerLabel: 'CreditWise', commercial: false },
+  { name: 'Wells Fargo', logo: '/Case Study/WHy citi wins/wells-fargo-1.svg', consumer: true, consumerLabel: 'Close-Up', commercial: false },
+  { name: 'AmEx', logo: '/Case Study/WHy citi wins/amex-3.svg', consumer: true, consumerLabel: 'MyCredit Guide', commercial: false },
+  { name: 'Apple', logo: '/Case Study/WHy citi wins/Apple_Card.svg', consumer: true, consumerLabel: 'Apple Card', commercial: false },
   { name: 'Citi (Today)', consumer: false, commercial: false, highlight: 'red' as const },
   { name: 'Citi + LumiqAI', consumer: true, consumerLabel: '✓', commercial: true, commercialLabel: '✓', highlight: 'green' as const },
 ];
@@ -30,46 +32,58 @@ export function CompetitiveMatrix() {
                     bank.highlight === 'green' ? 'bg-gradient-to-r from-emerald-50/70 to-emerald-50/50 hover:from-emerald-50 hover:to-emerald-50/70 shadow-sm' : ''}
                 `}
               >
-                <td className={`px-6 py-4 font-semibold ${
+                <td className={`px-6 py-4 ${
                   bank.highlight === 'red' ? 'text-red-800' :
                   bank.highlight === 'green' ? 'text-emerald-800' : 'text-slate-700'
                 }`}>
-                  {bank.name}
-                  {bank.highlight === 'green' && (
-                    <div className="inline-block ml-2 w-2 h-2 bg-emerald-500 rounded-full shadow-sm"></div>
-                  )}
+                  <div className="flex items-center gap-2">
+                    {'logo' in bank && bank.logo ? (
+                      <img src={bank.logo} alt={bank.name} className="shrink-0 object-contain" style={{ height: 22, maxWidth: 100 }} />
+                    ) : (
+                      <>
+                        <span className="font-semibold">{bank.name}</span>
+                        {bank.highlight === 'green' && (
+                          <span className="inline-block w-2 h-2 bg-emerald-500 rounded-full shadow-sm" />
+                        )}
+                      </>
+                    )}
+                  </div>
                 </td>
-                <td className="px-6 py-4 text-center">
-                  {bank.consumer ? (
-                    <span className="inline-flex items-center gap-2 text-emerald-700">
-                      <div className="flex items-center justify-center w-6 h-6 bg-emerald-100 rounded-full">
-                        <Check size={14} className="text-emerald-600" />
+                <td className="px-6 py-4">
+                  <div className="flex flex-col items-center gap-1">
+                    {bank.consumer ? (
+                      <>
+                        <div className="flex items-center justify-center w-6 h-6 bg-emerald-100 rounded-full">
+                          <Check size={14} className="text-emerald-600" />
+                        </div>
+                        {bank.consumerLabel !== '✓' && (
+                          <span className="text-xs font-medium text-slate-500">{bank.consumerLabel}</span>
+                        )}
+                      </>
+                    ) : (
+                      <div className="flex items-center justify-center w-6 h-6 bg-slate-100 rounded-full">
+                        <X size={14} className="text-slate-400" />
                       </div>
-                      {bank.consumerLabel !== '✓' && (
-                        <span className="text-xs font-medium text-slate-600">{bank.consumerLabel}</span>
-                      )}
-                    </span>
-                  ) : (
-                    <div className="flex items-center justify-center w-6 h-6 bg-slate-100 rounded-full mx-auto">
-                      <X size={14} className="text-slate-400" />
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </td>
-                <td className="px-6 py-4 text-center">
-                  {bank.commercial ? (
-                    <span className="inline-flex items-center gap-2 text-emerald-700">
-                      <div className="flex items-center justify-center w-6 h-6 bg-emerald-100 rounded-full">
-                        <Check size={14} className="text-emerald-600" />
+                <td className="px-6 py-4">
+                  <div className="flex flex-col items-center gap-1">
+                    {bank.commercial ? (
+                      <>
+                        <div className="flex items-center justify-center w-6 h-6 bg-emerald-100 rounded-full">
+                          <Check size={14} className="text-emerald-600" />
+                        </div>
+                        {bank.commercialLabel !== '✓' && (
+                          <span className="text-xs font-medium text-slate-500">{bank.commercialLabel}</span>
+                        )}
+                      </>
+                    ) : (
+                      <div className="flex items-center justify-center w-6 h-6 bg-slate-100 rounded-full">
+                        <X size={14} className="text-slate-400" />
                       </div>
-                      {bank.commercialLabel !== '✓' && (
-                        <span className="text-xs font-medium text-slate-600">{bank.commercialLabel}</span>
-                      )}
-                    </span>
-                  ) : (
-                    <div className="flex items-center justify-center w-6 h-6 bg-slate-100 rounded-full mx-auto">
-                      <X size={14} className="text-slate-400" />
-                    </div>
-                  )}
+                    )}
+                  </div>
                 </td>
               </tr>
             ))}

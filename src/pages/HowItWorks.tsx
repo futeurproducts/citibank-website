@@ -40,7 +40,7 @@ const AnimatedCounter = ({ num, suffix = "", decimals = 0 }: {
 
 export default function HowItWorks() {
   useEffect(() => {
-    document.title = "How It Works \u2014 Credit Intelligence in 90 Days";
+    document.title = "LUMIQ AI \u2014 From Application to Decision in 83ms";
   }, []);
 
   const fadeInUp = {
@@ -628,12 +628,12 @@ export default function HowItWorks() {
 
               {/* Pilot Economics */}
               <div className="mt-12 p-6 md:p-8 rounded-xl bg-[#C9922A]/10 border border-[#C9922A]/30 text-center">
-                <h4 className="text-sm font-bold tracking-widest text-[#C9922A] uppercase mb-2">$150K Pilot Economics</h4>
+                <h4 className="text-sm font-bold tracking-widest text-[#C9922A] uppercase mb-2">$600K Pilot Economics</h4>
                 <p className="text-foreground font-medium max-w-3xl mx-auto mb-2">
-                  $150K to validate credit intelligence across CitiDirect — less than a single RM's annual compensation.
+                  $600K to validate credit intelligence across CitiDirect — less than a single RM's annual compensation.
                 </p>
                 <p className="text-sm text-muted-foreground max-w-3xl mx-auto">
-                  ROI measured against CCB's digital lending conversion baseline. $150K for 90 days of proof on a platform processing up to $10M per digital credit application. 100% redeemable against Year 1 platform license.
+                  ROI measured against CCB's digital lending conversion baseline. $600K for 90 days of proof on a platform processing up to $10M per digital credit application.
                 </p>
               </div>
             </motion.div>
@@ -814,10 +814,10 @@ export default function HowItWorks() {
                 Start a 90-Day Pilot Alongside Citi's Digital Lending Rollout
               </h2>
               <p className="text-xl md:text-2xl text-muted-foreground mb-4 leading-relaxed">
-                $150,000 Strategic Pilot. Across CCB's digital lending platform. 7 KPIs. Measurable conversion lift.
+                $600,000 Strategic Pilot. Across CCB's digital lending platform. 7 KPIs. Measurable conversion lift.
               </p>
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-                100% redeemable against Year 1 platform license upon full-scale deployment.
+                Measured against pre-agreed KPIs.
               </p>
               <Button
                 size="lg"

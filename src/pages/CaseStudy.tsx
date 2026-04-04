@@ -36,7 +36,7 @@ import {
 
 export default function CaseStudy() {
   useEffect(() => {
-    document.title = "Case Study \u2014 The Missing Intelligence Layer for Citi\u2019s $10M Digital Credit Applications";
+    document.title = "LUMIQ AI \u2014 The Commercial Lending Intelligence Gap";
   }, []);
 
   const fadeInUp = {
@@ -1123,7 +1123,7 @@ export default function CaseStudy() {
                   90-Day Credit Intelligence Pilot
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  $150K pilot investment. 100% redeemable against Year 1 platform license upon full-scale deployment.
+                  $600K pilot investment. Measured against pre-agreed KPIs.
                 </p>
                 <div className="h-px w-24 bg-primary mx-auto mt-4" />
               </div>
@@ -1259,10 +1259,10 @@ export default function CaseStudy() {
               <motion.div {...fadeInUp} className="mt-8">
                 <Card className="bg-primary border-0 shadow-lg">
                   <CardContent className="p-6 sm:p-8 text-center">
-                    <div className="text-4xl font-bold text-primary-foreground mb-3">$150,000</div>
+                    <div className="text-4xl font-bold text-primary-foreground mb-3">$600,000</div>
                     <p className="text-primary-foreground/90 text-lg mb-2">90-Day Credit Intelligence Pilot</p>
                     <p className="text-primary-foreground/70 text-sm max-w-2xl mx-auto">
-                      100% redeemable against Year 1 platform license upon full-scale deployment. Zero risk — if KPIs are not met, the full amount applies to an extended evaluation or is returned.
+                      Measured against pre-agreed baselines. 90 days of validated results.
                     </p>
                   </CardContent>
                 </Card>

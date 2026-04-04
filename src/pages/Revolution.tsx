@@ -6,7 +6,7 @@ import { PageLayout } from "@/components/PageLayout";
 
 export default function Revolution() {
   useEffect(() => {
-    document.title = "The Digital Lending Intelligence Blueprint — LumiqAI for Citi";
+    document.title = "LUMIQ AI \u2014 Digital Lending Intelligence";
     document.body.style.background = "hsl(var(--background))";
   }, []);
 

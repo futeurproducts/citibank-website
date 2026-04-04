@@ -1,4 +1,9 @@
 {
+  "redirects": [
+    { "source": "/revolution", "destination": "/", "permanent": true },
+    { "source": "/uss", "destination": "/how-it-works", "permanent": true },
+    { "source": "/impact", "destination": "/case-study", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],

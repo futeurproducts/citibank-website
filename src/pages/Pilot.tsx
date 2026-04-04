@@ -44,7 +44,7 @@ export default function Pilot() {
   const location = useLocation();
 
   useEffect(() => {
-    document.title = "90-Day Credit Intelligence Pilot \u2014 $150K, CCB Digital Lending, Measurable KPIs";
+    document.title = "LUMIQ AI \u2014 90-Day Pilot, $600K, Measured Against Your KPIs";
   }, []);
 
   // Handle hash navigation when component mounts or hash changes
@@ -156,7 +156,7 @@ export default function Pilot() {
                   </div>
                   <div className="mt-6 p-4 rounded-lg bg-foreground/5 border border-foreground/20">
                     <p className="text-sm text-foreground font-medium">
-                      $150K pilot investment. 100% redeemable against Year 1 platform license upon full-scale deployment. Zero risk — if KPIs are not met, the full amount applies to an extended evaluation or is returned.
+                      $600K pilot investment. Measured against pre-agreed KPIs. 90 days of validated credit intelligence.
                     </p>
                   </div>
                 </CardContent>
@@ -386,8 +386,8 @@ export default function Pilot() {
             <Card className="bg-primary border-0 shadow-lg">
               <CardContent className="p-6 text-center">
                 <p className="text-primary-foreground text-lg">
-                  <span className="font-bold">$150K pilot investment.</span>{" "}
-                  <span className="text-primary-foreground/80">100% redeemable against Year 1 platform license upon full-scale deployment.</span>
+                  <span className="font-bold">$600K pilot investment.</span>{" "}
+                  <span className="text-primary-foreground/80">Measured against pre-agreed baselines.</span>
                 </p>
               </CardContent>
             </Card>
@@ -849,8 +849,8 @@ export default function Pilot() {
                     </h3>
                     <div className="space-y-3">
                       {[
-                        { metric: "$150K", label: "90-day pilot investment" },
-                        { metric: "100%", label: "Redeemable against Year 1 license" }
+                        { metric: "$600K", label: "90-day pilot investment" },
+                        { metric: "7", label: "KPIs measured against baselines" }
                       ].map((item, idx) => (
                         <div key={idx} className="flex justify-between items-center py-2 border-b border-border last:border-0">
                           <span className="text-sm text-muted-foreground">{item.label}</span>
@@ -860,7 +860,7 @@ export default function Pilot() {
                     </div>
                     <div className="mt-4 p-3 rounded-lg bg-primary/10 border border-primary/20">
                       <p className="text-xs text-foreground font-medium">
-                        $150K for 90 days of proof on a platform processing up to $10M per digital credit application. ROI measured against CCB's digital lending conversion baseline.
+                        $600K for 90 days of proof on a platform processing up to $10M per digital credit application. ROI measured against CCB's digital lending conversion baseline.
                       </p>
                     </div>
                   </CardContent>
@@ -930,10 +930,10 @@ export default function Pilot() {
                 Start a 90-Day Pilot Alongside Citi's Digital Lending Rollout
               </h2>
               <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mb-4">
-                $150,000 Strategic Pilot across CCB's digital lending platform. 83ms pre-qualification on CitiDirect. 7 KPIs measured against pre-agreed baselines.
+                $600,000 Strategic Pilot across CCB's digital lending platform. 83ms pre-qualification on CitiDirect. 7 KPIs measured against pre-agreed baselines.
               </p>
               <p className="text-sm text-primary-foreground/60 max-w-xl mx-auto mb-8">
-                100% redeemable against Year 1 platform license upon full-scale deployment.
+                Measured against pre-agreed KPIs.
               </p>
               
               <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>

@@ -210,7 +210,7 @@ export default function Impact() {
   const heroRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    document.title = "Digital Lending Impact \u2014 Citi Commercial Bank";
+    document.title = "LUMIQ AI \u2014 Digital Lending Impact";
     document.body.style.background = "#020617";
   }, []);
 
@@ -969,7 +969,7 @@ export default function Impact() {
           >
             <h2 className="text-4xl font-extrabold mb-6">Ready to Deploy Across CCB?</h2>
             <p className="text-xl text-slate-300 mb-8">
-              90-day pilot. $150K investment. 7 KPIs. Measurable application conversion lift across Citi's digital lending platform.
+              90-day pilot. $600K investment. 7 KPIs. Measurable application conversion lift across Citi's digital lending platform.
             </p>
             <Link
               to="/#demo"

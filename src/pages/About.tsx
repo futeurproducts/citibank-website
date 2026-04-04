@@ -78,8 +78,7 @@ const citiLeadership = [
 
 function About() {
   useEffect(() => {
-    document.title =
-      "About LUMIQ AI for Citi -- Credit Intelligence for Digital Commercial Lending";
+    document.title = "LUMIQ AI \u2014 Enterprise Credit Intelligence Platform";
   }, []);
 
   return (
@@ -796,7 +795,7 @@ function About() {
             <div className="mt-8">
               <Button size="lg" asChild>
                 <Link to="/pilot#pilot-form">
-                  Explore the $150K Pilot
+                  Explore the $600K Pilot
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
               </Button>
@@ -874,7 +873,7 @@ function About() {
               Start a 90-Day Pilot Alongside Citi's Digital Lending Rollout
             </h2>
             <p className="text-xl text-white/95 mb-10 leading-relaxed">
-              $150,000 validates credit intelligence across CCB's digital
+              $600,000 validates credit intelligence across CCB's digital
               lending platform -- less than a single RM's annual compensation.
               Measured against pre-agreed KPIs. Within your risk framework.
             </p>
@@ -885,7 +884,7 @@ function About() {
               asChild
             >
               <Link to="/pilot#pilot-form">
-                Start the $150K Pilot
+                Start the $600K Pilot
                 <ArrowRight className="ml-3 w-6 h-6" strokeWidth={2.5} />
               </Link>
             </Button>

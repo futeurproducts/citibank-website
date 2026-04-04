@@ -55,7 +55,7 @@ function ComparisonRow({ infrastructure, intelligence, delay = 0 }: { infrastruc
 
 function USS() {
   useEffect(() => {
-    document.title = "Unique Salient Similarities — AI Transformation to Credit Intelligence";
+    document.title = "LUMIQ AI \u2014 Credit Intelligence Architecture";
   }, []);
 
   return (
@@ -429,7 +429,7 @@ function USS() {
                     <div className="text-sm text-muted-foreground">Audit-Trail Coverage</div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-primary mb-1">$150K</div>
+                    <div className="text-2xl font-bold text-primary mb-1">$600K</div>
                     <div className="text-sm text-muted-foreground">90-Day Pilot</div>
                   </div>
                   <div>

@@ -239,3 +239,14 @@
     max-width: 1536px;
   }
 }
+
+/* ============================================
+ * SCROLL ANIMATION SAFETY NET
+ * Ensure content is visible even if intersection
+ * observer hasn't fired (fast scroll / JS delay)
+ * ============================================ */
+
+section, [data-section] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
