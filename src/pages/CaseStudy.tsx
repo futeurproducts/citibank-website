@@ -5,6 +5,13 @@ import { PageLayout } from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Footer } from "@/components/Footer";
+import { TenKStatsCaseStudy } from "@/components/TenKStatCards";
+import { PerformanceRadar } from "@/components/PerformanceRadar";
+import { FinancialModelTable } from "@/components/FinancialModelTable";
+import { RevenueComposition } from "@/components/RevenueComposition";
+import { RevenueAcceleration } from "@/components/RevenueAcceleration";
+import { InvestorDayCountdown } from "@/components/InvestorDayCountdown";
+import { CompetitiveMatrix } from "@/components/CompetitiveMatrix";
 import {
   TrendingUp,
   Shield,
@@ -31,12 +38,13 @@ import {
   RefreshCw,
   TrendingDown,
   ChevronRight,
-  Globe
+  Globe,
+  CalendarClock
 } from "lucide-react";
 
 export default function CaseStudy() {
   useEffect(() => {
-    document.title = "LUMIQ AI \u2014 The Commercial Lending Intelligence Gap";
+    document.title = "Results — The $9.7B Problem | LumiqAI";
   }, []);
 
   const fadeInUp = {
@@ -49,47 +57,28 @@ export default function CaseStudy() {
   return (
     <PageLayout>
       <div className="min-h-screen">
-        {/* Hero Section */}
+
+        {/* ================================================================
+            SECTION 1 — HERO
+            ================================================================ */}
         <section className="relative overflow-hidden pt-8 md:pt-12 lg:pt-16 pb-20 md:pb-24 lg:pb-32 bg-gradient-to-b from-primary/10 to-background">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Text Content - Left Side */}
                 <div className="order-2 lg:order-1">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 text-primary rounded-full text-xs font-semibold uppercase tracking-wide mb-6">
-                    CITI CASE STUDY · EXECUTIVE EDITION
-                  </div>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6 text-foreground leading-tight">
-                    The Missing Intelligence Layer for Citi's{" "}
-                    <span className="text-primary">$10M Digital Credit</span>{" "}
-                    Applications
+                    The{" "}
+                    <span className="text-primary">$9.7B Problem:</span>{" "}
+                    Credit Losses Without Credit Intelligence
                   </h1>
                   <div className="space-y-4 mb-8">
                     <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-                      Citi Commercial Bank is digitizing lending — revolving credit, term loans, commercial cards, letters of credit on CitiDirect. The missing layer: pre-qualification intelligence that scores every business before it applies.
+                      Citi absorbed $9.7 billion in card credit losses in 2024 with zero AI-driven credit underwriting deployed. Criticized commercial loans grew 14%. The intelligence layer is missing.
                     </p>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                      LumiqAI applies credit intelligence across CCB's digital platform — pre-scoring businesses, matching products, and generating compliance documentation, while Citi's Transformation reaches "two-thirds at or near target state."
+                      LumiqAI delivers dual consumer + commercial credit intelligence — pre-scoring businesses, matching products, and generating compliance documentation across Citi's digital platforms.
                     </p>
-                    <p className="text-lg font-semibold text-foreground">
-                      Built for Citi's controls. Integrated with CitiDirect. Aligned with Stylus Workspaces. Ready for the $7.75T trade finance supercycle.
-                    </p>
-                  </div>
-
-                  {/* Hero Metric Badges */}
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
-                      <TrendingUp className="h-4 w-4 text-primary" />
-                      <span className="text-sm font-medium text-primary">+15-25% application conversion lift</span>
-                    </div>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
-                      <Shield className="h-4 w-4 text-primary" />
-                      <span className="text-sm font-medium text-primary">Built for ECOA/FCRA/CRA controls</span>
-                    </div>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
-                      <DollarSign className="h-4 w-4 text-primary" />
-                      <span className="text-sm font-medium text-primary">Up to $10M per digital credit application</span>
-                    </div>
                   </div>
                 </div>
 
@@ -106,6 +95,9 @@ export default function CaseStudy() {
                       alt="Case Study Hero"
                       className="w-full h-auto"
                     />
+                    <p className="text-xs text-muted-foreground text-center mt-3 italic">
+                      LumiqAI Credit Journey — Consumer + Business intelligence
+                    </p>
                   </motion.div>
                 </div>
               </div>
@@ -113,68 +105,83 @@ export default function CaseStudy() {
           </div>
         </section>
 
-        {/* Hero Stats Strip */}
+        {/* Hero Stats Strip — 3 stats */}
         <section className="py-12 px-4 sm:px-6 bg-primary/5 border-y border-primary/20">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-[1400px] mx-auto">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
                 <div className="space-y-2">
-                  <div className="text-2xl md:text-3xl font-bold text-primary">$10M</div>
-                  <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">Per digital credit application</div>
+                  <div className="text-2xl md:text-3xl font-bold text-primary">$9.7B</div>
+                  <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">Annual Card Credit Losses</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-2xl md:text-3xl font-bold text-primary">Outstanding</div>
-                  <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">CRA rating, 2nd consecutive</div>
+                  <div className="text-2xl md:text-3xl font-bold text-primary flex items-center justify-center gap-1">
+                    14%<TrendingUp className="h-5 w-5" />
+                  </div>
+                  <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">Criticized Loan Growth</div>
                 </div>
                 <div className="space-y-2">
-                  <div className="text-2xl md:text-3xl font-bold text-primary">$7.75T</div>
-                  <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">Global capex supercycle</div>
+                  <div className="text-2xl md:text-3xl font-bold text-primary">0</div>
+                  <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">AI Credit Underwriting Deployed</div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Strategic Context — Recent Citi Moves */}
+        {/* ================================================================
+            SECTION 2 — THE WINDOW IS OPEN (was "Recent Strategic Context")
+            ================================================================ */}
         <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
-              <h2 className="text-2xl font-heading font-bold mb-8 text-foreground">Recent Citi Strategic Context</h2>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Card>
-                  <CardContent className="p-5">
-                    <div className="text-xs font-semibold text-primary mb-2">FEB 2026</div>
-                    <h3 className="font-semibold text-sm mb-1">Sakana AI Investment</h3>
-                    <p className="text-xs text-muted-foreground">Citi's first-ever strategic AI investment. David Griffiths: "AI is infrastructure, not experiment."</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-5">
-                    <div className="text-xs font-semibold text-primary mb-2">DEC 2025</div>
-                    <h3 className="font-semibold text-sm mb-1">OCC Consent Order Removed</h3>
-                    <p className="text-xs text-muted-foreground">Regulators validate Citi's transformation progress. Model governance infrastructure recognized.</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-5">
-                    <div className="text-xs font-semibold text-primary mb-2">NOV 2025</div>
-                    <h3 className="font-semibold text-sm mb-1">Citi Token Services Expansion</h3>
-                    <p className="text-xs text-muted-foreground">Euro integration, 24/7 multi-currency liquidity. Real-time cross-border payment rails.</p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardContent className="p-5">
-                    <div className="text-xs font-semibold text-primary mb-2">OCT 2025</div>
-                    <h3 className="font-semibold text-sm mb-1">Jane Fraser — Board Chair</h3>
-                    <p className="text-xs text-muted-foreground">Leadership stability confirmed. Transformation mandate continues with full board alignment.</p>
-                  </CardContent>
-                </Card>
+              <h2 className="text-2xl font-heading font-bold mb-8 text-foreground">The Window Is Open</h2>
+              <div className="flex flex-col md:flex-row gap-4 overflow-x-auto pb-2">
+                {[
+                  {
+                    date: "MAY 2026",
+                    title: "Investor Day",
+                    desc: "Citi's first major Investor Day since transformation launch. AI strategy, digital lending metrics, and ROI targets will be scrutinized by analysts.",
+                    highlight: true
+                  },
+                  {
+                    date: "FEB 2026",
+                    title: "Sakana AI Investment",
+                    desc: "Citi's first-ever strategic AI investment. David Griffiths: \"AI is infrastructure, not experiment.\"",
+                    highlight: false
+                  },
+                  {
+                    date: "DEC 2025",
+                    title: "OCC Consent Order Removed",
+                    desc: "Regulators validate Citi's transformation progress. Model governance infrastructure recognized.",
+                    highlight: false
+                  },
+                  {
+                    date: "SEP 2025",
+                    title: "Stylus Workspaces Launch",
+                    desc: "Agentic AI platform rolling out to thousands of Citi employees — needs credit signals to consume.",
+                    highlight: false
+                  }
+                ].map((item, index) => (
+                  <Card key={index} className={`flex-shrink-0 md:flex-1 min-w-[260px] ${item.highlight ? "border-2 border-primary shadow-md" : ""}`}>
+                    <CardContent className="p-5">
+                      <div className={`text-xs font-semibold mb-2 ${item.highlight ? "text-primary" : "text-primary"}`}>
+                        {item.highlight && <CalendarClock className="inline h-3.5 w-3.5 mr-1 -mt-0.5" />}
+                        {item.date}
+                      </div>
+                      <h3 className="font-semibold text-sm mb-1">{item.title}</h3>
+                      <p className="text-xs text-muted-foreground">{item.desc}</p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Citi Transformation Blueprint Timeline */}
+        {/* ================================================================
+            SECTION 3 — TRANSFORMATION BLUEPRINT (KEPT + 10-K data)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
@@ -184,7 +191,7 @@ export default function CaseStudy() {
                   The Citi Transformation Blueprint
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Three inflection points that created the opportunity for credit intelligence.
+                  Three inflection points that created the opportunity for credit intelligence. $3.3B in transformation expenses invested. 548 applications retired in 2025 alone.
                 </p>
                 <div className="h-px w-24 bg-primary mx-auto mt-6" />
               </div>
@@ -201,7 +208,7 @@ export default function CaseStudy() {
                         <CardContent className="p-6">
                           <div className="text-3xl font-bold text-primary mb-2">2023</div>
                           <h3 className="font-bold text-lg text-foreground mb-2">Citi Transformation Launches</h3>
-                          <p className="text-muted-foreground">Jane Fraser launches Citi Transformation — simplifying the organization, modernizing infrastructure, and setting the stage for AI-first operations.</p>
+                          <p className="text-muted-foreground">Jane Fraser launches Citi Transformation — simplifying the organization, modernizing infrastructure. $3.3B in transformation-related expenses through 2025.</p>
                         </CardContent>
                       </Card>
                     </div>
@@ -221,8 +228,8 @@ export default function CaseStudy() {
                       <Card className="border border-primary/30 shadow-sm">
                         <CardContent className="p-6">
                           <div className="text-3xl font-bold text-primary mb-2">2025</div>
-                          <h3 className="font-bold text-lg text-foreground mb-2">CCB Digital Credit Application</h3>
-                          <p className="text-muted-foreground">CCB launches Digital Credit Application on CitiDirect — revolving credit, term loans, commercial cards, LOC. Up to $10M per application with electronic signatures.</p>
+                          <h3 className="font-bold text-lg text-foreground mb-2">548 Apps Retired + CCB Digital Launch</h3>
+                          <p className="text-muted-foreground">CCB launches Digital Credit Application on CitiDirect. Meanwhile, 548 legacy applications retired as part of the simplification mandate — clearing the path for modern credit infrastructure.</p>
                         </CardContent>
                       </Card>
                     </div>
@@ -248,7 +255,7 @@ export default function CaseStudy() {
 
                 <motion.div {...fadeInUp} transition={{ delay: 0.4 }} className="mt-8 text-center">
                   <p className="text-sm text-muted-foreground italic">
-                    Sources: CCB Digitizes Lending (Jun 25, 2025), Jane Fraser Board Chair (Oct 22, 2025)
+                    Sources: Citi 2025 10-K, CCB Digitizes Lending (Jun 25, 2025), Jane Fraser Board Chair (Oct 22, 2025)
                   </p>
                 </motion.div>
               </div>
@@ -256,29 +263,9 @@ export default function CaseStudy() {
           </div>
         </section>
 
-        {/* SMB / Market Stats */}
-        <section className="py-12 px-4 sm:px-6 bg-primary/5 border-y border-primary/20">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="max-w-[1400px] mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
-                <div className="space-y-2">
-                  <div className="text-2xl md:text-3xl font-bold text-primary">Up to $10M</div>
-                  <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">CCB digital credit applications each</div>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-2xl md:text-3xl font-bold text-primary">$7.75T</div>
-                  <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">Global capex supercycle by 2030</div>
-                </div>
-                <div className="space-y-2">
-                  <div className="text-2xl md:text-3xl font-bold text-primary">$145.9B</div>
-                  <div className="text-sm text-muted-foreground font-medium uppercase tracking-wide">CRA-allocated activity</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 5-Thread Business Case */}
+        {/* ================================================================
+            SECTION 4 — 5-THREAD BUSINESS CASE (condensed to table)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
@@ -287,87 +274,55 @@ export default function CaseStudy() {
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
                   How LumiqAI Serves Each of Citi's 5 Strategic Priorities
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  Citi is executing a 5-front transformation. LumiqAI is the credit intelligence layer that connects all five.
-                </p>
                 <div className="h-px w-24 bg-primary mx-auto mt-6" />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-3">
-                {[
-                  {
-                    icon: Brain,
-                    thread: "AI-First",
-                    initiative: "Stylus Workspaces / Sakana",
-                    lumiqRole: "Credit signals for AI workflows",
-                    impact: "Structured JSON intelligence consumed natively by Stylus agentic AI",
-                    source: "Stylus Workspaces (Sep 2025), Sakana AI (Feb 2026)"
-                  },
-                  {
-                    icon: CreditCard,
-                    thread: "Digital Lending",
-                    initiative: "CCB / CitiDirect",
-                    lumiqRole: "Pre-qualify before apply",
-                    impact: "+15-25% application conversion lift across revolving credit, term loans, commercial cards, LOC",
-                    source: "CCB Digitizes Lending (Jun 2025)"
-                  },
-                  {
-                    icon: Globe,
-                    thread: "Cross-Border",
-                    initiative: "Token Services / Coinbase",
-                    lumiqRole: "Cross-border eligibility scoring",
-                    impact: "Credit assessment aligned with 24/7 multi-currency liquidity across 94 markets",
-                    source: "Token Services Euro (Nov 2025)"
-                  },
-                  {
-                    icon: BarChart3,
-                    thread: "Trade Finance",
-                    initiative: "$7.75T Supercycle",
-                    lumiqRole: "Supply chain credit scoring",
-                    impact: "Trade finance credit assessment at scale for the global capex supercycle",
-                    source: "Supply Chain Report (Feb 2026)"
-                  },
-                  {
-                    icon: Building2,
-                    thread: "Community Impact",
-                    initiative: "$60B Housing / CRA",
-                    lumiqRole: "SPCP zones + CRA analytics",
-                    impact: "CRA-compliant community lending analytics aligned with $145.9B allocated activity",
-                    source: "CRA Outstanding (2025)"
-                  }
-                ].map((item, index) => (
-                  <motion.div key={index} {...fadeInUp} transition={{ delay: index * 0.1 }}>
-                    <Card className="h-full border border-primary/20 shadow-sm hover:shadow-md transition-all hover:border-primary/40">
-                      <CardContent className="p-5 space-y-3">
-                        <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <item.icon className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <div className="text-xs font-bold text-primary uppercase tracking-wide">{item.thread}</div>
-                          <h3 className="font-bold text-sm text-foreground mt-1">{item.initiative}</h3>
-                        </div>
-                        <div className="h-px w-full bg-primary/10" />
-                        <div>
-                          <p className="text-xs font-semibold text-foreground mb-1">LumiqAI Role:</p>
-                          <p className="text-xs text-primary font-medium">{item.lumiqRole}</p>
-                        </div>
-                        <p className="text-xs text-muted-foreground leading-relaxed">{item.impact}</p>
-                        <p className="text-[10px] text-muted-foreground/60 italic">{item.source}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
+              <div className="max-w-5xl mx-auto">
+                <Card className="border border-primary/20 overflow-hidden shadow-sm">
+                  <CardContent className="p-0">
+                    <div className="w-full overflow-x-auto">
+                      <table className="w-full text-sm min-w-[640px]">
+                        <thead className="bg-primary">
+                          <tr>
+                            <th className="text-left p-3 sm:p-4 text-xs sm:text-sm text-primary-foreground font-semibold">Thread</th>
+                            <th className="text-left p-3 sm:p-4 text-xs sm:text-sm text-primary-foreground font-semibold">Citi Initiative</th>
+                            <th className="text-left p-3 sm:p-4 text-xs sm:text-sm text-primary-foreground font-semibold">LumiqAI Role</th>
+                            <th className="text-left p-3 sm:p-4 text-xs sm:text-sm text-primary-foreground font-semibold">Impact</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {[
+                            { thread: "AI-First", initiative: "Stylus Workspaces / Sakana", role: "Credit signals for AI workflows", impact: "Structured JSON consumed natively by Stylus agentic AI" },
+                            { thread: "Digital Lending", initiative: "CCB / CitiDirect", role: "Pre-qualify before apply", impact: "+15-25% application conversion lift" },
+                            { thread: "Cross-Border", initiative: "Token Services / Coinbase", role: "Cross-border eligibility scoring", impact: "Credit assessment across 94 markets" },
+                            { thread: "Trade Finance", initiative: "$7.75T Supercycle", role: "Supply chain credit scoring", impact: "Trade finance assessment at scale" },
+                            { thread: "Community Impact", initiative: "$60B Housing / CRA", role: "SPCP zones + CRA analytics", impact: "CRA-compliant community lending analytics" }
+                          ].map((row, index) => (
+                            <tr key={index} className={index % 2 === 0 ? "bg-background" : "bg-muted/30"}>
+                              <td className="p-3 sm:p-4 font-semibold text-primary text-xs sm:text-sm">{row.thread}</td>
+                              <td className="p-3 sm:p-4 text-foreground text-xs sm:text-sm">{row.initiative}</td>
+                              <td className="p-3 sm:p-4 text-foreground text-xs sm:text-sm">{row.role}</td>
+                              <td className="p-3 sm:p-4 text-muted-foreground text-xs sm:text-sm">{row.impact}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Section 1 - Executive Diagnosis */}
+        {/* ================================================================
+            SECTION 5 — EXECUTIVE DIAGNOSIS (KEPT — strongest section)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">01 — EXECUTIVE DIAGNOSIS</div>
+                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">05 — EXECUTIVE DIAGNOSIS</div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
                   Executive Diagnosis
                 </h2>
@@ -378,12 +333,17 @@ export default function CaseStudy() {
                 <p className="text-xl text-foreground leading-relaxed mb-6">
                   Citi is now the <span className="font-bold text-primary">only top-4 U.S. bank</span> with neither a consumer nor a business credit-intelligence layer inside its digital platforms. This absence blocks Citi from capturing early credit intent — the most valuable inflection point in the funnel.
                 </p>
-                <p className="text-xl font-semibold text-destructive">
+                <p className="text-xl font-semibold text-destructive mb-4">
                   Competitors convert before Citi even appears.
                 </p>
                 <p className="text-lg text-muted-foreground mt-4">
-                  This has become a structural vulnerability affecting consumer cards, commercial lending, digital engagement, and long-term retention — while CCB's new Digital Credit Application platform creates the perfect integration point.
+                  Confirmed by Citi's 2025 10-K: zero disclosed AI-driven credit underwriting. Meanwhile, card net credit losses are rising — Branded Cards 4.47% to 5.16%, Retail Services 6.79% to 7.84%.
                 </p>
+              </motion.div>
+
+              {/* 10-K Stats Component */}
+              <motion.div {...fadeInUp} className="mb-12">
+                <TenKStatsCaseStudy />
               </motion.div>
 
               <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -419,6 +379,7 @@ export default function CaseStudy() {
                 </motion.div>
               </div>
 
+              {/* Ecosystem Risk — Credit Karma / Nav intercept (KEPT) */}
               <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
                 <Card className="border border-destructive/30 shadow-sm hover:shadow-md transition-all">
                   <CardContent className="p-6 space-y-4">
@@ -459,12 +420,14 @@ export default function CaseStudy() {
           </div>
         </section>
 
-        {/* Section 2 - Competitive Consequence */}
+        {/* ================================================================
+            SECTION 6 — COMPETITIVE CONSEQUENCE (KEPT + delinquency data)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">02 — COMPETITIVE CONSEQUENCE</div>
+                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">06 — COMPETITIVE CONSEQUENCE</div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
                   How Citi Loses the Customer Before the Application Begins
                 </h2>
@@ -475,8 +438,11 @@ export default function CaseStudy() {
                 <p className="text-xl text-foreground leading-relaxed mb-4">
                   Citi's customers must leave Citi's ecosystem to check their credit score. The moment they do, Chase, AmEx, Capital One, Apple Card, and fintech lenders intercept them with prequalification offers.
                 </p>
-                <p className="text-xl font-bold text-foreground">
+                <p className="text-xl font-bold text-foreground mb-4">
                   This creates silent funnel amputation: Citi never sees the demand signal.
+                </p>
+                <p className="text-base text-muted-foreground">
+                  Meanwhile, delinquency deepens: 90+ day delinquencies at Branded Cards 1.50%, Retail Services 2.78%. These are customers who needed intelligence-driven intervention earlier in the journey.
                 </p>
               </motion.div>
 
@@ -495,7 +461,6 @@ export default function CaseStudy() {
                     transition={{ duration: 0.5 }}
                     className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
                   >
-                    {/* Timeline Dot */}
                     <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
                       <div className="w-16 h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center">
                         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
@@ -503,8 +468,6 @@ export default function CaseStudy() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Content */}
                     <div className="md:ml-24 flex-1">
                       <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
                         <CardContent className="p-6 md:p-8">
@@ -543,7 +506,6 @@ export default function CaseStudy() {
                     transition={{ duration: 0.5, delay: 0.1 }}
                     className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
                   >
-                    {/* Timeline Dot */}
                     <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
                       <div className="w-16 h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center">
                         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
@@ -551,8 +513,6 @@ export default function CaseStudy() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Content */}
                     <div className="md:ml-24 flex-1">
                       <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
                         <CardContent className="p-6 md:p-8">
@@ -592,7 +552,6 @@ export default function CaseStudy() {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
                   >
-                    {/* Timeline Dot */}
                     <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
                       <div className="w-16 h-16 rounded-full bg-background border-4 border-primary flex items-center justify-center">
                         <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
@@ -600,8 +559,6 @@ export default function CaseStudy() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Content */}
                     <div className="md:ml-24 flex-1">
                       <Card className="bg-card border border-border shadow-sm hover:shadow-md transition-all">
                         <CardContent className="p-6 md:p-8">
@@ -640,7 +597,6 @@ export default function CaseStudy() {
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="relative flex flex-col md:flex-row gap-6 md:gap-8 items-start"
                   >
-                    {/* Timeline Dot */}
                     <div className="hidden md:flex absolute left-0 w-16 h-16 items-center justify-center z-10">
                       <div className="w-16 h-16 rounded-full bg-background border-4 border-foreground flex items-center justify-center">
                         <div className="w-8 h-8 rounded-full bg-foreground flex items-center justify-center">
@@ -648,8 +604,6 @@ export default function CaseStudy() {
                         </div>
                       </div>
                     </div>
-
-                    {/* Content */}
                     <div className="md:ml-24 flex-1 w-full flex justify-center md:justify-start">
                       <Card className="bg-card border-2 border-foreground shadow-sm hover:shadow-md transition-all w-full max-w-md md:max-w-none">
                         <CardContent className="p-6 md:p-8 text-center">
@@ -668,12 +622,14 @@ export default function CaseStudy() {
           </div>
         </section>
 
-        {/* Section 3 - Revenue Leakage */}
+        {/* ================================================================
+            SECTION 7 — REVENUE LEAKAGE (+ 10-K anchors)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">03 — REVENUE LEAKAGE & ECONOMIC IMPACT</div>
+                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">07 — REVENUE LEAKAGE & ECONOMIC IMPACT</div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
                   $900M-$1.6B Lost Annually
                 </h2>
@@ -681,8 +637,11 @@ export default function CaseStudy() {
               </div>
 
               <motion.div {...fadeInUp} className="mb-8 text-center max-w-3xl mx-auto">
-                <p className="text-lg text-muted-foreground">
+                <p className="text-lg text-muted-foreground mb-4">
                   Based on benchmarking against Chase Credit Journey, Capital One CreditWise, and Wells Fargo Close-Up — and applying Citi's TAM:
+                </p>
+                <p className="text-base text-muted-foreground">
+                  USPB holds $164B in card loans. Corporate banking manages $923B in exposure. $15.4B in consumer credit reserves (ACLL) means a 1% improvement equals $154M recovered.
                 </p>
               </motion.div>
 
@@ -693,11 +652,11 @@ export default function CaseStudy() {
                       <div className="text-xs sm:text-sm font-bold text-foreground tracking-wider mb-3 sm:mb-4 uppercase text-center md:text-left">LEAKAGE TODAY</div>
                       <div className="space-y-3 sm:space-y-4">
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3 border-b border-border">
-                          <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">Consumer</span>
+                          <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">Consumer ($164B card loans)</span>
                           <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground text-center sm:text-right">$600M-$900M/year</span>
                         </div>
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3 border-b border-border">
-                          <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">Commercial / SMB</span>
+                          <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">Commercial ($923B exposure)</span>
                           <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground text-center sm:text-right">$300M-$700M/year</span>
                         </div>
                         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3">
@@ -722,9 +681,13 @@ export default function CaseStudy() {
                           <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">Commercial Recovery</span>
                           <span className="text-lg sm:text-xl md:text-2xl font-bold text-foreground text-center sm:text-right">$300M-$700M</span>
                         </div>
-                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3">
-                          <span className="text-xs sm:text-sm md:text-base font-semibold text-foreground text-center sm:text-left">Build Cost Avoided</span>
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3 border-b border-border">
+                          <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">Build Cost Avoided</span>
                           <span className="text-base sm:text-lg md:text-xl font-bold text-foreground text-center sm:text-right">$40M-$70M saved</span>
+                        </div>
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0 py-2 sm:py-3">
+                          <span className="text-xs sm:text-sm md:text-base text-foreground text-center sm:text-left">ACLL Improvement (1%)</span>
+                          <span className="text-base sm:text-lg md:text-xl font-bold text-primary text-center sm:text-right">$154M</span>
                         </div>
                       </div>
                     </CardContent>
@@ -734,19 +697,21 @@ export default function CaseStudy() {
 
               <motion.div {...fadeInUp} className="text-center">
                 <p className="text-sm text-muted-foreground italic">
-                  Sources: JPMC filings, Capital One annual reports, Experian 2024 Credit Trends, Wells Fargo digital engagement data, Citi 10-K TAM.
+                  Sources: Citi 2025 10-K (USPB, Corporate Banking segments), JPMC filings, Capital One annual reports, Experian 2024 Credit Trends.
                 </p>
               </motion.div>
             </motion.div>
           </div>
         </section>
 
-        {/* Section 4 - Root Cause Analysis */}
+        {/* ================================================================
+            SECTION 8 — ROOT CAUSE ANALYSIS (KEPT — 8 "No" items + 10-K quote)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">04 — ROOT CAUSE ANALYSIS</div>
+                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">08 — ROOT CAUSE ANALYSIS</div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
                   Citi Lacks the Credit Intelligence Infrastructure
                 </h2>
@@ -810,9 +775,12 @@ export default function CaseStudy() {
               <motion.div {...fadeInUp}>
                 <Card className="bg-primary border-0 shadow-lg">
                   <CardContent className="p-6 text-center">
-                    <p className="text-primary-foreground text-lg">
+                    <p className="text-primary-foreground text-lg mb-3">
                       <span className="font-bold">This is not a feature gap.</span>{" "}
                       <span className="text-primary-foreground/80">This is an infrastructure gap — and CCB's Digital Credit Application is the integration point.</span>
+                    </p>
+                    <p className="text-primary-foreground/70 text-sm italic">
+                      Citi's 2025 10-K describes loan underwriting as one of "50+ complex processes" being re-engineered — but the intelligence layer is absent.
                     </p>
                   </CardContent>
                 </Card>
@@ -821,12 +789,14 @@ export default function CaseStudy() {
           </div>
         </section>
 
-        {/* Section 5 - Solution Overview */}
+        {/* ================================================================
+            SECTION 9 — SOLUTION MODULES (KEPT + Module B 10-K data)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">05 — THE SOLUTION</div>
+                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">09 — THE SOLUTION</div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
                   LumiqAI's Consumer + Commercial Credit Intelligence Layer
                 </h2>
@@ -904,6 +874,11 @@ export default function CaseStudy() {
                         </li>
                       ))}
                     </ul>
+                    <div className="mt-6 p-4 rounded-lg bg-primary/5 border border-primary/20">
+                      <p className="text-sm text-muted-foreground">
+                        <span className="font-semibold text-foreground">10-K context:</span> $383B funded loans, $540B unfunded commitments, criticized credits up 14% — the commercial lending book needs intelligence-driven underwriting now.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -911,219 +886,72 @@ export default function CaseStudy() {
           </div>
         </section>
 
-        {/* Section 6 - Economic Impact Model */}
+        {/* ================================================================
+            SECTION 10 — PERFORMANCE RADAR (NEW)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">06 — ECONOMIC IMPACT MODEL</div>
+                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">10 — PERFORMANCE RADAR</div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
-                  What Citi Gains
+                  Legacy vs. LumiqAI Intelligence
                 </h2>
-                <div className="h-px w-24 bg-primary mx-auto" />
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  Five dimensions of credit infrastructure compared: Citi's current state versus LumiqAI-powered operations.
+                </p>
+                <div className="h-px w-24 bg-primary mx-auto mt-6" />
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {/* Consumer Impact */}
-                <motion.div {...fadeInUp} transition={{ delay: 0.1 }} className="flex justify-center md:justify-start">
-                  <Card className="h-full border-2 border-primary shadow-sm w-full max-w-md md:max-w-none">
-                    <CardContent className="p-6 sm:p-8">
-                      <h3 className="text-xl font-bold text-primary mb-6 text-center md:text-left">Consumer Impact</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                        <div className="text-center sm:text-left">
-                          <div className="text-2xl sm:text-3xl font-bold text-foreground">+12-24%</div>
-                          <div className="text-sm text-muted-foreground">Approval uplift</div>
-                        </div>
-                        <div className="text-center sm:text-left">
-                          <div className="text-2xl sm:text-3xl font-bold text-foreground">-25-40%</div>
-                          <div className="text-sm text-muted-foreground">Manual reviews</div>
-                        </div>
-                        <div className="text-center sm:text-left">
-                          <div className="text-2xl sm:text-3xl font-bold text-foreground">2x-3x</div>
-                          <div className="text-sm text-muted-foreground">Engagement</div>
-                        </div>
-                        <div className="text-center sm:text-left">
-                          <div className="text-2xl sm:text-3xl font-bold text-foreground">+5-10%</div>
-                          <div className="text-sm text-muted-foreground">CAC-free card conversions</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-
-                {/* Commercial Impact */}
-                <motion.div {...fadeInUp} transition={{ delay: 0.2 }} className="flex justify-center md:justify-start">
-                  <Card className="h-full border-2 border-primary shadow-sm w-full max-w-md md:max-w-none">
-                    <CardContent className="p-6 sm:p-8">
-                      <h3 className="text-xl font-bold text-primary mb-6 text-center md:text-left">Commercial Impact</h3>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                        <div className="text-center sm:text-left">
-                          <div className="text-2xl sm:text-3xl font-bold text-foreground">+15-25%</div>
-                          <div className="text-sm text-muted-foreground">Application conversion lift</div>
-                        </div>
-                        <div className="text-center sm:text-left">
-                          <div className="text-2xl sm:text-3xl font-bold text-foreground">83ms</div>
-                          <div className="text-sm text-muted-foreground">Pre-qualification on CitiDirect</div>
-                        </div>
-                        <div className="text-center sm:text-left">
-                          <div className="text-2xl sm:text-3xl font-bold text-foreground">$10M</div>
-                          <div className="text-sm text-muted-foreground">Per digital credit application</div>
-                        </div>
-                        <div className="text-center sm:text-left">
-                          <div className="text-2xl sm:text-3xl font-bold text-primary">+$300M-$700M</div>
-                          <div className="text-sm text-muted-foreground">Revenue recovery</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </div>
+              <PerformanceRadar />
             </motion.div>
           </div>
         </section>
 
-        {/* Section 7 - Why Now */}
+        {/* ================================================================
+            SECTION 11 — FINANCIAL MODEL (NEW)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">07 — WHY NOW</div>
+                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">11 — FINANCIAL MODEL</div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
-                  Why Citi Must Act Now — The 5-Front Convergence
+                  Year-1 Impact Projections
                 </h2>
-                <div className="h-px w-24 bg-primary mx-auto" />
+                <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                  Financial model anchored to Citi's 2025 10-K disclosures. Base and optimistic scenarios measured against $600K pilot investment.
+                </p>
+                <div className="h-px w-24 bg-primary mx-auto mt-6" />
               </div>
 
-              <div className="grid lg:grid-cols-2 gap-8 mb-12">
-                {/* Left Column - Urgency Factors */}
-                <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
-                  <Card className="h-full border border-border shadow-sm">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-                        <AlertTriangle className="h-5 w-5 text-primary" />
-                        The Urgency
-                      </h3>
-                      <ul className="space-y-4">
-                        <li className="flex items-start gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Brain className="h-4 w-4 text-primary" />
-                          </div>
-                          <div>
-                            <p className="text-foreground font-medium">Stylus Workspaces is rolling out to thousands — it needs credit signals to consume.</p>
-                          </div>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <CreditCard className="h-4 w-4 text-primary" />
-                          </div>
-                          <div>
-                            <p className="text-foreground font-medium">CCB's Digital Credit Application is live on CitiDirect — the integration point exists now.</p>
-                          </div>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <TrendingUp className="h-4 w-4 text-primary" />
-                          </div>
-                          <div>
-                            <p className="text-foreground font-medium">$7.75T capex supercycle creates unprecedented trade finance credit demand.</p>
-                          </div>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Clock className="h-4 w-4 text-primary" />
-                          </div>
-                          <div>
-                            <p className="text-foreground font-medium">Competitors deepen their funnels while Citi's transformation creates the window.</p>
-                          </div>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+              <div className="space-y-12">
+                <FinancialModelTable />
 
-                {/* Right Column - What This Means */}
-                <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
-                  <Card className="h-full border border-border shadow-sm">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-bold text-primary mb-6 flex items-center gap-2">
-                        <CheckCircle2 className="h-5 w-5" />
-                        What This Means for Citi in 2026
-                      </h3>
-                      <ul className="space-y-3">
-                        <li className="flex items-start gap-3">
-                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-foreground">Credit intelligence as a native Stylus Workspaces module</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-foreground">Pre-qualification on CitiDirect's Digital Credit Application</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-foreground">Cross-border eligibility scoring aligned with Token Services</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-foreground">CRA-compliant community lending with Outstanding rating maintained</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                          <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-foreground">The only dual consumer + commercial credit intelligence ecosystem in America</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <RevenueComposition />
+                  <RevenueAcceleration />
+                </div>
+
+                <InvestorDayCountdown />
               </div>
-
-              {/* Timeline - Full Width */}
-              <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
-                <Card className="bg-card border border-border shadow-lg overflow-hidden">
-                  <CardContent className="p-8">
-                    <div className="text-center mb-6">
-                      <h3 className="text-xl font-bold text-foreground mb-2">Window of Opportunity</h3>
-                      <p className="text-muted-foreground">Q1-Q2 2026 — While Transformation programs converge</p>
-                    </div>
-                    <div className="flex items-center justify-between mb-4 text-xs sm:text-sm">
-                      <span className="font-bold text-foreground">Q1 2026</span>
-                      <span className="font-bold text-foreground">Q2 2026</span>
-                      <span className="font-bold text-foreground">Q3 2026</span>
-                    </div>
-                    <div className="relative h-6 bg-muted rounded-full overflow-hidden">
-                      <div className="absolute left-0 right-0 h-full bg-gradient-to-r from-primary via-primary-light to-primary-dark rounded-full" />
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6 text-center">
-                      <div>
-                        <div className="text-xs sm:text-sm font-semibold text-foreground mb-1">Pilot Kickoff</div>
-                        <div className="text-xs text-muted-foreground">CitiDirect integration begins</div>
-                      </div>
-                      <div>
-                        <div className="text-xs sm:text-sm font-semibold text-foreground mb-1">Risk Review</div>
-                        <div className="text-xs text-muted-foreground">Compliance + Stylus alignment</div>
-                      </div>
-                      <div>
-                        <div className="text-xs sm:text-sm font-semibold text-foreground mb-1">Go Live</div>
-                        <div className="text-xs text-muted-foreground">Full CCB deployment decision</div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
             </motion.div>
           </div>
         </section>
 
-        {/* Section 8 - Pilot Framework */}
+        {/* ================================================================
+            SECTION 12 — PILOT FRAMEWORK ($600K + 7 KPIs)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background-secondary">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">08 — PILOT FRAMEWORK</div>
+                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">12 — PILOT FRAMEWORK</div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
                   90-Day Credit Intelligence Pilot
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                  $600K pilot investment. Measured against pre-agreed KPIs.
+                  $600K investment against Citi's $9.7B loss baseline and $3.3B transformation spend. Measured against 7 pre-agreed KPIs.
                 </p>
                 <div className="h-px w-24 bg-primary mx-auto mt-4" />
               </div>
@@ -1164,6 +992,36 @@ export default function CaseStudy() {
                 </motion.div>
               </div>
 
+              {/* 7 KPI Success Criteria */}
+              <motion.div {...fadeInUp} className="mb-12">
+                <Card className="border border-primary/30 shadow-sm">
+                  <CardContent className="p-6 sm:p-8">
+                    <h3 className="text-xl font-bold text-foreground mb-6 text-center">7 KPI Success Criteria</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                      {[
+                        { kpi: "Application Conversion Lift", target: "+15-25%", icon: TrendingUp },
+                        { kpi: "Pre-Qualification Response Time", target: "<100ms", icon: Zap },
+                        { kpi: "Manual Review Reduction", target: "-25-40%", icon: FileCheck },
+                        { kpi: "Cross-Sell Accuracy", target: ">80%", icon: Target },
+                        { kpi: "Decline-to-Recovery Rate", target: "+10-15%", icon: RefreshCw },
+                        { kpi: "Compliance Documentation", target: "SR 11-7 aligned", icon: Shield },
+                        { kpi: "Stylus Integration", target: "JSON-native", icon: Brain }
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-start gap-3 p-3 rounded-lg bg-background">
+                          <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                            <item.icon className="h-4 w-4 text-primary" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-foreground">{item.kpi}</p>
+                            <p className="text-sm text-primary font-medium">{item.target}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
               {/* Governance */}
               <motion.div {...fadeInUp}>
                 <Card className="bg-primary/10 border border-primary/30 shadow-sm">
@@ -1195,66 +1053,6 @@ export default function CaseStudy() {
                 </Card>
               </motion.div>
 
-              {/* Pilot Timeline */}
-              <motion.div {...fadeInUp} className="mt-8">
-                <Card className="bg-card border border-border shadow-sm">
-                  <CardContent className="p-4 sm:p-6 md:p-8">
-                    <h4 className="text-base sm:text-lg font-bold text-foreground mb-4 sm:mb-6 text-center">Pilot Timeline</h4>
-
-                    {/* Mobile: Vertical Timeline */}
-                    <div className="sm:hidden space-y-6">
-                      {[
-                        { weeks: "0-2", label: "Weeks", desc: "Connect credit signals (FICO, Intelliscore, FSR). Validate against CCB underwriting. Configure CitiDirect integration." },
-                        { weeks: "3-8", label: "Weeks", desc: "Deploy across CCB digital lending. Track conversion, cross-sell accuracy, portfolio health. A/B test pre-qualification vs. manual." },
-                        { weeks: "9-12", label: "Weeks", desc: "Executive review with KPI results. Scale decision. Full CCB integration roadmap including Stylus and cross-border." }
-                      ].map((item, index) => (
-                        <div key={index} className="relative">
-                          {index < 2 && (
-                            <div className="absolute left-5 top-12 bottom-0 w-0.5 bg-primary/20" />
-                          )}
-                          <div className="flex items-start gap-4">
-                            <div className="h-10 w-10 rounded-full bg-primary/10 border-2 border-primary/30 flex items-center justify-center flex-shrink-0 relative z-10">
-                              <span className="text-xs text-primary font-bold">{item.weeks}</span>
-                            </div>
-                            <div className="flex-1 pt-1">
-                              <p className="text-xs font-semibold text-foreground mb-1">{item.label}</p>
-                              <p className="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Desktop: Horizontal Timeline */}
-                    <div className="hidden sm:flex flex-row justify-between items-start md:items-center gap-4">
-                      <div className="text-center flex-1">
-                        <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                          <span className="text-xs sm:text-sm text-primary font-bold">0-2</span>
-                        </div>
-                        <p className="text-xs sm:text-sm text-muted-foreground">Weeks</p>
-                        <p className="text-xs text-muted-foreground/80">Connect signals, validate against CCB underwriting</p>
-                      </div>
-                      <div className="hidden sm:block h-px w-8 sm:w-16 bg-primary/30" />
-                      <div className="text-center flex-1">
-                        <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                          <span className="text-xs sm:text-sm text-primary font-bold">3-8</span>
-                        </div>
-                        <p className="text-xs sm:text-sm text-muted-foreground">Weeks</p>
-                        <p className="text-xs text-muted-foreground/80">Deploy on CitiDirect, A/B test pre-qualification</p>
-                      </div>
-                      <div className="hidden sm:block h-px w-8 sm:w-16 bg-primary/30" />
-                      <div className="text-center flex-1">
-                        <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                          <span className="text-xs sm:text-sm text-primary font-bold">9-12</span>
-                        </div>
-                        <p className="text-xs sm:text-sm text-muted-foreground">Weeks</p>
-                        <p className="text-xs text-muted-foreground/80">Executive review, scale decision, Stylus roadmap</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-
               {/* Pilot Price */}
               <motion.div {...fadeInUp} className="mt-8">
                 <Card className="bg-primary border-0 shadow-lg">
@@ -1262,7 +1060,7 @@ export default function CaseStudy() {
                     <div className="text-4xl font-bold text-primary-foreground mb-3">$600,000</div>
                     <p className="text-primary-foreground/90 text-lg mb-2">90-Day Credit Intelligence Pilot</p>
                     <p className="text-primary-foreground/70 text-sm max-w-2xl mx-auto">
-                      Measured against pre-agreed baselines. 90 days of validated results.
+                      Measured against 7 pre-agreed KPIs. 90 days of validated results against Citi's $9.7B loss baseline.
                     </p>
                   </CardContent>
                 </Card>
@@ -1271,129 +1069,33 @@ export default function CaseStudy() {
           </div>
         </section>
 
-        {/* Section 9 - Strategic Positioning */}
+        {/* ================================================================
+            SECTION 13 — COMPETITIVE MATRIX (KEPT)
+            ================================================================ */}
         <section className="py-20 md:py-24 lg:py-32 bg-background">
           <div className="container mx-auto px-4 sm:px-6">
             <motion.div {...fadeInUp} className="max-w-[1400px] mx-auto">
               <div className="text-center mb-12 lg:mb-16">
-                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">09 — STRATEGIC POSITIONING</div>
+                <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-4">13 — COMPETITIVE POSITIONING</div>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 text-foreground">
-                  Why Citi Wins: The First Dual-Layer Credit Intelligence Bank
+                  The First Top-4 Bank With Dual Credit Intelligence
                 </h2>
                 <div className="h-px w-24 bg-primary mx-auto" />
               </div>
 
               <motion.div {...fadeInUp} className="mb-12 text-center max-w-3xl mx-auto">
-                <p className="text-lg text-foreground mb-6">
+                <p className="text-lg text-foreground mb-4">
                   Chase built consumer. Capital One built consumer. Wells Fargo built consumer. AmEx built consumer. Apple built consumer.
                 </p>
                 <p className="text-xl font-bold text-destructive mb-4">
                   No one has built commercial.
                 </p>
                 <p className="text-xl font-bold text-primary">
-                  Citi has first-mover advantage to own the only dual consumer + commercial credit intelligence ecosystem in America — powered by CitiDirect, aligned with Stylus Workspaces, and ready for the $7.75T supercycle.
+                  The first top-4 bank to deploy dual consumer + commercial credit intelligence wins the structural advantage.
                 </p>
               </motion.div>
 
-              {/* Competitor Logos */}
-              <motion.div {...fadeInUp} className="mb-12">
-                <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
-                  {[
-                    { name: "Chase", logo: "/Case Study/WHy citi wins/chase.svg" },
-                    { name: "Capital One", logo: "/Case Study/WHy citi wins/Capital_One_logo.svg" },
-                    { name: "Wells Fargo", logo: "/Case Study/WHy citi wins/wells-fargo-1.svg" },
-                    { name: "AmEx", logo: "/Case Study/WHy citi wins/amex-3.svg" },
-                    { name: "Apple", logo: "/Case Study/WHy citi wins/Apple_Card.svg" },
-                  ].map((item, index) => (
-                    <div key={index} className="flex flex-col items-center">
-                      <div className="w-20 h-12 rounded-xl bg-card border border-border flex items-center justify-center p-2 mb-2">
-                        <img src={item.logo} alt={item.name} className="w-full h-full object-contain" />
-                      </div>
-                      <span className="text-xs text-muted-foreground">{item.name}</span>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Competitor Comparison */}
-              <motion.div {...fadeInUp}>
-                <Card className="border-2 border-primary overflow-hidden shadow-sm">
-                  <CardContent className="p-0">
-                    <div className="w-full overflow-x-auto">
-                      <table className="w-full min-w-[320px]">
-                      <thead className="bg-primary">
-                        <tr>
-                          <th className="text-left p-2 sm:p-4 text-xs sm:text-sm text-primary-foreground font-semibold">Bank</th>
-                          <th className="text-center p-2 sm:p-4 text-xs sm:text-sm text-primary-foreground font-semibold">Consumer</th>
-                          <th className="text-center p-2 sm:p-4 text-xs sm:text-sm text-primary-foreground font-semibold">Commercial</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {[
-                          { bank: "Chase", product: "Credit Journey", logo: "/Case Study/WHy citi wins/chase.svg", consumer: true, commercial: false },
-                          { bank: "Capital One", product: "CreditWise", logo: "/Case Study/WHy citi wins/Capital_One_logo.svg", consumer: true, commercial: false },
-                          { bank: "Wells Fargo", product: "Close-Up", logo: "/Case Study/WHy citi wins/wells-fargo-1.svg", consumer: true, commercial: false },
-                          { bank: "AmEx", product: "MyCredit Guide", logo: "/Case Study/WHy citi wins/amex-3.svg", consumer: true, commercial: false },
-                          { bank: "Apple", product: "Apple Card", logo: "/Case Study/WHy citi wins/Apple_Card.svg", consumer: true, commercial: false },
-                        ].map((row, index) => (
-                          <tr key={index} className={index % 2 === 0 ? "bg-background-secondary" : "bg-background"}>
-                            <td className="p-2 sm:p-4">
-                              <div className="flex items-center gap-2 sm:gap-3">
-                                <div className="w-8 h-6 sm:w-12 sm:h-8 flex items-center justify-center flex-shrink-0">
-                                  <img
-                                    src={row.logo}
-                                    alt={row.bank}
-                                    className="h-4 sm:h-6 w-auto object-contain"
-                                  />
-                                </div>
-                                <div>
-                                  <span className="text-xs sm:text-sm font-medium text-foreground">{row.bank}</span>
-                                  <span className="text-[10px] sm:text-xs text-muted-foreground block">{row.product}</span>
-                                </div>
-                              </div>
-                            </td>
-                            <td className="p-2 sm:p-4 text-center">
-                              {row.consumer ? (
-                                <CheckCircle2 className="h-4 w-4 sm:h-6 sm:w-6 text-success mx-auto" />
-                              ) : (
-                                <XCircle className="h-4 w-4 sm:h-6 sm:w-6 text-muted-foreground mx-auto" />
-                              )}
-                            </td>
-                            <td className="p-2 sm:p-4 text-center">
-                              {row.commercial ? (
-                                <CheckCircle2 className="h-4 w-4 sm:h-6 sm:w-6 text-success mx-auto" />
-                              ) : (
-                                <XCircle className="h-4 w-4 sm:h-6 sm:w-6 text-muted-foreground mx-auto" />
-                              )}
-                            </td>
-                          </tr>
-                        ))}
-                        {/* Citi row - showing the gap */}
-                        <tr className="bg-destructive/5 border-t border-destructive/20">
-                          <td className="p-2 sm:p-4 text-xs sm:text-sm font-medium text-destructive">Citi (Today)</td>
-                          <td className="p-2 sm:p-4 text-center">
-                            <XCircle className="h-4 w-4 sm:h-6 sm:w-6 text-destructive mx-auto" />
-                          </td>
-                          <td className="p-2 sm:p-4 text-center">
-                            <XCircle className="h-4 w-4 sm:h-6 sm:w-6 text-destructive mx-auto" />
-                          </td>
-                        </tr>
-                        {/* Citi + LumiqAI row */}
-                        <tr className="bg-primary/10 border-t-2 border-primary">
-                          <td className="p-2 sm:p-4 text-xs sm:text-sm font-bold text-primary">Citi + LumiqAI</td>
-                          <td className="p-2 sm:p-4 text-center">
-                            <CheckCircle2 className="h-4 w-4 sm:h-6 sm:w-6 text-primary mx-auto" />
-                          </td>
-                          <td className="p-2 sm:p-4 text-center">
-                            <CheckCircle2 className="h-4 w-4 sm:h-6 sm:w-6 text-primary mx-auto" />
-                          </td>
-                        </tr>
-                      </tbody>
-                      </table>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+              <CompetitiveMatrix />
             </motion.div>
           </div>
         </section>
@@ -1409,36 +1111,36 @@ export default function CaseStudy() {
 
               <motion.div {...fadeInUp}>
                 <ol className="text-sm text-muted-foreground space-y-2 list-decimal list-inside">
+                  <li>Citi 2025 10-K — Card credit losses $9.7B, ACLL $15.4B, USPB $164B card loans, $923B corporate exposure</li>
+                  <li>Citi 2025 10-K — Transformation expenses $3.3B, 548 applications retired, 50+ complex processes</li>
+                  <li>Citi 2025 10-K — Branded Cards NCL 5.16%, Retail Services NCL 7.84%, criticized loans +14%</li>
                   <li>CCB Digitizes Lending on CitiDirect (Jun 25, 2025)</li>
-                  <li>Jane Fraser Elected Board Chair (Oct 22, 2025)</li>
                   <li>Stylus Workspaces — Agentic AI Platform (Sep 22, 2025)</li>
                   <li>Sakana AI Investment (Feb 24, 2026)</li>
-                  <li>Citi Token Services Euro Expansion (Nov 2025)</li>
-                  <li>Supply Chain Finance Report — $7.75T Supercycle (Feb 20, 2026)</li>
-                  <li>CRA Outstanding Rating — $145.9B Allocated Activity (2025)</li>
                   <li>OCC Consent Order Removal (Dec 2025)</li>
+                  <li>Citi Investor Day scheduled May 7, 2026</li>
                   <li>Chase Credit Journey filings (2017-2023)</li>
                   <li>Capital One CreditWise adoption reports</li>
                   <li>Wells Fargo Business Credit Close-Up engagement metrics</li>
-                  <li>Citi 10-K (consumer and commercial TAM)</li>
                   <li>Experian State of Credit 2023-2024</li>
-                  <li>CFPB Open Banking analysis 2023-2024</li>
                 </ol>
               </motion.div>
             </motion.div>
           </div>
         </section>
 
-        {/* Final CTA */}
+        {/* ================================================================
+            BOTTOM CTA
+            ================================================================ */}
         <section className="py-24 md:py-32 px-4 sm:px-6 bg-gradient-to-br from-primary via-primary to-secondary">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-4xl mx-auto text-center">
               <motion.div {...fadeInUp}>
                 <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-                  Ready to Close Citi's Credit Intelligence Gap?
+                  $600K. 90 Days. Measured Against Your KPIs.
                 </h2>
                 <p className="text-xl text-primary-foreground/90 mb-8">
-                  Schedule a pilot review to see how LumiqAI deploys consumer + commercial credit intelligence across CitiDirect in 90 days.
+                  Book a 15-minute technical review to see how LumiqAI deploys dual credit intelligence across Citi's digital platforms.
                 </p>
                 <Button
                   size="lg"
@@ -1446,7 +1148,7 @@ export default function CaseStudy() {
                   asChild
                 >
                   <Link to="/pilot#pilot-form">
-                    Book Pilot Review
+                    Book 15-Minute Technical Review
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
