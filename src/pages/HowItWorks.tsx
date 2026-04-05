@@ -143,10 +143,13 @@ export default function HowItWorks() {
 
               {/* SECTION 2 — ARCHITECTURE */}
               <div className="mt-16">
-                <h3 className="text-xl font-heading font-bold text-center mb-2">Integration Architecture</h3>
-                <p className="text-sm text-muted-foreground text-center max-w-2xl mx-auto mb-6">
-                  One API call. Four bureau sources orchestrated in parallel. Seven structured outputs in 83 milliseconds.
-                </p>
+                <div className="text-center mb-8">
+                  <span className="inline-block px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-600 text-xs font-semibold uppercase tracking-wider mb-4">Integration Architecture</span>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">How Data Flows Through LumiqAI</h2>
+                  <p className="text-base text-muted-foreground text-center max-w-2xl mx-auto">
+                    One API call. Four bureau sources orchestrated in parallel. Seven structured outputs in 83 milliseconds.
+                  </p>
+                </div>
 
                 {/* Animated Architecture Flow Diagram */}
                 <ArchitectureFlow />
