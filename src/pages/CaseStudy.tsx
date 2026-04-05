@@ -355,7 +355,7 @@ export default function CaseStudy() {
                         <p className="text-muted-foreground text-sm">No score visibility, no prequalification, no credit alerts inside Citi App</p>
                       </div>
                       <div className="relative mx-auto max-w-[280px]">
-                        <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                           <img
                             src="/Case Study/Exec Diagnosis/Consumer.png"
                             alt="Consumer Credit Intelligence Gap"
@@ -374,7 +374,7 @@ export default function CaseStudy() {
                         <p className="text-muted-foreground text-sm">No business score, no unified Business+PG model, no lending eligibility logic on CitiDirect</p>
                       </div>
                       <div className="relative mx-auto max-w-[280px]">
-                        <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                           <img
                             src="/Case Study/Exec Diagnosis/SMB.png"
                             alt="Commercial Credit Intelligence Gap"
@@ -407,7 +407,7 @@ export default function CaseStudy() {
                       <div className="text-center">
                         <p className="text-xs font-semibold text-foreground mb-2">Credit Karma (Consumer)</p>
                         <div className="relative mx-auto max-w-[280px]">
-                          <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                          <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                             <img
                               src="/Case Study/Exec Diagnosis/Eco System Risk /Consumer.PNG"
                               alt="Ecosystem Risk Consumer - Credit Karma"
@@ -419,7 +419,7 @@ export default function CaseStudy() {
                       <div className="text-center">
                         <p className="text-xs font-semibold text-foreground mb-2">Nav / D&B (Business)</p>
                         <div className="relative mx-auto max-w-[280px]">
-                          <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                          <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                             <img
                               src="/Case Study/Exec Diagnosis/Eco System Risk /Business.PNG"
                               alt="Ecosystem Risk Business - Nav"
@@ -495,7 +495,7 @@ export default function CaseStudy() {
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Consumer</p>
                               <div className="relative mx-auto max-w-[240px]">
-                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                                   <img
                                     src="/Case Study/How Citi Loses the Customer Before the Application Begins/Checks Score Elsewhere/COnsumer/Consumer.PNG"
                                     alt="Consumer Checks Score Elsewhere"
@@ -507,7 +507,7 @@ export default function CaseStudy() {
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Business</p>
                               <div className="relative mx-auto max-w-[240px]">
-                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                                   <img
                                     src="/Case Study/How Citi Loses the Customer Before the Application Begins/Checks Score Elsewhere/Business/IMG_0202.PNG"
                                     alt="Business Checks Score Elsewhere"
@@ -548,7 +548,7 @@ export default function CaseStudy() {
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Consumer</p>
                               <div className="relative mx-auto max-w-[240px]">
-                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                                   <img
                                     src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Consumer.PNG"
                                     alt="Competitor Prequal Consumer"
@@ -561,7 +561,7 @@ export default function CaseStudy() {
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Business</p>
                               <div className="relative mx-auto max-w-[240px]">
-                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                                   <img
                                     src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Business.PNG"
                                     alt="Competitor Prequal Business"
@@ -602,7 +602,7 @@ export default function CaseStudy() {
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Consumer</p>
                               <div className="relative mx-auto max-w-[240px]">
-                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                                   <img
                                     src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Approval/Consumer.PNG"
                                     alt="Competitor Approval Consumer"
@@ -614,7 +614,7 @@ export default function CaseStudy() {
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Business</p>
                               <div className="relative mx-auto max-w-[240px]">
-                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                                   <img
                                     src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Approval/Business.PNG"
                                     alt="Competitor Approval Business"
@@ -792,7 +792,7 @@ export default function CaseStudy() {
                   <Card className="border border-border shadow-sm">
                     <CardContent className="p-4 flex justify-center">
                       <div className="relative mx-auto max-w-[280px]">
-                        <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                           <img
                             src="/Summary_.png"
                             alt="Citi Lacks Consumer Credit Intelligence"
@@ -807,7 +807,7 @@ export default function CaseStudy() {
                   <Card className="border border-border shadow-sm">
                     <CardContent className="p-4 flex justify-center">
                       <div className="relative mx-auto max-w-[280px]">
-                        <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                           <img
                             src="/summary 2.png"
                             alt="Citi Lacks Business Credit Intelligence"
@@ -881,7 +881,7 @@ export default function CaseStudy() {
                   </div>
                   <div className="bg-card rounded-2xl border border-border p-8 text-center shadow-sm">
                     <div className="relative mx-auto max-w-[500px]">
-                      <div className="rounded-3xl overflow-hidden border-[6px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                      <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                         <img
                           src="/images/3-phone-consumer.png"
                           alt="Citi Consumer LUMIQ"
@@ -899,7 +899,7 @@ export default function CaseStudy() {
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="order-2 lg:order-1 bg-card rounded-2xl border border-border p-8 text-center shadow-sm">
                     <div className="relative mx-auto max-w-[500px]">
-                      <div className="rounded-3xl overflow-hidden border-[6px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                      <div className="overflow-hidden rounded-2xl shadow-lg transition-transform duration-300 hover:scale-[1.02]">
                         <img
                           src="/images/3-phones-business.png"
                           alt="Citi Commercial LUMIQ"

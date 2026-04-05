@@ -1,0 +1,168 @@
+{
+  "title": "Login – Vercel",
+  "url": "https://vercel.com/login?next=%2Fsso-api%3Furl%3Dhttps%253A%252F%252Fcitibank-website-git-staging-ci-33bbc9-futeur-products-projects.vercel.app%252Fimpact%26nonce%3D6a4b4e0760909f9c3a73e5a1afc02a6e4d67270c7a48a1cb7661a514e7eb04e0",
+  "totalHeight": 900,
+  "sectionCount": 16,
+  "sections": [
+    {
+      "index": 0,
+      "tag": "STYLE",
+      "id": "react-aria-pressable-style",
+      "className": null,
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": "@layer {\n  [data-react-aria-pressable] {\n    touch-action: pan-x pan-y pinch-zoom;\n  }\n}"
+    },
+    {
+      "index": 1,
+      "tag": "SCRIPT",
+      "id": "theme-script",
+      "className": null,
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": "((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f?.[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)"
+    },
+    {
+      "index": 2,
+      "tag": "STYLE",
+      "id": "googleidentityservice_button_styles",
+      "className": null,
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": ".qJTHM{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;color:#202124;direction:ltr;-webkit-touch-callout:none;font-family:\"Roboto-Regular\",arial,sans-serif;-webkit-font-smoothing:antialiased;font-weight:400;margin:0;overflow:hidden;-webkit-text-size-adjust:100%}.ynRLnc{left:-9999"
+    },
+    {
+      "index": 3,
+      "tag": "LINK",
+      "id": "googleidentityservice",
+      "className": null,
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": null
+    },
+    {
+      "index": 4,
+      "tag": "SCRIPT",
+      "id": "_R_",
+      "className": null,
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": null
+    },
+    {
+      "index": 5,
+      "tag": "SCRIPT",
+      "id": "css-layers",
+      "className": null,
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": "(function() {\n              var style = document.createElement('style');\n              style.textContent = \"@layer preflight, theme, base, components, geist, utilities;\";\n              document.head.prepend(style);\n            })();"
+    },
+    {
+      "index": 6,
+      "tag": "SCRIPT",
+      "id": "browser-check",
+      "className": null,
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": "var w=window;var good=w.CSS&&CSS.supports('color', 'var(--v)'); try{const i=1} catch(e){good=0}; if(!good && (!w.localStorage || !localStorage.getItem('ignore-browser'))) w.location='/old-browser.html'"
+    },
+    {
+      "index": 7,
+      "tag": "SCRIPT",
+      "id": "script-sift",
+      "className": null,
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": "\nif (window.location.hostname === 'vercel.com' || window.location.search.includes('test-sift')) {\n  (function() {\n    var d = document;\n    var w = window;\n    var find = (s) => d.cookie.split('; ').find(r => r.startsWith(s));\n    var sid;\n    var row = find('vercel_session_id');\n    if (row) {\n    "
+    },
+    {
+      "index": 8,
+      "tag": "A",
+      "id": null,
+      "className": "link-module__Q1NRQq__link no-underline pointer-events-none cursor-default",
+      "top": 32,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": null
+    },
+    {
+      "index": 9,
+      "tag": "SPAN",
+      "id": null,
+      "className": "vercel-logo left-6 top-[23px] z-[var(--header-zindex)] inline-flex size-5 rounded-sm no-underline outline-offset-2 fixed",
+      "top": 23,
+      "height": 20,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": null
+    },
+    {
+      "index": 10,
+      "tag": "A",
+      "id": "header-sign-up-btn",
+      "className": "button-module__QyrFCa__base reset-module__ylizOa__reset button-module__QyrFCa__button reset-module__ylizOa__reset button-module__QyrFCa__secondary button-module__QyrFCa__small button-module__QyrFCa__i",
+      "top": 16,
+      "height": 32,
+      "backgroundColor": "rgb(255, 255, 255)",
+      "textContent": "Sign Up"
+    },
+    {
+      "index": 11,
+      "tag": "DIV",
+      "id": null,
+      "className": "flex flex-1 flex-col items-center justify-center gap-6 pb-8 data-[otp-screen]:pt-4",
+      "top": 64,
+      "height": 772,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": "Log in to VercelContinue with Email\n  \n  \n  Continue with Google\n  \n  \n  \n  \n  \n  \n  Continue with GitHubContinue with AppleContinue with SAML SSOContinue with PasskeyShow other optionsDon't have an account? Sign Up"
+    },
+    {
+      "index": 12,
+      "tag": "INPUT",
+      "id": "input-_r_7_",
+      "className": "input-module__q7zwrG__input",
+      "top": 180,
+      "height": 48,
+      "backgroundColor": "rgb(255, 255, 255)",
+      "textContent": null
+    },
+    {
+      "index": 13,
+      "tag": "clipPath",
+      "id": "clip0_872_3147",
+      "className": "[object SVGAnimatedString]",
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": "\n  \n  "
+    },
+    {
+      "index": 14,
+      "tag": "clipPath",
+      "id": "clip0_11069_2571",
+      "className": "[object SVGAnimatedString]",
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": null
+    },
+    {
+      "index": 15,
+      "tag": "SCRIPT",
+      "id": "prefetch-zones-links",
+      "className": null,
+      "top": 0,
+      "height": 0,
+      "backgroundColor": "rgba(0, 0, 0, 0)",
+      "textContent": "{\"prefetch\":[{\"eagerness\":\"moderate\",\"where\":{\"and\":[{\"href_matches\":\"/*\"},{\"selector_matches\":\"[data-zone]\"},{\"not\":{\"selector_matches\":\"[data-zone=\\\"same\\\"]\"}},{\"not\":{\"selector_matches\":\"[data-zone=\\\"null\\\"]\"}}]}},{\"eagerness\":\"immediate\",\"where\":{\"and\":[{\"href_matches\":\"/*\"},{\"selector_matches\":"
+    }
+  ]
+}
