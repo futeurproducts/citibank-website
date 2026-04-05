@@ -1,696 +1,444 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion, useInView } from "framer-motion";
-import { CheckCircle2, Shield, Zap, TrendingUp, Database, Lock, GitBranch, CloudCog, FileCheck, Users, ArrowRight, BarChart3, Info, Download, Briefcase, UserCheck, Target, LineChart as LineChartIcon, AlertTriangle, Upload, ImageIcon, DollarSign, Clock } from "lucide-react";
+import { motion } from "framer-motion";
+import { TheGap } from "@/components/TheGap";
+import {
+  ArrowRight,
+  Zap,
+  Building2,
+  Globe,
+  TrendingUp,
+  Heart,
+  Clock,
+  Layers,
+  DollarSign,
+  CalendarCheck,
+  Plug,
+  BarChart3,
+  CheckCircle2,
+} from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
-import { Footer } from "@/components/Footer";
-import { Hero, BankComparison, StrategicBridge } from "@/components/sections/home";
+import { Hero } from "@/components/sections/home";
 import { ImpactChatWidget } from "@/components/ImpactChatWidget";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { InvestorDayCountdown } from "@/components/InvestorDayCountdown";
+import { ApiResponsePreview } from "@/components/ApiResponsePreview";
+import { TenKStatsHomepage } from "@/components/TenKStatCards";
+import { CompetitiveMatrix } from "@/components/CompetitiveMatrix";
+import { ComplianceTrust } from "@/components/ComplianceTrust";
+import { PilotInvestment } from "@/components/PilotInvestment";
 
-// Animated counter hook
-function useCountUp(target: number, isInView: boolean, suffix = "") {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    if (!isInView) return;
-    let start = 0;
-    const duration = 2000;
-    const increment = target / (duration / 16);
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
-    return () => clearInterval(timer);
-  }, [target, isInView]);
-  return count + suffix;
-}
+/* ------------------------------------------------------------------ */
+/*  Fade-in wrapper — opacity:1 fallback if JS disabled               */
+/* ------------------------------------------------------------------ */
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true } as const,
+  transition: { duration: 0.5 },
+};
 
-function MetricCard({ value, label, suffix = "", delay = 0 }: { value: number; label: string; suffix?: string; delay?: number }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-  const animatedValue = useCountUp(value, isInView, suffix);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay }}
-      className="flex flex-col items-center p-6 rounded-xl bg-card border border-border shadow-sm hover:border-primary/50 transition-all duration-300"
-    >
-      <div className="text-4xl font-bold text-primary mb-2">{animatedValue}</div>
-      <div className="text-sm text-muted-foreground text-center">{label}</div>
-    </motion.div>
-  );
-}
-
+/* ================================================================== */
+/*  INDEX PAGE                                                         */
+/* ================================================================== */
 function Index() {
+  useEffect(() => {
+    document.title =
+      "LUMIQ AI \u2014 Same-Day Credit Decisions for Commercial Lending";
+  }, []);
+
   return (
     <PageLayout>
+      {/* ── S1: HERO ──────────────────────────────────────────────── */}
       <Hero />
-      <BankComparison />
-      <StrategicBridge />
 
-      {/* Citi Dual-Engine Hero Section */}
-      <section className="py-24 relative bg-background">
-        
-        <div className="container mx-auto px-6 relative z-10">
-          {/* Section Title */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16 max-w-[1600px] mx-auto"
-          >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-tight mb-4">
-              Chase, Capital One, and Wells Fargo each built only one side of this stack.
-            </h2>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold text-foreground leading-tight mb-4">
-              Citi has neither side — which is why intent escapes.
-            </h2>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary">
-                LUMIQ AI built both sides, fully functional today — ready for Citi.
-              </span>
-            </h2>
-          </motion.div>
-
-          {/* Two Cards Side by Side */}
-          <div className="grid lg:grid-cols-2 gap-8 max-w-[1600px] mx-auto">
-            
-            {/* Left Card - Consumer */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="relative"
-            >
-              <div className="h-full bg-card border border-border rounded-2xl overflow-hidden shadow-lg">
-                {/* Card Header */}
-                <div className="bg-secondary/10 px-6 py-5 border-b border-secondary/20">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-full bg-secondary/20 flex items-center justify-center">
-                      <Users className="w-5 h-5 text-secondary" />
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-secondary">Powered by LumiqAI</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground">Citi Consumer Credit Journey</h3>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Real-time visibility + instant prequal + 1-tap apply for Citi's entire consumer card portfolio.
-                  </p>
-                </div>
-
-                {/* Mockup Images - 3 Phones */}
-                <div className="mx-6 mt-6 flex items-center justify-center">
-                  <img
-                    src="/images/3-phone-consumer.png"
-                    alt="Citi Consumer Credit Journey - 3 Phone Mockups"
-                    className="w-full max-w-full h-auto object-contain rounded-xl"
-                  />
-                </div>
-
-                {/* Features */}
-                <div className="p-6 space-y-3">
-                  <ul className="space-y-2.5 text-sm">
-                    <li className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
-                      <span>Display daily VantageScore 3.0</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
-                      <span>AI-driven prequalification for Citi consumer cards</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
-                      <span>1-tap Apply for eligible users</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
-                      <span>Decline recovery flow</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-secondary mt-0.5 flex-shrink-0" />
-                      <span>Predictive pathways & credit simulations</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Impact Footer */}
-                <div className="bg-secondary/5 px-6 py-4 border-t border-secondary/20">
-                  <p className="text-xs font-bold uppercase tracking-wider text-secondary mb-3">Impact for Citi</p>
-                  <div className="grid grid-cols-2 gap-3 text-xs">
-                    <div className="text-muted-foreground"><span className="text-secondary font-semibold">+18–25%</span> consumer approvals</div>
-                    <div className="text-muted-foreground"><span className="text-secondary font-semibold">30–50%</span> more organic apps</div>
-                    <div className="text-muted-foreground"><span className="text-secondary font-semibold">$300M–$500M</span> recovered revenue</div>
-                    <div className="text-muted-foreground"><span className="text-secondary font-semibold">Zero CAC</span> in-app activation</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right Card - Business */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.15 }}
-              className="relative"
-            >
-              <div className="h-full bg-card border border-primary/30 rounded-2xl overflow-hidden shadow-lg">
-                {/* Card Header */}
-                <div className="bg-primary/10 px-6 py-5 border-b border-primary/20">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                      <Briefcase className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-primary">Powered by LumiqAI</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground">Citi Business Credit Journey</h3>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Unified Owner FICO + Business Score + AI eligibility for Citi's SMB credit products.
-                  </p>
-                </div>
-
-                {/* Mockup Images - 3 Phones */}
-                <div className="mx-6 mt-6 flex items-center justify-center">
-                  <img
-                    src="/images/3-phones-business.png"
-                    alt="Citi Business Credit Journey - 3 Phone Mockups"
-                    className="w-full max-w-full h-auto object-contain rounded-xl"
-                  />
-                </div>
-
-                {/* Features */}
-                <div className="p-6 space-y-3">
-                  <ul className="space-y-2.5 text-sm">
-                    <li className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Experian Business Score + Owner Score displayed together</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>AI-powered prequal for Citi small-business cards</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Predictive loan pathways</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>1-tap Apply inside the Citi Business App</span>
-                    </li>
-                    <li className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                      <span>Thin-file enhancement (cashflow + risk layering)</span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Impact Footer */}
-                <div className="bg-primary/5 px-6 py-4 border-t border-primary/20">
-                  <p className="text-xs font-bold uppercase tracking-wider text-primary mb-3">Impact for Citi</p>
-                  <div className="grid grid-cols-2 gap-3 text-xs">
-                    <div className="text-muted-foreground"><span className="text-primary font-semibold">+20–30%</span> SMB approvals</div>
-                    <div className="text-muted-foreground"><span className="text-primary font-semibold">25–40%</span> fewer manual reviews</div>
-                    <div className="text-muted-foreground"><span className="text-primary font-semibold">$300M–$700M</span> incremental revenue</div>
-                    <div className="text-muted-foreground"><span className="text-primary font-semibold">First bank</span> with unified intelligence</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* What It Does Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-16 mb-16"
-          >
-            <h3 className="text-center text-2xl md:text-3xl font-heading font-bold text-foreground mb-12">What It Does</h3>
-            <div className="grid md:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
-              <Card className="text-center hover:shadow-lg transition-all duration-300">
-                <CardContent className="pt-8 pb-8">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
-                    <Target className="w-8 h-8 text-primary" />
-                  </div>
-                  <h4 className="text-lg font-bold text-foreground mb-3">Find creditworthy applicants Citi currently declines</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Unlock hidden revenue from qualified customers slipping through the cracks.</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center hover:shadow-lg transition-all duration-300">
-                <CardContent className="pt-8 pb-8">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
-                    <Shield className="w-8 h-8 text-primary" />
-                  </div>
-                  <h4 className="text-lg font-bold text-foreground mb-3">Approve more, without increasing default risk</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Expand approvals confidently with risk-calibrated decisioning.</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center hover:shadow-lg transition-all duration-300">
-                <CardContent className="pt-8 pb-8">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle2 className="w-8 h-8 text-primary" />
-                  </div>
-                  <h4 className="text-lg font-bold text-foreground mb-3">Expand credit access compliantly and fairly</h4>
-                  <p className="text-sm text-muted-foreground leading-relaxed">Built for Reg B, ECOA, and SPCP alignment from day one.</p>
-                </CardContent>
-              </Card>
-            </div>
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* Section 4: THE COMPETITIVE COST */}
-      <section className="py-24 relative bg-background-secondary">
+      {/* ── S2: METRICS STRIP ─────────────────────────────────────── */}
+      <section className="py-14 bg-white border-b border-slate-100">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12 text-center"
-          >
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-              The Competitive Cost
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Citi is losing approvals, spend, and loyalty at the exact moment customers form credit intent. Competitors intercept Citi customers before they reach Citi's funnels.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-[1600px] mx-auto">
-            {/* Left Column - Competitor Diversion */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Card className="h-full border-secondary/30">
-                <CardContent className="p-6 md:p-8">
-                  <div className="w-12 h-12 rounded-2xl bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-6">
-                    <AlertTriangle className="w-6 h-6 text-secondary" />
-                  </div>
-                  <h4 className="text-xl font-bold text-foreground mb-6">Each month Citi's customers are diverted to:</h4>
-                  <ul className="space-y-4">
-                    <li className="flex items-center gap-3">
-                      <div className="w-20 h-12 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 p-2">
-                        <img src="/The Compet Cost/chase.svg" alt="Chase" className="w-full h-full object-contain" />
-                      </div>
-                      <div className="flex-1">
-                        <span className="text-foreground font-semibold">Chase:</span>
-                        <span className="text-muted-foreground ml-2">In-app prequals + 1-tap approvals</span>
-                      </div>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-20 h-12 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 p-2">
-                        <img src="/The Compet Cost/Capital_One_logo.svg" alt="Capital One" className="w-full h-full object-contain" />
-                      </div>
-                      <div className="flex-1">
-                        <span className="text-foreground font-semibold">Capital One:</span>
-                        <span className="text-muted-foreground ml-2">CreditWise → funnel dominance</span>
-                      </div>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-20 h-12 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 p-2">
-                        <img src="/The Compet Cost/wells-fargo.svg" alt="Wells Fargo" className="w-full h-full object-contain" />
-                      </div>
-                      <div className="flex-1">
-                        <span className="text-foreground font-semibold">Wells Fargo:</span>
-                        <span className="text-muted-foreground ml-2">Close-Up → SMB activation</span>
-                      </div>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-20 h-12 rounded-xl bg-card border border-border flex items-center justify-center flex-shrink-0 p-2">
-                        <img src="/The Compet Cost/Apple_Card.svg" alt="Apple Card" className="w-full h-full object-contain" />
-                      </div>
-                      <div className="flex-1">
-                        <span className="text-foreground font-semibold">Apple Card:</span>
-                        <span className="text-muted-foreground ml-2">frictionless instant approvals</span>
-                      </div>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Right Column - Revenue Leakage Panel */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Card className="h-full border-primary/30">
-                <CardContent className="p-6 md:p-8">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
-                    <DollarSign className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="text-xl font-bold text-foreground mb-6">
-                    Estimated Annual Revenue Leakage
-                  </h4>
-                  <div className="space-y-4">
-                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-0 border-b border-border pb-4">
-                      <span className="text-muted-foreground font-medium">Consumer:</span>
-                      <span className="text-2xl sm:text-2xl font-bold text-primary">$600M–$900M</span>
-                    </div>
-                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-0 border-b border-border pb-4">
-                      <span className="text-muted-foreground font-medium">Business:</span>
-                      <span className="text-2xl sm:text-2xl font-bold text-primary">$300M–$700M</span>
-                    </div>
-                    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-0 pt-2">
-                      <span className="text-foreground font-bold text-lg">Total:</span>
-                      <span className="text-3xl sm:text-3xl font-bold text-primary">$900M–$1.6B lost annually</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-
-          {/* Footnote */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-sm text-muted-foreground mt-8 text-center"
-          >
-            Benchmarking: Credit Journey, CreditWise, Close-Up, applied to Citi TAM.
-          </motion.p>
-
-        </div>
-      </section>
-
-      {/* Section 5: THE IMPACT - WHAT CITI GAINS */}
-      <section className="py-24 relative bg-background">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="mb-12 text-center"
-          >
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-              The Impact<br />
-              What Citi Gains
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Modeled on Chase Credit Journey, Capital One CreditWise, Wells Fargo Close-Up, and calibrated to Citi's TAM.
-            </p>
-          </motion.div>
-
-          {/* 2x2 Impact Grid */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-[1600px] mx-auto">
-            {/* Metric 1 - Consumer Lift */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card className="h-full hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6 md:p-8">
-                  <div className="w-12 h-12 rounded-2xl bg-success/10 border border-success/20 flex items-center justify-center mb-6">
-                    <TrendingUp className="w-6 h-6 text-success" />
-                  </div>
-                  <h4 className="text-xl font-bold text-foreground mb-6">Consumer Lift</h4>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-success"></div>
-                      <span className="text-foreground"><span className="font-semibold text-success">+12–24%</span> approval lift</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-success"></div>
-                      <span className="text-foreground"><span className="font-semibold text-success">+25–40%</span> fewer manual reviews</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-success"></div>
-                      <span className="text-foreground"><span className="font-semibold text-success">2–3×</span> engagement</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-success"></div>
-                      <span className="text-foreground"><span className="font-semibold text-success">+5–10%</span> card conversions</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Metric 2 - Business Lift */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <Card className="h-full hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6 md:p-8">
-                  <div className="w-12 h-12 rounded-2xl bg-success/10 border border-success/20 flex items-center justify-center mb-6">
-                    <TrendingUp className="w-6 h-6 text-success" />
-                  </div>
-                  <h4 className="text-xl font-bold text-foreground mb-6">Business Lift</h4>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-success"></div>
-                      <span className="text-foreground"><span className="font-semibold text-success">+18–30%</span> approval lift</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-success"></div>
-                      <span className="text-foreground"><span className="font-semibold text-success">+35–50%</span> fewer manual reviews</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-success"></div>
-                      <span className="text-foreground"><span className="font-semibold text-success">+5–12%</span> SMB conversions</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-success"></div>
-                      <span className="text-foreground"><span className="font-semibold text-success">+$300M–$700M</span> uplift</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Metric 3 - Total Financial Impact */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 border-primary/30">
-                <CardContent className="p-6 md:p-8">
-                  <div className="w-12 h-12 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
-                    <DollarSign className="w-6 h-6 text-primary" />
-                  </div>
-                  <h4 className="text-xl font-bold text-foreground mb-6">Total Financial Impact</h4>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary"></div>
-                      <span className="text-foreground"><span className="font-semibold text-primary">+$900M–$1.6B</span> annual uplift</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary"></div>
-                      <span className="text-foreground"><span className="font-semibold text-primary">Zero CAC</span></span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary"></div>
-                      <span className="text-foreground">First-mover advantage in credit intelligence</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            {/* Metric 4 - Development Savings */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <Card className="h-full hover:shadow-lg transition-all duration-300 border-secondary/30">
-                <CardContent className="p-6 md:p-8">
-                  <div className="w-12 h-12 rounded-2xl bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-6">
-                    <Zap className="w-6 h-6 text-secondary" />
-                  </div>
-                  <h4 className="text-xl font-bold text-foreground mb-6">Development Savings</h4>
-                  <ul className="space-y-3">
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-secondary"></div>
-                      <span className="text-foreground">Save <span className="font-semibold text-secondary">$40M–$70M</span> in build cost</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-secondary"></div>
-                      <span className="text-foreground">Save <span className="font-semibold text-secondary">18–24 months</span> of internal development</span>
-                    </li>
-                    <li className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary"></div>
-                      <span className="text-foreground">LumiqAI deploys in <span className="font-semibold text-primary">90 days</span></span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-
-          {/* CTA Bar */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex justify-center mt-12"
-          >
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-10 py-7 text-xl group"
-            >
-              <Link
-                to="/pilot"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
+            {[
+              { big: "83ms", sub: "Credit Score Response Time", icon: Zap },
+              { big: "7 Outputs", sub: "One API Call Enterprise JSON", icon: Layers },
+              { big: "$600K Pilot", sub: "Measured Against Your KPIs", icon: DollarSign },
+              { big: "90 Days", sub: "To Prove ROI Or Scale", icon: CalendarCheck },
+            ].map((m, i) => (
+              <motion.div
+                key={i}
+                {...fadeIn}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="flex flex-col items-center text-center p-5 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-200"
               >
-                Review Citi Pilot Plan
-                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </Button>
-          </motion.div>
-
-          {/* Closing Line */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-center text-xl md:text-2xl font-bold mt-12 text-transparent bg-clip-text bg-gradient-to-r from-secondary via-primary to-secondary"
-          >
-            Citi becomes the only bank in America with a dual consumer + business credit intelligence engine.
-          </motion.p>
+                <m.icon className="w-5 h-5 text-blue-500 mb-2" />
+                <div className="text-2xl md:text-3xl font-bold text-slate-900">
+                  {m.big}
+                </div>
+                <div className="text-xs text-slate-500 mt-1">{m.sub}</div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="flex justify-center mt-6">
+            <a
+              href="https://citi.demo.futeurcredx.com/demo/citi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                className="gap-2 text-blue-500 border-blue-200 hover:bg-blue-50"
+              >
+                Try the 83ms Demo
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section id="how-it-works" className="pt-24 md:pt-32 lg:pt-40 pb-24 md:pb-32 lg:pb-40 relative scroll-mt-20 bg-background-secondary">
+      {/* ── S3: CONTEXT LINE (replaces ticker) ────────────────────── */}
+      <section className="py-8 bg-slate-50 border-b border-slate-100">
         <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16 lg:mb-24"
-          >
-            <div className="text-primary text-xs font-semibold uppercase tracking-wide mb-6">
-              HOW IT WORKS
-            </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6 leading-tight">
-              Three steps to convert qualified customers
+          <p className="text-center text-sm md:text-base text-slate-600 max-w-3xl mx-auto">
+            Citi is investing $12.5B in technology and digitizing commercial
+            lending end-to-end. The credit intelligence layer is the missing
+            piece.
+          </p>
+        </div>
+      </section>
+
+      {/* ── S5: THE GAP (interactive component) ─────────────────── */}
+      <TheGap />
+
+      {/* ── S6: ONE API. FIVE USE CASES. ──────────────────────────── */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <motion.div {...fadeIn} className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-slate-900 mb-4">
+              One API. Five Use Cases.
             </h2>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Transform declined applicants into approved customers through intelligent analysis and compliant expansion
-            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-10 max-w-[1600px] mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 max-w-6xl mx-auto">
             {[
               {
-                step: 1,
-                title: "Analyze declined applicants",
-                description: "Review your existing decline population to identify patterns and underwriting gaps.",
-                icon: Database
+                icon: Building2,
+                title: "Digital Lending Intelligence",
+                desc: "Pre-qualify every CitiDirect application before it reaches underwriting.",
+                color: "text-blue-500",
+                bg: "bg-blue-50",
+                border: "border-blue-200",
               },
               {
-                step: 2,
-                title: "Identify hidden creditworthy segments",
-                description: "Surface qualified applicants that current models miss using alternative data signals.",
-                icon: Target
+                icon: Zap,
+                title: "CitiDirect Pre-Qualification",
+                desc: "83ms scoring across revolving credit, term loans, cards, and letters of credit.",
+                color: "text-purple-500",
+                bg: "bg-purple-50",
+                border: "border-purple-200",
               },
               {
-                step: 3,
-                title: "Approve safely through SPCP programs",
-                description: "Expand credit access compliantly through Special Purpose Credit Programs.",
-                icon: CheckCircle2
-              }
-            ].map((item, index) => (
+                icon: Globe,
+                title: "Cross-Border Scoring",
+                desc: "Credit intelligence across 94 markets, aligned with Citi Token Services.",
+                color: "text-cyan-500",
+                bg: "bg-cyan-50",
+                border: "border-cyan-200",
+              },
+              {
+                icon: TrendingUp,
+                title: "Trade Finance Analytics",
+                desc: "Supply chain credit scoring for the $7.75T global capex supercycle.",
+                color: "text-amber-500",
+                bg: "bg-amber-50",
+                border: "border-amber-200",
+              },
+              {
+                icon: Heart,
+                title: "Community Impact (CRA)",
+                desc: "SPCP-eligible zone mapping and CRA-supportive lending analytics.",
+                color: "text-green-500",
+                bg: "bg-green-50",
+                border: "border-green-200",
+              },
+            ].map((c, i) => (
               <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                key={c.title}
+                {...fadeIn}
+                transition={{ duration: 0.5, delay: i * 0.07 }}
+                className={`rounded-xl border ${c.border} ${c.bg} p-5 flex flex-col items-center text-center`}
               >
-                <div className="group h-full bg-background rounded-2xl p-10 lg:p-12 transition-all duration-300 shadow-sm hover:shadow-lg border border-border">
-                  {/* Icon */}
-                  <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
-                    <item.icon className="w-8 h-8 text-primary-foreground" />
-                  </div>
-
-                  {/* Step Number */}
-                  <div className="text-primary text-sm font-semibold uppercase tracking-wide mb-4">
-                    Step {item.step}
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-2xl md:text-3xl font-heading text-foreground mb-6">{item.title}</h3>
-
-                  {/* Description */}
-                  <p className="text-base md:text-lg font-body text-muted-foreground leading-relaxed">{item.description}</p>
+                <div
+                  className={`w-11 h-11 rounded-full ${c.bg} flex items-center justify-center mb-3`}
+                >
+                  <c.icon className={`w-5 h-5 ${c.color}`} />
                 </div>
+                <h4 className="text-sm font-bold text-slate-900 mb-2">
+                  {c.title}
+                </h4>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  {c.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section id="cta" className="py-32 relative scroll-mt-20 bg-primary/5">
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="max-w-[1600px] mx-auto text-center"
-          >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">
-              Start a 6-Week Pilot with Pre-Agreed Success Criteria
+      {/* ── S7: WHY NOW ───────────────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.div {...fadeIn} className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-slate-900 mb-4">
+              Why Now
             </h2>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Non-disruptive integration. Measurable results. Built on proven principles.
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              Commercial lending is going digital. The banks that add credit
+              intelligence first will own the next decade of market share.
             </p>
-            <Button
-              size="lg"
-              className="w-full sm:w-auto max-w-xl gap-2 px-4 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 text-xs sm:text-sm md:text-base font-semibold text-center justify-center"
-              asChild
+          </motion.div>
+          <TenKStatsHomepage />
+        </div>
+      </section>
+
+      {/* ── S8: SEVEN OUTPUTS ─────────────────────────────────────── */}
+      <section className="py-20 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <motion.div {...fadeIn} className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-slate-900 mb-4">
+              Seven Outputs. One API Call.
+            </h2>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
+            {/* Cards */}
+            <div className="grid sm:grid-cols-2 gap-4">
+              {[
+                {
+                  title: "Digital Lending Intelligence",
+                  desc: "Pre-score every business before they apply on CitiDirect.",
+                },
+                {
+                  title: "Relationship Manager Copilot",
+                  desc: "AI briefing per RM — top prospects, risk flags, next-best-action.",
+                },
+                {
+                  title: "Onboarding Acceleration",
+                  desc: "83ms scoring pipeline with instant pre-qualification.",
+                },
+                {
+                  title: "Multi-Product Pre-Qualification",
+                  desc: "Revolving credit, term loans, cards, letters of credit.",
+                },
+                {
+                  title: "Cross-Border Portfolio Radar",
+                  desc: "Monitor your book across 94 markets with early warning signals.",
+                },
+                {
+                  title: "Trade Finance Intelligence",
+                  desc: "Score supply chain credit in the $7.75T supercycle.",
+                },
+                {
+                  title: "CRA & Community Toolkit",
+                  desc: "Map CRA-eligible zones and generate SPCP-compliant scoring.",
+                },
+              ].map((card, i) => (
+                <motion.div
+                  key={card.title}
+                  {...fadeIn}
+                  transition={{ duration: 0.4, delay: i * 0.05 }}
+                  className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow-md transition-all duration-200"
+                >
+                  <h4 className="text-sm font-bold text-slate-900 mb-1">
+                    {card.title}
+                  </h4>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {card.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* API Preview */}
+            <motion.div
+              {...fadeIn}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="hidden lg:block"
             >
-              <Link to="/pilot#pilot-form" className="leading-snug whitespace-normal flex items-center justify-center gap-2">
-                <span className="hidden sm:inline">Book a 20-minute pilot review — see conversion lift & model audit in action</span>
-                <span className="sm:hidden">Book Pilot Review</span>
-                <ArrowRight className="inline-flex w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-              </Link>
-            </Button>
+              <ApiResponsePreview />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── S9: COMPETITIVE COMPARISON ────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.div {...fadeIn} className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-slate-900 mb-4">
+              Competitive Comparison
+            </h2>
+            <p className="text-base text-slate-600 max-w-2xl mx-auto">
+              Citi is the only top-4 bank without consumer or commercial credit
+              intelligence in-app. LumiqAI closes both gaps.
+            </p>
+          </motion.div>
+          <CompetitiveMatrix />
+        </div>
+      </section>
+
+      {/* ── S10: COST OF INACTION (replaces competitive cost) ─────── */}
+      <section className="py-16 bg-slate-50 border-y border-slate-100">
+        <div className="container mx-auto px-6">
+          <motion.p
+            {...fadeIn}
+            className="text-center text-base md:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed"
+          >
+            Every month without credit intelligence, qualified applicants go to
+            competitors who pre-qualify them first. The top-4 banks that
+            deployed credit journeys saw{" "}
+            <span className="font-semibold text-slate-900">
+              15-25% application conversion lifts
+            </span>{" "}
+            within 90 days.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* ── S11: IMPACT (condensed) ───────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.div {...fadeIn} className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-slate-900 mb-4">
+              The Impact
+            </h2>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {[
+              {
+                stat: "+15-25%",
+                label: "Application Conversion Lift",
+                color: "text-green-600",
+              },
+              {
+                stat: "$40M-$70M",
+                label: "Development Cost Avoided",
+                color: "text-blue-500",
+              },
+              {
+                stat: "90 Days",
+                label: "To Production (Not 18-24 Months)",
+                color: "text-purple-600",
+              },
+            ].map((s, i) => (
+              <motion.div
+                key={s.label}
+                {...fadeIn}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="flex flex-col items-center text-center p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md transition-all duration-200"
+              >
+                <div className={`text-3xl md:text-4xl font-bold ${s.color} mb-2`}>
+                  {s.stat}
+                </div>
+                <div className="text-sm text-slate-500">{s.label}</div>
+              </motion.div>
+            ))}
+          </div>
+          <div className="flex justify-center mt-8">
+            <Link to="/pilot">
+              <Button
+                size="lg"
+                className="gap-2 px-8 py-5 text-base font-semibold bg-blue-500 hover:bg-blue-600"
+              >
+                Start the 90-Day Pilot
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── S12: COMPLIANCE ───────────────────────────────────────── */}
+      <ComplianceTrust />
+
+      {/* ── S13: PILOT ECONOMICS ──────────────────────────────────── */}
+      <PilotInvestment />
+
+      {/* ── S14: HOW IT WORKS ─────────────────────────────────────── */}
+      <section
+        id="how-it-works"
+        className="py-20 bg-slate-50 scroll-mt-20"
+      >
+        <div className="container mx-auto px-6">
+          <motion.div {...fadeIn} className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-slate-900 mb-4">
+              How It Works
+            </h2>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                step: 1,
+                title: "Connect",
+                desc: "Plug into CitiDirect's application pipeline. 2 weeks.",
+                icon: Plug,
+              },
+              {
+                step: 2,
+                title: "Score",
+                desc: "83ms pre-qualification on every application. 7 outputs.",
+                icon: BarChart3,
+              },
+              {
+                step: 3,
+                title: "Prove",
+                desc: "Measure conversion lift against pre-agreed KPIs. 90 days.",
+                icon: CheckCircle2,
+              },
+            ].map((s, i) => (
+              <motion.div
+                key={s.step}
+                {...fadeIn}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group rounded-xl border border-slate-200 bg-white p-8 text-center shadow-sm hover:shadow-md transition-all duration-200"
+              >
+                <div className="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-200">
+                  <s.icon className="w-7 h-7 text-white" />
+                </div>
+                <div className="text-blue-500 text-xs font-semibold uppercase tracking-wide mb-2">
+                  Step {s.step}
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  {s.title}
+                </h3>
+                <p className="text-sm text-slate-500">{s.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── S15: FOOTER CTA ───────────────────────────────────────── */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6 text-center">
+          <motion.div {...fadeIn} className="max-w-3xl mx-auto space-y-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-slate-900 leading-tight">
+              $600K. 90 Days. Measured Against Your KPIs.
+            </h2>
+            <Link to="/pilot">
+              <Button
+                size="lg"
+                className="gap-2 px-8 py-6 mt-2 text-lg font-semibold bg-blue-500 hover:bg-blue-600"
+              >
+                Book 15-Minute Technical Review
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>
 
       <ImpactChatWidget />
-      <Footer />
     </PageLayout>
   );
 }
 
 export default Index;
-

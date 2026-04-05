@@ -1,9 +1,15 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Shield, Lock, FileCheck, AlertTriangle } from "lucide-react";
 
 function Security() {
+  useEffect(() => {
+    document.title = "Security — LUMIQ AI";
+  }, []);
+
   return (
     <PageLayout>
       <section className="py-16 md:py-24 bg-background">
@@ -14,6 +20,9 @@ function Security() {
             transition={{ duration: 0.6 }}
             className="mb-12"
           >
+            <Badge className="mb-4 bg-primary/10 text-primary border-primary/30 px-4 py-2">
+              LUMIQ AI for Citi
+            </Badge>
             <div className="flex items-center gap-3 mb-6">
               <Lock className="w-8 h-8 text-primary" />
               <h1 className="font-display text-[40px] md:text-[56px] font-bold text-foreground">

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "home",
+    "path": "/",
+    "status": 200,
+    "title": "LUMIQ AI — Same-Day Credit Decisions for Commercial Lending",
+    "titlePass": true,
+    "violations": [],
+    "screenshot": "/Users/devaccount/citibank-website/audit-screenshots/phase9-final/home.png"
+  },
+  {
+    "name": "about",
+    "path": "/about",
+    "status": 200,
+    "title": "LUMIQ AI — The Team Behind 83ms Credit Decisions",
+    "titlePass": true,
+    "violations": [],
+    "screenshot": "/Users/devaccount/citibank-website/audit-screenshots/phase9-final/about.png"
+  },
+  {
+    "name": "pilot",
+    "path": "/pilot",
+    "status": 200,
+    "title": "LUMIQ AI — $600K. 90 Days. Measured Against Your KPIs.",
+    "titlePass": true,
+    "violations": [],
+    "screenshot": "/Users/devaccount/citibank-website/audit-screenshots/phase9-final/pilot.png"
+  },
+  {
+    "name": "how-it-works",
+    "path": "/how-it-works",
+    "status": 200,
+    "title": "LUMIQ AI — From Application to Decision in 83ms",
+    "titlePass": true,
+    "violations": [],
+    "screenshot": "/Users/devaccount/citibank-website/audit-screenshots/phase9-final/how-it-works.png"
+  },
+  {
+    "name": "case-study",
+    "path": "/case-study",
+    "status": 200,
+    "title": "Results — The $9.7B Problem | LumiqAI",
+    "titlePass": true,
+    "violations": [],
+    "screenshot": "/Users/devaccount/citibank-website/audit-screenshots/phase9-final/case-study.png"
+  },
+  {
+    "name": "terms",
+    "path": "/terms",
+    "status": 200,
+    "title": "Terms of Service — LUMIQ AI",
+    "titlePass": true,
+    "violations": [],
+    "screenshot": "/Users/devaccount/citibank-website/audit-screenshots/phase9-final/terms.png"
+  },
+  {
+    "name": "privacy",
+    "path": "/privacy",
+    "status": 200,
+    "title": "Privacy Policy — LUMIQ AI",
+    "titlePass": true,
+    "violations": [],
+    "screenshot": "/Users/devaccount/citibank-website/audit-screenshots/phase9-final/privacy.png"
+  },
+  {
+    "name": "security",
+    "path": "/security",
+    "status": 200,
+    "title": "Security — LUMIQ AI",
+    "titlePass": true,
+    "violations": [],
+    "screenshot": "/Users/devaccount/citibank-website/audit-screenshots/phase9-final/security.png"
+  }
+]

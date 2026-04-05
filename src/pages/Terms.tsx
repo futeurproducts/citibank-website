@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { PageLayout } from "@/components/PageLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText } from "lucide-react";
 
 function Terms() {
+  useEffect(() => {
+    document.title = "Terms of Service — LUMIQ AI";
+  }, []);
+
   return (
     <PageLayout>
       <section className="py-16 md:py-24 bg-background">

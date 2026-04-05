@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LumiqAI — Credit Intelligence for Citi Commercial Bank</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #18181B;
+    background: #fff;
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 28px 32px 24px;
+    font-size: 10px;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #003B70;
+    margin-bottom: 16px;
+  }
+  .logo {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #003B70;
+  }
+  .logo-sub {
+    font-size: 9px;
+    font-weight: 500;
+    color: #71717A;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .header-right {
+    text-align: right;
+    font-size: 8px;
+    color: #71717A;
+  }
+
+  /* Killer Statement */
+  .killer {
+    background: #003B70;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-bottom: 14px;
+  }
+  .killer h1 {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .killer p {
+    font-size: 9px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.5;
+  }
+
+  /* Metrics Strip */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .metric {
+    text-align: center;
+    padding: 10px 6px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+  }
+  .metric .value {
+    font-size: 18px;
+    font-weight: 800;
+    color: #003B70;
+    letter-spacing: -0.02em;
+  }
+  .metric .label {
+    font-size: 7.5px;
+    color: #71717A;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  /* Two Column */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 14px;
+  }
+  .section-label {
+    font-size: 7.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #003B70;
+    margin-bottom: 6px;
+  }
+  .section h2 {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .section p {
+    font-size: 9px;
+    color: #52525B;
+    line-height: 1.55;
+  }
+
+  /* Competitive Table */
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+    margin-top: 6px;
+  }
+  .comp-table th {
+    text-align: left;
+    padding: 6px 8px;
+    background: #F4F4F5;
+    font-weight: 600;
+    font-size: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #71717A;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .comp-table td {
+    padding: 5px 8px;
+    border-bottom: 1px solid #F4F4F5;
+  }
+  .comp-table tr:last-child td {
+    background: #003B70;
+    color: #fff;
+    font-weight: 600;
+  }
+  .score-bar {
+    display: inline-block;
+    height: 6px;
+    border-radius: 3px;
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+
+  /* Pilot Box */
+  .pilot-box {
+    border: 2px solid #C9922A;
+    border-radius: 6px;
+    padding: 12px 16px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+  .pilot-price {
+    font-size: 28px;
+    font-weight: 800;
+    color: #C9922A;
+    letter-spacing: -0.03em;
+  }
+  .pilot-details {
+    font-size: 9px;
+    color: #52525B;
+    line-height: 1.6;
+  }
+  .pilot-details strong {
+    color: #18181B;
+  }
+
+  /* Checklist */
+  .checklist {
+    list-style: none;
+    padding: 0;
+  }
+  .checklist li {
+    font-size: 9px;
+    padding: 3px 0;
+    padding-left: 14px;
+    position: relative;
+    color: #52525B;
+  }
+  .checklist li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #003B70;
+    font-weight: 700;
+    font-size: 9px;
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid #E5E7EB;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 7.5px;
+    color: #94A3B8;
+    margin-top: auto;
+  }
+  .footer a {
+    color: #003B70;
+    text-decoration: none;
+  }
+
+  /* Urgency Bar */
+  .urgency {
+    background: #FEF3C7;
+    border: 1px solid #F59E0B;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 8.5px;
+    color: #92400E;
+    text-align: center;
+    margin-bottom: 14px;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="logo">LUMIQ AI</div>
+    <div class="logo-sub">Credit Intelligence for Citi Commercial Bank</div>
+  </div>
+  <div class="header-right">
+    Confidential — For Internal Evaluation<br>
+    March 2026
+  </div>
+</div>
+
+<!-- KILLER STATEMENT -->
+<div class="killer">
+  <h1>Citi invested $12.5B in technology, deployed AI to 180,000 colleagues across 84 countries, and retired 548 legacy applications — yet has zero disclosed AI for commercial credit decisioning.</h1>
+  <p>Every top-4 U.S. bank competitor has deployed credit AI. LumiqAI is the missing layer — an 83ms pre-qualification engine that inserts directly into CitiDirect's digital credit application flow without replacing existing systems.</p>
+</div>
+
+<!-- URGENCY -->
+<div class="urgency">
+  Investor Day: May 7, 2026 — Pilot results available as Transformation proof point. OCC consent order removed Dec 18, 2025.
+</div>
+
+<!-- METRICS -->
+<div class="metrics">
+  <div class="metric">
+    <div class="value">83ms</div>
+    <div class="label">Pre-qualification</div>
+  </div>
+  <div class="metric">
+    <div class="value">$10M</div>
+    <div class="label">Per digital application</div>
+  </div>
+  <div class="metric">
+    <div class="value">7</div>
+    <div class="label">Signals per API call</div>
+  </div>
+  <div class="metric">
+    <div class="value">90 days</div>
+    <div class="label">Pilot to measurable results</div>
+  </div>
+</div>
+
+<!-- TWO COLUMNS: GAP + INSERTION POINT -->
+<div class="two-col">
+  <div class="section">
+    <div class="section-label">The Gap</div>
+    <h2>What Citi Has Built vs What Is Missing</h2>
+    <p style="margin-bottom: 6px;"><strong>Built:</strong> Digital Credit Applications on CitiDirect (Jun 2025). Stylus Workspaces deployed to 180K+ colleagues. Token Services across 94 markets. $60B housing commitment. Outstanding CRA rating.</p>
+    <p style="margin-bottom: 6px;"><strong>Missing:</strong> Real-time pre-qualification before application submission. Structured credit signals for Stylus Workspaces. Product-level eligibility scoring across CCB's full shelf. Audit-ready credit intelligence within SR 11-7 governance.</p>
+    <p><strong>Regulatory urgency:</strong> $61M FRB + $75M OCC penalties for data quality deficiencies. 50+ of the largest processes being re-engineered — including loan underwriting.</p>
+  </div>
+  <div class="section">
+    <div class="section-label">Competitive Context</div>
+    <h2>Digital Lending AI Maturity</h2>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Bank</th>
+          <th>Score</th>
+          <th>Credit AI Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>JPMorgan Chase</td>
+          <td><span class="score-bar" style="width:84px;background:#94A3B8;"></span>9.2</td>
+          <td>Index AI, 80% approvals automated</td>
+        </tr>
+        <tr>
+          <td>Bank of America</td>
+          <td><span class="score-bar" style="width:78px;background:#94A3B8;"></span>8.7</td>
+          <td>Erica ML, &lt;5min SMB decisions</td>
+        </tr>
+        <tr>
+          <td>Wells Fargo</td>
+          <td><span class="score-bar" style="width:72px;background:#94A3B8;"></span>7.9</td>
+          <td>GenAI underwriting pilots</td>
+        </tr>
+        <tr>
+          <td>Citi + LumiqAI</td>
+          <td><span class="score-bar" style="width:62px;background:#003B70;"></span>6.8 → ↑</td>
+          <td>83ms pre-qual, 7 signals, SR 11-7</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:7px;color:#94A3B8;margin-top:4px;">Estimated maturity based on public disclosures. Not official Celent scores.</p>
+  </div>
+</div>
+
+<!-- PILOT BOX -->
+<div class="pilot-box">
+  <div class="pilot-price">$600K</div>
+  <div class="pilot-details">
+    <strong>90-Day Strategic Pilot for Citi Commercial Bank</strong><br>
+    8 pre-agreed KPIs measured against baselines. 100% redeemable against Year 1 platform license upon full-scale deployment. 0.005% of Citi's $12.5B annual technology investment. Sandbox-only — zero risk to live operations.
+  </div>
+</div>
+
+<!-- TWO COLUMNS: WHAT'S INCLUDED + FOR WHO -->
+<div class="two-col">
+  <div class="section">
+    <div class="section-label">What the Pilot Delivers</div>
+    <ul class="checklist">
+      <li>83ms pre-qualification before CitiDirect submission</li>
+      <li>Multi-product eligibility: revolving credit, term loans, commercial cards, LOC</li>
+      <li>Structured JSON signals consumed natively by Stylus Workspaces</li>
+      <li>Cross-border eligibility scoring aligned with Token Services</li>
+      <li>CRA-eligible zone mapping for $60B housing commitment</li>
+      <li>Full audit trail — SR 11-7, BCBS 239 compliant</li>
+      <li>Weekly performance dashboards for CCB leadership</li>
+      <li>Go/no-go decision with complete data package at Week 13</li>
+    </ul>
+  </div>
+  <div class="section">
+    <div class="section-label">Built for These Teams</div>
+    <ul class="checklist">
+      <li><strong>Wyatt Crowell</strong> — Head of NA CCB. Territory intelligence and pre-scoring for client deepening from day one</li>
+      <li><strong>Tasnim Ghiawadwala</strong> — Head of CCB. 83ms layer complements CitiDirect's digital credit application platform</li>
+      <li><strong>Tim Ryan</strong> — Head of Technology. Stylus Workspaces consumes LumiqAI credit signals via structured JSON</li>
+      <li><strong>Risk & Compliance</strong> — SR 11-7 aligned, ECOA/FCRA/CRA compliant, model explainability built in</li>
+    </ul>
+    <div style="margin-top:8px;padding:8px 10px;background:#F8FAFC;border-radius:4px;border:1px solid #E5E7EB;">
+      <p style="font-size:8.5px;color:#18181B;font-weight:600;margin-bottom:2px;">Overlay, not replacement.</p>
+      <p style="font-size:8px;color:#71717A;">LumiqAI inserts between application initiation and manual underwriting on CitiDirect. No rip-and-replace. No migration. Citi's underwriting rules, thresholds, and controls remain unchanged.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>
+    <strong style="color:#003B70;">LumiqAI</strong> — Credit Intelligence Platform &nbsp;|&nbsp;
+    <a href="https://citi-website-staging.vercel.app">citi-website-staging.vercel.app</a> &nbsp;|&nbsp;
+    <a href="mailto:support@futeurcredx.com">support@futeurcredx.com</a>
+  </div>
+  <div>
+    SOC 2 Type II in progress &nbsp;|&nbsp; AES-256 + TLS 1.3 &nbsp;|&nbsp; On-prem / VPC deployment options
+  </div>
+</div>
+
+</body>
+</html>

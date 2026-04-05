@@ -28,10 +28,9 @@ export function Header() {
   }, [openDropdown]);
 
   const navigation = [
-    { label: "About", href: "/about" },
+    { label: "Platform", href: "/about" },
     { label: "How It Works", href: "/how-it-works" },
-    { label: "Case Study", href: "/case-study" },
-    // { label: "Demo", href: "/demo" }, // Commented out - keeping code as backup
+    { label: "Results", href: "/case-study" },
     { label: "Pilot", href: "/pilot" },
   ];
 
@@ -61,7 +60,7 @@ export function Header() {
             whileHover={{ scale: 1.05 }}
             style={{ fontFamily: "'Inter', system-ui, -apple-system, sans-serif", letterSpacing: '-0.02em' }}
           >
-              LUMIQ × Citi
+              LUMIQ AI for Citi
           </motion.div>
           </Link>
 
@@ -79,6 +78,16 @@ export function Header() {
           </Link>
               </li>
             ))}
+            <li>
+              <a
+                href="https://citi.demo.futeurcredx.com/demo/citi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-150 hover:bg-blue-600"
+              >
+                Demo &rarr;
+              </a>
+            </li>
           </ul>
 
           {/* Mobile Menu Toggle */}
@@ -113,6 +122,16 @@ export function Header() {
           </Link>
               </li>
             ))}
+            <li>
+              <a
+                href="https://citi.demo.futeurcredx.com/demo/citi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block py-3 text-blue-500 font-medium hover:text-blue-600 transition-colors duration-150"
+              >
+                Demo &rarr;
+              </a>
+            </li>
           </ul>
       </div>
       )}

@@ -1,16 +1,57 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { PageLayout } from "@/components/PageLayout";
-import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, Target, Shield, TrendingUp, Users, Lightbulb, ArrowRight, Database, Brain, BarChart3 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  ArrowRight,
+  Database,
+  Globe,
+  BarChart3,
+  Shield,
+  Cpu,
+  Users,
+  Scale,
+  ExternalLink,
+  TrendingUp,
+  Lightbulb,
+} from "lucide-react";
 import HeroBackground from "@/components/HeroBackground";
 
+const teamMembers = [
+  {
+    initials: "SK",
+    name: "Sean K.",
+    role: "CEO & Founder",
+    description:
+      "10+ years in enterprise fintech and credit infrastructure. Built lending platforms processing $2B+ in annual originations.",
+  },
+  {
+    initials: "EL",
+    name: "Engineering Leadership",
+    role: "Platform Architecture",
+    description:
+      "Former bank technology team leads. Built real-time scoring systems at scale across regulated financial institutions.",
+  },
+  {
+    initials: "RC",
+    name: "Risk & Compliance",
+    role: "Regulatory Frameworks",
+    description:
+      "Regulatory experience across OCC, FRB, FDIC frameworks. SR 11-7 model risk management and ECOA/CRA compliance.",
+  },
+];
+
 function About() {
+  useEffect(() => {
+    document.title =
+      "LUMIQ AI — The Team Behind 83ms Credit Decisions";
+  }, []);
+
   return (
     <PageLayout>
-      {/* Hero Section */}
+      {/* SECTION 1 — Hero */}
       <HeroBackground>
         <div className="flex flex-col items-start max-w-5xl">
           <motion.div
@@ -20,24 +61,30 @@ function About() {
             className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/30 text-white text-xs sm:text-sm font-medium mb-5 sm:mb-6"
           >
             <Shield className="w-3 h-3 sm:w-4 sm:h-4" strokeWidth={2.5} />
-            FuteurCredX / LUMIQ AI
+            About LUMIQ AI
           </motion.div>
 
           <h1 className="font-heading text-[32px] sm:text-[40px] md:text-[44px] lg:text-[52px] xl:text-[68px] 2xl:text-[76px] font-bold mb-6 sm:mb-8 leading-[1.1] text-white">
-            About FuteurCredX
+            The Team Behind 83ms Credit Decisions
           </h1>
 
           <p className="text-base sm:text-lg md:text-lg lg:text-xl xl:text-2xl text-white/95 mb-4 sm:mb-5 leading-relaxed font-semibold max-w-2xl">
-            Building the future of credit intelligence—enterprise-grade AI that empowers financial institutions and consumers to make better credit decisions.
+            We built the credit intelligence layer that top-4 banks need but
+            haven't built internally. Enterprise-grade. Regulator-ready.
+            Deployable in 90 days.
           </p>
 
           <p className="text-sm sm:text-base md:text-base lg:text-lg xl:text-lg text-white/80 mb-8 sm:mb-12 leading-relaxed max-w-2xl">
-            From consumer credit education to business credit infrastructure, we deliver measurable outcomes through explainable AI and regulatory-aligned decisioning.
+            FuteurCredX builds LumiqAI — an enterprise credit intelligence API
+            that delivers 7 risk signals in 83ms through 4-bureau orchestration.
+            We serve banks modernizing commercial lending with real-time
+            pre-qualification, cross-border eligibility scoring, and
+            CRA-compliant analytics.
           </p>
         </div>
       </HeroBackground>
 
-      {/* Who We Are */}
+      {/* SECTION 2 — Why We Exist */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-6">
           <motion.div
@@ -48,10 +95,193 @@ function About() {
             className="text-center mb-12"
           >
             <h2 className="font-heading text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
-              Who We Are
+              Why We Exist
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Commercial banks are digitizing lending. Applications are online.
+              Signatures are electronic. But the credit decision itself still
+              takes days or weeks. We built LumiqAI to make that decision happen
+              in 83 milliseconds.
+            </p>
+          </motion.div>
+
+          {/* Three Blocks */}
+          <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <Card className="h-full border-l-4 border-l-primary">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
+                    <Cpu
+                      className="w-7 h-7 text-primary"
+                      strokeWidth={2.5}
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    What We Build
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Enterprise credit intelligence APIs. 4-bureau orchestration
+                    delivering 7 structured outputs per query. Built to SR 11-7
+                    model risk management standards. Every score explainable,
+                    every decision auditable.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Card className="h-full border-l-4 border-l-secondary">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-6">
+                    <Users
+                      className="w-7 h-7 text-secondary"
+                      strokeWidth={2.5}
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    Who We Serve
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Top-4 commercial banks processing $10M+ applications.
+                    CRA/ECOA-compliant decisioning for domestic portfolios.
+                    Cross-border eligibility scoring across 94 markets and
+                    multiple currencies.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Card className="h-full border-l-4 border-l-primary">
+                <CardContent className="p-6 sm:p-8">
+                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
+                    <Scale
+                      className="w-7 h-7 text-primary"
+                      strokeWidth={2.5}
+                    />
+                  </div>
+                  <h3 className="text-lg font-semibold text-foreground mb-3">
+                    How We're Different
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Your rules, your thresholds, your risk appetite — scored in
+                    83ms. Not a black-box model. Not a generic score. A
+                    configurable credit intelligence engine that operates within
+                    your existing risk framework.
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+
+          {/* SECTION 3 — Cost Comparison Statement (replaces self-quote) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            <Card className="bg-primary/5 border-primary/20">
+              <CardContent className="p-8 sm:p-10">
+                <p className="text-lg sm:text-xl text-foreground leading-relaxed text-center font-medium">
+                  The average enterprise bank spends 18-24 months and $40M-$70M
+                  building credit intelligence internally. LumiqAI deploys in 90
+                  days for $600K.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* SECTION 4 — Our Team */}
+      <section className="py-16 md:py-24 bg-background-secondary">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-heading text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
+              Our Team
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              FuteurCredX is an enterprise AI company specializing in credit intelligence, risk scoring, and financial product optimization for banks, lenders, and consumers.
+              Founded by enterprise credit infrastructure veterans with
+              experience across top-4 banks and regulated fintechs.
+            </p>
+          </motion.div>
+
+          <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+            {teamMembers.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="h-full hover:shadow-lg transition-all duration-200">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-4 mb-5">
+                      <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
+                        <span className="text-lg font-bold text-primary">
+                          {member.initials}
+                        </span>
+                      </div>
+                      <div>
+                        <h3 className="text-base font-bold text-foreground leading-tight">
+                          {member.name}
+                        </h3>
+                        <p className="text-xs text-muted-foreground">
+                          {member.role}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {member.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5 — What We Deliver */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-heading text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
+              What We Deliver
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Three capabilities. Measurable outcomes. Deployed within your
+              existing infrastructure.
             </p>
           </motion.div>
 
@@ -64,12 +294,22 @@ function About() {
             >
               <Card className="h-full">
                 <CardContent className="p-6 sm:p-8">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
-                    <Target className="w-7 h-7 text-primary" strokeWidth={2.5} />
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
+                    <Database
+                      className="w-6 h-6 text-primary"
+                      strokeWidth={2.5}
+                    />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Mission-Driven</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Democratize credit intelligence and enable fair, transparent, and data-driven lending decisions at scale.
+                  <h3 className="text-lg font-bold text-foreground mb-3">
+                    Digital Pre-Qualification
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    Pre-score every commercial credit application before
+                    submission. Owner FICO, business credit, and behavioral
+                    signals unified in a single API call.
+                  </p>
+                  <p className="text-sm font-semibold text-primary">
+                    83ms scoring. Up to $10M per application.
                   </p>
                 </CardContent>
               </Card>
@@ -83,12 +323,22 @@ function About() {
             >
               <Card className="h-full">
                 <CardContent className="p-6 sm:p-8">
-                  <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-6">
-                    <Users className="w-7 h-7 text-secondary" strokeWidth={2.5} />
+                  <div className="w-14 h-14 rounded-2xl bg-secondary/10 border border-secondary/20 flex items-center justify-center mb-5">
+                    <Globe
+                      className="w-6 h-6 text-secondary"
+                      strokeWidth={2.5}
+                    />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Dual Audience</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Serving both financial institutions (banks, credit unions, lenders) and consumers seeking credit transparency and optimization.
+                  <h3 className="text-lg font-bold text-foreground mb-3">
+                    Cross-Border Intelligence
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    Portfolio monitoring, cross-sell signals, and eligibility
+                    scoring aligned with multi-currency clearing networks. Early
+                    warning for exposure concentration.
+                  </p>
+                  <p className="text-sm font-semibold text-secondary">
+                    94 markets. Multi-currency. Early warning.
                   </p>
                 </CardContent>
               </Card>
@@ -102,12 +352,22 @@ function About() {
             >
               <Card className="h-full">
                 <CardContent className="p-6 sm:p-8">
-                  <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
-                    <Shield className="w-7 h-7 text-primary" strokeWidth={2.5} />
+                  <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-5">
+                    <BarChart3
+                      className="w-6 h-6 text-primary"
+                      strokeWidth={2.5}
+                    />
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground mb-3">Compliance-First</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    Built with SOC 2, FCRA, ECOA, and GLBA alignment from day one. Audit-ready infrastructure designed for enterprise risk and compliance teams.
+                  <h3 className="text-lg font-bold text-foreground mb-3">
+                    CRA & Community Analytics
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    SPCP-compliant zone mapping. CRA-supportive credit
+                    intelligence for community lending decisions.
+                    Branch-level impact measurement.
+                  </p>
+                  <p className="text-sm font-semibold text-primary">
+                    SPCP zone mapping. Branch-level dashboards.
                   </p>
                 </CardContent>
               </Card>
@@ -116,7 +376,7 @@ function About() {
         </div>
       </section>
 
-      {/* What We Do */}
+      {/* SECTION 6 — Platform & Resources */}
       <section className="py-16 md:py-24 bg-background-secondary">
         <div className="container mx-auto px-6">
           <motion.div
@@ -127,110 +387,11 @@ function About() {
             className="text-center mb-12"
           >
             <h2 className="font-heading text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
-              What We Do
+              Platform & Resources
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We build AI-powered credit intelligence platforms that transform how institutions underwrite, monitor, and grow their portfolios.
-            </p>
-          </motion.div>
-
-          <div className="max-w-7xl mx-auto space-y-6">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Card>
-                <CardContent className="p-6 sm:p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                      <Database className="w-7 h-7 text-primary" strokeWidth={2.5} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">Credit Data Unification</h3>
-                      <p className="text-muted-foreground leading-relaxed mb-3">
-                        Consolidate owner FICO, business credit scores (FICO SBSS, Experian FSR), internal banking data, and behavioral signals into a single unified view with full data lineage.
-                      </p>
-                      <p className="text-sm text-muted-foreground italic">
-                        Real-time ingestion with explainable scoring models aligned to institutional policy overlays.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <Card>
-                <CardContent className="p-6 sm:p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-secondary/10 border border-secondary/20 flex items-center justify-center flex-shrink-0">
-                      <Brain className="w-7 h-7 text-secondary" strokeWidth={2.5} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">AI-Powered Risk Decisioning</h3>
-                      <p className="text-muted-foreground leading-relaxed mb-3">
-                        Pre-qualification engines, early warning detection, and product recommendation models that reduce manual underwriting by 35% while improving approval accuracy by 18-20%.
-                      </p>
-                      <p className="text-sm text-muted-foreground italic">
-                        Explainable AI with full audit trails for compliance, adverse action reporting, and model governance.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <Card>
-                <CardContent className="p-6 sm:p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0">
-                      <BarChart3 className="w-7 h-7 text-primary" strokeWidth={2.5} />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">Portfolio Intelligence Dashboards</h3>
-                      <p className="text-muted-foreground leading-relaxed mb-3">
-                        Executive, risk, and banker dashboards showing qualified segments, pre-qualification funnels, industry risk heatmaps, conversion lift tracking, and loss pattern monitoring.
-                      </p>
-                      <p className="text-sm text-muted-foreground italic">
-                        Proactive alerts and segmentation tools enable data-driven portfolio optimization.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Enterprise Products */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-heading text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
-              Our Enterprise Product & Resources
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              LUMIQ AI for institutions—backed by comprehensive technical documentation and integration support.
+              Enterprise-grade infrastructure backed by comprehensive technical
+              documentation and integration support.
             </p>
           </motion.div>
 
@@ -242,45 +403,67 @@ function About() {
               transition={{ duration: 0.6 }}
             >
               <Card className="h-full flex flex-col">
-                <CardHeader>
-                  <CardTitle className="text-2xl">LUMIQ AI for Institutions</CardTitle>
-                </CardHeader>
-                <CardContent className="p-6 sm:p-8 pt-0 flex flex-col flex-1">
+                <CardContent className="p-6 sm:p-8 flex flex-col flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    LUMIQ AI Enterprise Platform
+                  </h3>
                   <div className="space-y-4 flex-1">
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Enterprise-grade credit intelligence for banks, credit unions, and lenders. Integrates directly into existing underwriting systems via RESTful API.
+                      Enterprise-grade credit intelligence designed for digital
+                      commercial lending platforms. RESTful API integration,
+                      structured JSON outputs, and CRA-compliant decisioning.
                     </p>
                     <div className="space-y-2">
                       <div className="flex items-start gap-3">
-                        <TrendingUp className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                        <TrendingUp
+                          className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                          strokeWidth={2.5}
+                        />
                         <p className="text-sm text-muted-foreground">
-                          Unified business credit view (owner FICO + business scores)
+                          83ms pre-qualification for digital credit applications
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <TrendingUp className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                        <TrendingUp
+                          className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                          strokeWidth={2.5}
+                        />
                         <p className="text-sm text-muted-foreground">
-                          Pre-qualification and product recommendation engines
+                          Cross-border eligibility scoring across 94 markets
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <TrendingUp className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                        <TrendingUp
+                          className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                          strokeWidth={2.5}
+                        />
                         <p className="text-sm text-muted-foreground">
-                          Portfolio health monitoring with early warning detection
+                          Structured JSON signals for agentic AI platform
+                          integration
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <TrendingUp className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                        <TrendingUp
+                          className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                          strokeWidth={2.5}
+                        />
                         <p className="text-sm text-muted-foreground">
-                          Compliance-ready audit trails and explainability
+                          CRA-compliant audit trails and explainability
                         </p>
                       </div>
                     </div>
                   </div>
                   <Button className="w-full mt-6" asChild>
-                    <a href="https://institutions.futeurcredx.com" target="_blank" rel="noopener noreferrer">
-                      Visit Institutions Portal
-                      <ExternalLink className="ml-2 w-4 h-4" strokeWidth={2.5} />
+                    <a
+                      href="https://docs.futeurcredx.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Explore API Documentation
+                      <ArrowRight
+                        className="ml-2 w-4 h-4"
+                        strokeWidth={2.5}
+                      />
                     </a>
                   </Button>
                 </CardContent>
@@ -294,45 +477,69 @@ function About() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <Card className="h-full flex flex-col">
-                <CardHeader>
-                  <CardTitle className="text-2xl">FuteurCredX Documentation Hub</CardTitle>
-                </CardHeader>
-                <CardContent className="p-6 sm:p-8 pt-0 flex flex-col flex-1">
+                <CardContent className="p-6 sm:p-8 flex flex-col flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    Documentation Hub
+                  </h3>
                   <div className="space-y-4 flex-1">
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Comprehensive technical documentation and integration resources for developers, engineers, and technical teams implementing FuteurCredX solutions.
+                      Technical documentation and integration resources for
+                      engineering teams implementing LumiqAI within enterprise
+                      banking infrastructure.
                     </p>
                     <div className="space-y-2">
                       <div className="flex items-start gap-3">
-                        <Lightbulb className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                        <Lightbulb
+                          className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                          strokeWidth={2.5}
+                        />
                         <p className="text-sm text-muted-foreground">
-                          Complete API reference documentation with endpoint specifications and authentication guides
+                          Complete API reference with endpoint specifications
+                          and authentication guides
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <Lightbulb className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                        <Lightbulb
+                          className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                          strokeWidth={2.5}
+                        />
                         <p className="text-sm text-muted-foreground">
-                          Step-by-step integration tutorials and implementation best practices
+                          Integration patterns and JSON signal schemas for
+                          agentic AI platforms
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <Lightbulb className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                        <Lightbulb
+                          className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                          strokeWidth={2.5}
+                        />
                         <p className="text-sm text-muted-foreground">
-                          Technical architecture diagrams, data flow specifications, and security protocols
+                          BCBS 239 data lineage architecture and compliance
+                          protocols
                         </p>
                       </div>
                       <div className="flex items-start gap-3">
-                        <Lightbulb className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" strokeWidth={2.5} />
+                        <Lightbulb
+                          className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                          strokeWidth={2.5}
+                        />
                         <p className="text-sm text-muted-foreground">
-                          Sample code libraries, SDKs, and sandbox environment access for testing
+                          Sandbox environment access and sample code libraries
                         </p>
                       </div>
                     </div>
                   </div>
                   <Button variant="outline" className="w-full mt-6" asChild>
-                    <a href="https://docs.futeurcredx.com" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://docs.futeurcredx.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       View Documentation
-                      <ExternalLink className="ml-2 w-4 h-4" strokeWidth={2.5} />
+                      <ExternalLink
+                        className="ml-2 w-4 h-4"
+                        strokeWidth={2.5}
+                      />
                     </a>
                   </Button>
                 </CardContent>
@@ -342,113 +549,7 @@ function About() {
         </div>
       </section>
 
-      {/* Why We Built This */}
-      <section className="py-16 md:py-24 bg-background-secondary">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="font-heading text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
-              Why We Built This
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              The credit industry is broken. Information asymmetry hurts consumers and institutions alike.
-            </p>
-          </motion.div>
-
-          <div className="max-w-7xl mx-auto space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <Card>
-                <CardContent className="p-6 sm:p-8">
-                  <h3 className="font-bold text-xl mb-3 text-foreground">For Consumers</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    71% of consumers don't understand how their credit score is calculated. 1 in 5 have errors on their credit reports. Access to credit education and transparency shouldn't be a luxury—it should be a fundamental right.
-                  </p>
-                  <p className="text-muted-foreground text-sm italic">
-                    We saw consumers struggling to navigate credit systems designed to keep them in the dark. FuteurCredX changes that.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <Card>
-                <CardContent className="p-6 sm:p-8">
-                  <h3 className="font-bold text-xl mb-3 text-foreground">For Institutions</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Banks and lenders are losing qualified customers to fintech disruptors who offer faster decisions and transparent experiences. Manual underwriting is slow, expensive, and error-prone. Risk teams lack real-time portfolio visibility.
-                  </p>
-                  <p className="text-muted-foreground text-sm italic">
-                    We saw institutions stuck with legacy systems that couldn't adapt to modern expectations. LUMIQ AI bridges that gap.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <Card>
-                <CardContent className="p-6 sm:p-8">
-                  <h3 className="font-bold text-xl mb-3 text-foreground">The Outcome</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    By combining consumer-grade transparency with enterprise-grade compliance, we're creating a new standard for credit intelligence. Consumers get control. Institutions get velocity and risk visibility. Everyone wins.
-                  </p>
-                  <p className="text-muted-foreground text-sm italic">
-                    This isn't incremental improvement—it's systemic transformation of how credit decisions are made.
-                  </p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Links & Resources */}
-      <section className="py-16 md:py-24 bg-background">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <h2 className="font-heading text-[36px] md:text-[48px] font-bold mb-4 text-foreground">
-              Explore FuteurCredX
-            </h2>
-            <p className="text-lg text-muted-foreground mb-10">
-              Visit our platform to see how we're transforming credit intelligence for institutions and consumers.
-            </p>
-            
-            <Button size="lg" className="text-lg px-10 py-7 h-auto" asChild>
-              <a href="https://www.futeurcredx.com/" target="_blank" rel="noopener noreferrer">
-                Visit FuteurCredX
-                <ExternalLink className="ml-2 w-5 h-5" strokeWidth={2.5} />
-              </a>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
+      {/* SECTION 8 — Bottom CTA */}
       <section className="py-20 md:py-32 bg-gradient-to-br from-primary via-primary to-secondary">
         <div className="container mx-auto px-6">
           <motion.div
@@ -459,23 +560,34 @@ function About() {
             className="text-center max-w-4xl mx-auto"
           >
             <h2 className="font-heading text-[40px] md:text-[56px] font-bold mb-6 text-white leading-[1.15]">
-              Ready to Transform Credit Intelligence?
+              Ready to see it in action?
             </h2>
             <p className="text-xl text-white/95 mb-10 leading-relaxed">
-              Whether you're a financial institution looking to modernize underwriting or exploring enterprise credit solutions, we'd love to connect.
+              $600K pilot. 90 days. 7 KPIs measured against your baselines.
             </p>
-            
-            <Button size="lg" className="bg-white hover:bg-white/90 text-primary font-bold text-xl px-12 py-8 h-auto shadow-xl" asChild>
-              <Link to="/pilot#pilot-form">
-                Get in Touch
-                <ArrowRight className="ml-3 w-6 h-6" strokeWidth={2.5} />
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/pilot"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold text-base hover:bg-white/90 transition-colors shadow-lg"
+              >
+                Start the 90-Day Pilot
+                <ArrowRight className="w-5 h-5" />
               </Link>
-            </Button>
+              <a
+                href="https://citi.demo.futeurcredx.com/integration-preview?bank=citi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/40 text-white font-semibold text-base hover:bg-white/10 transition-colors"
+              >
+                Try the Live Demo
+                <ExternalLink className="w-5 h-5" />
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      <Footer />
     </PageLayout>
   );
 }

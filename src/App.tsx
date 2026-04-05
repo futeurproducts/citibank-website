@@ -6,11 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import About from "./pages/About";
-import Revolution from "./pages/Revolution";
-import Impact from "./pages/Impact";
-// import Demo from "./pages/Demo"; // Commented out - keeping code as backup
 import Pilot from "./pages/Pilot";
-import USS from "./pages/USS";
 import HowItWorks from "./pages/HowItWorks";
 import CaseStudy from "./pages/CaseStudy";
 import Terms from "./pages/Terms";
@@ -30,11 +26,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
-          <Route path="/revolution" element={<Revolution />} />
-          <Route path="/impact" element={<Impact />} />
-          {/* <Route path="/demo" element={<Demo />} /> */} {/* Commented out - keeping code as backup */}
           <Route path="/pilot" element={<Pilot />} />
-          <Route path="/uss" element={<USS />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/case-study" element={<CaseStudy />} />
           <Route path="/terms" element={<Terms />} />

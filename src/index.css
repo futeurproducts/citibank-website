@@ -30,13 +30,13 @@
     --border: 214 32% 91%;
 
     /* ============================================
-     * 🎨 BRAND COLORS - Astra Template Blue
+     * 🎨 BRAND COLORS - Citi Blue #003B70
      * ============================================ */
 
-    --primary: 217 91% 60%; /* blue-600 equivalent - matches astra-template */
+    --primary: 212 100% 22%; /* Citi Blue #003B70 */
     --primary-foreground: 0 0% 100%;
-    --primary-light: 217 91% 70%; /* blue-500 equivalent */
-    --primary-dark: 217 91% 50%; /* blue-700 equivalent */
+    --primary-light: 212 100% 32%;
+    --primary-dark: 212 100% 16%;
 
     --secondary: 215 16% 47%; /* slate-500 equivalent */
     --secondary-foreground: 0 0% 100%;
@@ -238,4 +238,15 @@
   .container {
     max-width: 1536px;
   }
+}
+
+/* ============================================
+ * SCROLL ANIMATION SAFETY NET
+ * Ensure content is visible even if intersection
+ * observer hasn't fired (fast scroll / JS delay)
+ * ============================================ */
+
+section, [data-section] {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
