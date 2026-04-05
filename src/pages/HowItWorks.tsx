@@ -8,7 +8,6 @@ import {
   Shield, TrendingUp, CheckCircle2, Target, DollarSign, Zap, ArrowRight, Globe
 } from "lucide-react";
 import { ImpactChatWidget } from "@/components/ImpactChatWidget";
-import { Footer } from "@/components/Footer";
 import { ArchitectureFlow } from "@/components/ArchitectureFlow";
 import { SevenOutputsExplorer } from "@/components/SevenOutputsExplorer";
 import { BeforeAfterTable } from "@/components/BeforeAfterTable";
@@ -358,7 +357,6 @@ export default function HowItWorks() {
 
         {/* Impact Chat Widget */}
         <ImpactChatWidget />
-        <Footer />
       </div>
     </PageLayout>
   );

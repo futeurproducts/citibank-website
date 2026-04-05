@@ -18,7 +18,6 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { PageLayout } from "@/components/PageLayout";
-import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/sections/home";
 import { ImpactChatWidget } from "@/components/ImpactChatWidget";
 import { Button } from "@/components/ui/button";
@@ -438,7 +437,6 @@ function Index() {
       </section>
 
       <ImpactChatWidget />
-      <Footer />
     </PageLayout>
   );
 }

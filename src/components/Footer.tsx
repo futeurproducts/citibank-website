@@ -1,106 +1,139 @@
 import { Link } from "react-router-dom";
-import { Mail } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const navigation = [
-    { label: "Platform", href: "/about" },
-    { label: "How It Works", href: "/how-it-works" },
-    { label: "Results", href: "/case-study" },
-    { label: "Pilot", href: "/pilot" },
-  ];
-
   return (
-    <footer className="bg-primary/10 text-foreground/70">
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-12 lg:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {/* Column 1: About */}
-          <div>
-            <div className="mb-4">
-              <Link
-                to="/"
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="font-sans text-xl font-black tracking-tighter text-foreground uppercase"
-                style={{
-                  fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                LUMIQ AI
-              </Link>
-            </div>
-            <p className="mb-4 text-sm leading-relaxed text-foreground/60">
-              Same-day credit decisions for commercial lending. 83ms. 7 intelligence outputs. $600K pilot.
-            </p>
-          </div>
-
-          {/* Column 2: Quick Links */}
-          <div>
-            <h3 className="mb-4 text-xl sm:text-2xl font-heading text-foreground">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              {navigation.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    to={item.href}
-                    className="text-sm font-medium text-foreground/60 transition-colors duration-150 hover:text-primary"
-                  >
-                    {item.label}
+    <div
+      className="h-auto max-w-full relative flex flex-col justify-center px-5 lg:px-10 py-10 w-full border-t border-border"
+      style={{ backgroundColor: "hsl(var(--background-secondary, var(--background)))" }}
+    >
+      <footer>
+        <div className="container mx-auto max-w-[1400px]">
+          {/* Navigation Links */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
+            {/* LumiqAI for Citi */}
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">
+                LumiqAI for Citi
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    How It Works
                   </Link>
                 </li>
-              ))}
-            </ul>
+                <li>
+                  <Link to="/case-study" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Results
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/pilot" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Pilot
+                  </Link>
+                </li>
+              </ul>
+              <a
+                href="https://institutions.futeurcredx.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-4 px-4 py-2 text-sm font-medium text-primary-foreground bg-primary rounded-lg hover:bg-primary/90 transition-colors"
+              >
+                Learn more about LumiqAI
+              </a>
+            </div>
+
+            {/* Developers */}
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">
+                Developers
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="https://docs.futeurcredx.com/quickstart" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Quickstart
+                  </a>
+                </li>
+                <li>
+                  <a href="https://docs.futeurcredx.com" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Docs
+                  </a>
+                </li>
+                <li>
+                  <a href="https://docs.futeurcredx.com/api-reference" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    API Reference
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">
+                Company
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="https://www.futeurcredx.com/company/about" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.futeurcredx.com/contact-sales" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.futeurcredx.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.futeurcredx.com/legal/terms-of-service" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Terms of Service
+                  </a>
+                </li>
+              </ul>
+            </div>
+
           </div>
 
-          {/* Column 3: Contact */}
-          <div>
-            <h3 className="mb-4 text-xl sm:text-2xl font-heading text-foreground">
-              Contact Us
-            </h3>
-            <ul className="space-y-3 text-sm font-medium text-foreground/60">
-              <li className="flex items-start gap-2">
-                <Mail
-                  size={16}
-                  className="mt-0.5 shrink-0"
-                />
-                <a
-                  href="mailto:support@futeurcredx.com"
-                  className="hover:text-primary transition-colors duration-150"
-                >
-                  support@futeurcredx.com
-                </a>
-              </li>
-            </ul>
+          {/* Company Branding */}
+          <div className="border-t border-border pt-8 pb-8">
+            <h2 className="text-2xl font-bold text-foreground mb-2 uppercase tracking-wide">
+              FUTEURCREDX
+            </h2>
           </div>
-        </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-foreground/10 bg-primary/3">
-        <div className="container mx-auto flex flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-foreground/50 md:flex-row">
-          <p>
-            © {currentYear} LUMIQ AI. All rights reserved.
-          </p>
-          <div className="flex gap-6">
-            <Link
-              to="/privacy"
-              className="transition-colors duration-150 hover:text-primary"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/terms"
-              className="transition-colors duration-150 hover:text-primary"
-            >
-              Terms of Service
-            </Link>
+          {/* Service Descriptions */}
+          <div className="border-t border-border pt-8 pb-8 space-y-6">
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-2">
+                Enterprise Solutions
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Our enterprise solutions provide financial institutions with AI-powered risk assessment tools, lending intelligence, and portfolio analytics to enhance decision-making processes and improve operational efficiency.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-2">
+                Data Security
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                FUTEURCREDX employs industry-leading security measures to protect your business data. All information is encrypted and stored according to the highest security standards in compliance with relevant regulations.
+              </p>
+            </div>
+          </div>
+
+          {/* Final Copyright */}
+          <div className="border-t border-border pt-6">
+            <p className="text-center text-sm text-muted-foreground">
+              &copy; {currentYear} FUTEURCREDX. LUMIQ AI&trade; and FUTEURCREDX&reg; are registered trademarks. All rights reserved.
+            </p>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   );
 }
-
