@@ -354,11 +354,15 @@ export default function CaseStudy() {
                         <h3 className="font-bold text-lg text-foreground">Consumer</h3>
                         <p className="text-muted-foreground text-sm">No score visibility, no prequalification, no credit alerts inside Citi App</p>
                       </div>
-                      <img
-                        src="/Case Study/Exec Diagnosis/Consumer.png"
-                        alt="Consumer Credit Intelligence Gap"
-                        className="w-full h-auto rounded-lg max-w-md mx-auto"
-                      />
+                      <div className="relative mx-auto max-w-[280px]">
+                        <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                          <img
+                            src="/Case Study/Exec Diagnosis/Consumer.png"
+                            alt="Consumer Credit Intelligence Gap"
+                            className="w-full h-auto"
+                          />
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -369,11 +373,15 @@ export default function CaseStudy() {
                         <h3 className="font-bold text-lg text-foreground">Commercial / SMB</h3>
                         <p className="text-muted-foreground text-sm">No business score, no unified Business+PG model, no lending eligibility logic on CitiDirect</p>
                       </div>
-                      <img
-                        src="/Case Study/Exec Diagnosis/SMB.png"
-                        alt="Commercial Credit Intelligence Gap"
-                        className="w-full h-auto rounded-lg max-w-md mx-auto"
-                      />
+                      <div className="relative mx-auto max-w-[280px]">
+                        <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                          <img
+                            src="/Case Study/Exec Diagnosis/SMB.png"
+                            alt="Commercial Credit Intelligence Gap"
+                            className="w-full h-auto"
+                          />
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -398,19 +406,27 @@ export default function CaseStudy() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mt-6">
                       <div className="text-center">
                         <p className="text-xs font-semibold text-foreground mb-2">Credit Karma (Consumer)</p>
-                        <img
-                          src="/Case Study/Exec Diagnosis/Eco System Risk /Consumer.PNG"
-                          alt="Ecosystem Risk Consumer - Credit Karma"
-                          className="w-full h-auto rounded-lg max-w-sm mx-auto"
-                        />
+                        <div className="relative mx-auto max-w-[280px]">
+                          <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                            <img
+                              src="/Case Study/Exec Diagnosis/Eco System Risk /Consumer.PNG"
+                              alt="Ecosystem Risk Consumer - Credit Karma"
+                              className="w-full h-auto"
+                            />
+                          </div>
+                        </div>
                       </div>
                       <div className="text-center">
                         <p className="text-xs font-semibold text-foreground mb-2">Nav / D&B (Business)</p>
-                        <img
-                          src="/Case Study/Exec Diagnosis/Eco System Risk /Business.PNG"
-                          alt="Ecosystem Risk Business - Nav"
-                          className="w-full h-auto rounded-lg max-w-sm mx-auto"
-                        />
+                        <div className="relative mx-auto max-w-[280px]">
+                          <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                            <img
+                              src="/Case Study/Exec Diagnosis/Eco System Risk /Business.PNG"
+                              alt="Ecosystem Risk Business - Nav"
+                              className="w-full h-auto"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
@@ -478,19 +494,27 @@ export default function CaseStudy() {
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Consumer</p>
-                              <img
-                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Checks Score Elsewhere/COnsumer/Consumer.PNG"
-                                alt="Consumer Checks Score Elsewhere"
-                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
-                              />
+                              <div className="relative mx-auto max-w-[240px]">
+                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                  <img
+                                    src="/Case Study/How Citi Loses the Customer Before the Application Begins/Checks Score Elsewhere/COnsumer/Consumer.PNG"
+                                    alt="Consumer Checks Score Elsewhere"
+                                    className="w-full h-auto"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Business</p>
-                              <img
-                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Checks Score Elsewhere/Business/IMG_0202.PNG"
-                                alt="Business Checks Score Elsewhere"
-                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
-                              />
+                              <div className="relative mx-auto max-w-[240px]">
+                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                  <img
+                                    src="/Case Study/How Citi Loses the Customer Before the Application Begins/Checks Score Elsewhere/Business/IMG_0202.PNG"
+                                    alt="Business Checks Score Elsewhere"
+                                    className="w-full h-auto"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </CardContent>
@@ -523,20 +547,28 @@ export default function CaseStudy() {
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Consumer</p>
-                              <img
-                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Consumer.PNG"
-                                alt="Competitor Prequal Consumer"
-                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
-                                loading="lazy"
-                              />
+                              <div className="relative mx-auto max-w-[240px]">
+                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                  <img
+                                    src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Consumer.PNG"
+                                    alt="Competitor Prequal Consumer"
+                                    className="w-full h-auto"
+                                    loading="lazy"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Business</p>
-                              <img
-                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Business.PNG"
-                                alt="Competitor Prequal Business"
-                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
-                              />
+                              <div className="relative mx-auto max-w-[240px]">
+                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                  <img
+                                    src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Prequal/Business.PNG"
+                                    alt="Competitor Prequal Business"
+                                    className="w-full h-auto"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </CardContent>
@@ -569,19 +601,27 @@ export default function CaseStudy() {
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Consumer</p>
-                              <img
-                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Approval/Consumer.PNG"
-                                alt="Competitor Approval Consumer"
-                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
-                              />
+                              <div className="relative mx-auto max-w-[240px]">
+                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                  <img
+                                    src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Approval/Consumer.PNG"
+                                    alt="Competitor Approval Consumer"
+                                    className="w-full h-auto"
+                                  />
+                                </div>
+                              </div>
                             </div>
                             <div className="text-center">
                               <p className="text-sm font-semibold text-foreground mb-3">Business</p>
-                              <img
-                                src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Approval/Business.PNG"
-                                alt="Competitor Approval Business"
-                                className="w-full h-auto rounded-lg max-w-xs mx-auto"
-                              />
+                              <div className="relative mx-auto max-w-[240px]">
+                                <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                                  <img
+                                    src="/Case Study/How Citi Loses the Customer Before the Application Begins/Comp Approval/Business.PNG"
+                                    alt="Competitor Approval Business"
+                                    className="w-full h-auto"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </CardContent>
@@ -751,22 +791,30 @@ export default function CaseStudy() {
                 <motion.div {...fadeInUp} transition={{ delay: 0.4 }}>
                   <Card className="border border-border shadow-sm">
                     <CardContent className="p-4 flex justify-center">
-                      <img
-                        src="/Summary_.png"
-                        alt="Citi Lacks Consumer Credit Intelligence"
-                        className="w-full h-auto rounded-lg max-w-xs"
-                      />
+                      <div className="relative mx-auto max-w-[280px]">
+                        <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                          <img
+                            src="/Summary_.png"
+                            alt="Citi Lacks Consumer Credit Intelligence"
+                            className="w-full h-auto"
+                          />
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
                 <motion.div {...fadeInUp} transition={{ delay: 0.5 }}>
                   <Card className="border border-border shadow-sm">
                     <CardContent className="p-4 flex justify-center">
-                      <img
-                        src="/summary 2.png"
-                        alt="Citi Lacks Business Credit Intelligence"
-                        className="w-full h-auto rounded-lg max-w-xs"
-                      />
+                      <div className="relative mx-auto max-w-[280px]">
+                        <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                          <img
+                            src="/summary 2.png"
+                            alt="Citi Lacks Business Credit Intelligence"
+                            className="w-full h-auto"
+                          />
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -832,12 +880,16 @@ export default function CaseStudy() {
                     </ul>
                   </div>
                   <div className="bg-card rounded-2xl border border-border p-8 text-center shadow-sm">
-                    <img
-                      src="/images/3-phone-consumer.png"
-                      alt="Citi Consumer LUMIQ"
-                      className="w-full h-auto rounded-lg max-w-2xl mx-auto"
-                      loading="lazy"
-                    />
+                    <div className="relative mx-auto max-w-[500px]">
+                      <div className="rounded-3xl overflow-hidden border-[6px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <img
+                          src="/images/3-phone-consumer.png"
+                          alt="Citi Consumer LUMIQ"
+                          className="w-full h-auto"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -846,12 +898,16 @@ export default function CaseStudy() {
               <motion.div {...fadeInUp}>
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                   <div className="order-2 lg:order-1 bg-card rounded-2xl border border-border p-8 text-center shadow-sm">
-                    <img
-                      src="/images/3-phones-business.png"
-                      alt="Citi Commercial LUMIQ"
-                      className="w-full h-auto rounded-lg max-w-2xl mx-auto"
-                      loading="lazy"
-                    />
+                    <div className="relative mx-auto max-w-[500px]">
+                      <div className="rounded-3xl overflow-hidden border-[6px] border-slate-800 shadow-2xl shadow-slate-900/20 bg-white transition-transform duration-300 hover:scale-[1.02] hover:shadow-2xl">
+                        <img
+                          src="/images/3-phones-business.png"
+                          alt="Citi Commercial LUMIQ"
+                          className="w-full h-auto"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div className="order-1 lg:order-2">
                     <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
